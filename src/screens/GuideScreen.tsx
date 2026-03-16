@@ -26,12 +26,6 @@ function VenueCard({ venue, onToast, onMapClick }: {
     }
   };
 
-  const handleViewMap = () => {
-    if (venue.mapUrl) {
-      window.location.href = venue.mapUrl;
-    }
-  };
-
   return (
     <article className="guide-card">
       <h2 className="guide-card__name">{venue.name}</h2>
@@ -40,9 +34,9 @@ function VenueCard({ venue, onToast, onMapClick }: {
         <button className="guide-card__btn" type="button" onClick={handleCopy}>
           {copy.guideCopyAddress}
         </button>
-        <button className="guide-card__btn" type="button" onClick={handleViewMap}>
+        <a className="guide-card__btn" href={venue.mapUrl} target="_blank" rel="noopener noreferrer">
           {copy.guideViewMap}
-        </button>
+        </a>
       </div>
       <p className="guide-card__map-label">{copy.guideFloorPlan}</p>
       <div className="guide-card__map-wrap">
@@ -72,12 +66,22 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
   const [lightbox, setLightbox] = useState<{ src: string; label: string } | null>(null);
 
   useEffect(() => {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    const original = viewport?.getAttribute("content") || "";
     if (lightbox) {
       document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      viewport?.setAttribute("content", original.replace(/,?\s*user-scalable=\w+/, "") + ", user-scalable=no");
     } else {
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      viewport?.setAttribute("content", original.replace(/,?\s*user-scalable=\w+/, ""));
     }
-    return () => { document.documentElement.style.overflow = ""; };
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      viewport?.setAttribute("content", original);
+    };
   }, [lightbox]);
 
   return (
