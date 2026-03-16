@@ -30,8 +30,12 @@ function VenueCard({ venue, onToast, onMapClick }: {
 
   const handleViewMap = () => {
     if (venue.mapUrl) {
-      // 高德 URI API + callnative=1，网页中间页自带"打开App"按钮
-      window.location.href = venue.mapUrl;
+      // 用新窗口打开，避免产生当前页浏览历史（微信底部栏不会出现）
+      const a = document.createElement("a");
+      a.href = venue.mapUrl;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.click();
     }
   };
 
