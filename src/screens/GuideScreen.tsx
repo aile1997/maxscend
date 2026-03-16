@@ -27,26 +27,9 @@ function VenueCard({ venue, onToast, onMapClick }: {
   };
 
   const handleViewMap = () => {
-    if (!venue.mapUrl) return;
-    // On mobile, try to open native map app directly
-    const loc = venue.mapUrl.match(/position=([\d.]+),([\d.]+)/);
-    if (loc) {
-      const [, lng, lat] = loc;
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      if (isIOS) {
-        // Apple Maps with fallback
-        window.location.href = `maps://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(venue.name)}`;
-        return;
-      }
-      // Android: try geo URI (opens default map app)
-      window.location.href = `geo:${lat},${lng}?q=${lat},${lng}(${encodeURIComponent(venue.name)})`;
-      // Fallback after 500ms if no app opened
-      setTimeout(() => {
-        window.open(venue.mapUrl!, "_blank", "noopener");
-      }, 500);
-      return;
+    if (venue.mapUrl) {
+      window.open(venue.mapUrl, "_blank", "noopener");
     }
-    window.open(venue.mapUrl, "_blank", "noopener");
   };
 
   return (
@@ -76,17 +59,9 @@ function VenueCard({ venue, onToast, onMapClick }: {
 
 function MapLightbox({ src, label, onClose }: { src: string; label: string; onClose: () => void }) {
   return (
-    <div
-      className="lightbox"
-      onClick={onClose}
-      onTouchMove={(e) => e.preventDefault()}
-    >
-      <div
-        className="lightbox__content"
-        onClick={(e) => e.stopPropagation()}
-        onTouchMove={(e) => e.stopPropagation()}
-      >
-        <img className="lightbox__img" src={src} alt={label} draggable={false} />
+    <div className="lightbox" onClick={onClose}>
+      <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
+        <img className="lightbox__img" src={src} alt={label} />
         <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">×</button>
       </div>
     </div>

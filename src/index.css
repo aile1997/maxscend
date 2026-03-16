@@ -529,7 +529,7 @@ svg {
 }
 
 .aa--primary {
-  top: calc(210 * var(--design-unit));
+  top: calc(199 * var(--design-unit));
   width: calc(330 * var(--design-unit));
   height: calc(1474 * var(--design-unit));
   animation: card-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
@@ -542,15 +542,14 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   top: calc(1748 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  width: 100%;
+  width: calc(330 * var(--design-unit));
   overflow-x: auto;
-  padding-left: calc(38 * var(--design-unit));
-  padding-right: calc(38 * var(--design-unit));
+  padding-right: calc(47 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -651,15 +650,14 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   top: calc(199 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  width: 100%;
+  width: calc(330 * var(--design-unit));
   overflow-x: auto;
-  padding-left: calc(38 * var(--design-unit));
-  padding-right: calc(38 * var(--design-unit));
+  padding-right: calc(47 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -757,8 +755,6 @@ svg {
   justify-content: center;
   background: rgba(0, 0, 0, 0.85);
   animation: lightbox-in 200ms ease;
-  touch-action: none;
-  overscroll-behavior: contain;
 }
 
 @keyframes lightbox-in {
@@ -777,7 +773,6 @@ svg {
   max-height: 85vh;
   border-radius: 8px;
   object-fit: contain;
-  touch-action: pinch-zoom;
 }
 
 .lightbox__close {
@@ -859,9 +854,8 @@ svg {
 }
 
 .contact-card__phone {
-  width: calc(48 * var(--design-unit));
-  height: calc(48 * var(--design-unit));
-  object-fit: contain;
+  width: calc(40 * var(--design-unit));
+  height: calc(40 * var(--design-unit));
 }
 
 .contact-screen__feedback-title {
