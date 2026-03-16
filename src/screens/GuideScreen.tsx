@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { copy, guideVenues } from "../content";
 import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
@@ -8,37 +9,30 @@ interface GuideScreenProps {
   onToast: (message: string) => void;
 }
 
-function openAmap(lat: string, lng: string, name: string) {
+const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+function openMap(lat: string, lng: string, name: string, webUrl: string) {
+  if (isWeChat) {
+    // 微信浏览器无法唤起外部 App，直接跳转高德网页版
+    window.location.href = webUrl;
+    return;
+  }
+
   const encoded = encodeURIComponent(name);
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  const amapAppUrl = isIOS
+  const scheme = isIOS
     ? `iosamap://viewMap?sourceApplication=maxscend&poiname=${encoded}&lat=${lat}&lon=${lng}&dev=0`
     : `androidamap://viewMap?sourceApplication=maxscend&poiname=${encoded}&lat=${lat}&lon=${lng}&dev=0`;
-  const webFallback = `https://uri.amap.com/marker?position=${lng},${lat}&name=${encoded}`;
 
-  // Try opening the app
-  const iframe = document.createElement("iframe");
-  iframe.style.display = "none";
-  iframe.src = amapAppUrl;
-  document.body.appendChild(iframe);
+  // 尝试打开 App
+  window.location.href = scheme;
 
-  // Fallback to web after 600ms
-  const timer = setTimeout(() => {
-    window.location.href = webFallback;
-  }, 600);
-
-  // If app opened, the page will blur — clear the fallback
-  const onBlur = () => {
-    clearTimeout(timer);
-    window.removeEventListener("blur", onBlur);
-  };
-  window.addEventListener("blur", onBlur);
-
-  // Cleanup iframe
+  // 800ms 后如果还在页面说明 App 没装，跳转网页
   setTimeout(() => {
-    document.body.removeChild(iframe);
-    window.removeEventListener("blur", onBlur);
-  }, 2000);
+    if (!document.hidden) {
+      window.location.href = webUrl;
+    }
+  }, 800);
 }
 
 function VenueCard({ venue, onToast, onMapClick }: {
@@ -60,10 +54,11 @@ function VenueCard({ venue, onToast, onMapClick }: {
   };
 
   const handleViewMap = () => {
-    const loc = venue.mapUrl?.match(/position=([\d.]+),([\d.]+)/);
+    if (!venue.mapUrl) return;
+    const loc = venue.mapUrl.match(/position=([\d.]+),([\d.]+)/);
     if (loc) {
-      openAmap(loc[2], loc[1], venue.name);
-    } else if (venue.mapUrl) {
+      openMap(loc[2], loc[1], venue.name, venue.mapUrl);
+    } else {
       window.location.href = venue.mapUrl;
     }
   };
@@ -94,60 +89,26 @@ function VenueCard({ venue, onToast, onMapClick }: {
 }
 
 function MapLightbox({ src, label, onClose }: { src: string; label: string; onClose: () => void }) {
-  const [scale, setScale] = useState(1);
-  const lastDist = useRef(0);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  const onTouchStart = useCallback((e: React.TouchEvent) => {
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      lastDist.current = Math.hypot(dx, dy);
-    }
-  }, []);
-
-  const onTouchMove = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    if (e.touches.length === 2) {
-      const dx = e.touches[0].clientX - e.touches[1].clientX;
-      const dy = e.touches[0].clientY - e.touches[1].clientY;
-      const dist = Math.hypot(dx, dy);
-      if (lastDist.current > 0) {
-        const newScale = scale * (dist / lastDist.current);
-        setScale(Math.min(Math.max(newScale, 1), 5));
-      }
-      lastDist.current = dist;
-    }
-  }, [scale]);
-
-  const onTouchEnd = useCallback(() => {
-    lastDist.current = 0;
-  }, []);
-
   return (
-    <div
-      className="lightbox"
-      onClick={onClose}
-      onTouchMove={(e) => e.preventDefault()}
-    >
-      <div
-        className="lightbox__content"
-        onClick={(e) => e.stopPropagation()}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
-        <img
-          ref={imgRef}
-          className="lightbox__img"
-          src={src}
-          alt={label}
-          draggable={false}
-          style={{ transform: `scale(${scale})` }}
-        />
+    <div className="lightbox" onClick={onClose}>
+      <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
+        <TransformWrapper
+          initialScale={1}
+          minScale={1}
+          maxScale={5}
+          doubleClick={{ mode: "zoomIn" }}
+          pinch={{ step: 5 }}
+        >
+          <TransformComponent
+            wrapperStyle={{ width: "100%", height: "100%" }}
+            contentStyle={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
+          >
+            <img className="lightbox__img" src={src} alt={label} draggable={false} />
+          </TransformComponent>
+        </TransformWrapper>
         <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">×</button>
       </div>
-      <p className="lightbox__hint">双指缩放查看</p>
+      <p className="lightbox__hint">双指缩放 · 双击放大</p>
     </div>
   );
 }
@@ -158,15 +119,10 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
   useEffect(() => {
     if (lightbox) {
       document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "";
-      document.body.style.touchAction = "";
     }
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [lightbox]);
 
   return (
