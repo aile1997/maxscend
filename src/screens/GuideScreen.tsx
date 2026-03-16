@@ -9,31 +9,6 @@ interface GuideScreenProps {
   onToast: (message: string) => void;
 }
 
-const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-function openMap(lat: string, lng: string, name: string, webUrl: string) {
-  if (isWeChat) {
-    // 微信浏览器无法唤起外部 App，直接跳转高德网页版
-    window.location.href = webUrl;
-    return;
-  }
-
-  const encoded = encodeURIComponent(name);
-  const scheme = isIOS
-    ? `iosamap://viewMap?sourceApplication=maxscend&poiname=${encoded}&lat=${lat}&lon=${lng}&dev=0`
-    : `androidamap://viewMap?sourceApplication=maxscend&poiname=${encoded}&lat=${lat}&lon=${lng}&dev=0`;
-
-  // 尝试打开 App
-  window.location.href = scheme;
-
-  // 800ms 后如果还在页面说明 App 没装，跳转网页
-  setTimeout(() => {
-    if (!document.hidden) {
-      window.location.href = webUrl;
-    }
-  }, 800);
-}
 
 function VenueCard({ venue, onToast, onMapClick }: {
   venue: GuideVenue;
@@ -54,11 +29,8 @@ function VenueCard({ venue, onToast, onMapClick }: {
   };
 
   const handleViewMap = () => {
-    if (!venue.mapUrl) return;
-    const loc = venue.mapUrl.match(/position=([\d.]+),([\d.]+)/);
-    if (loc) {
-      openMap(loc[2], loc[1], venue.name, venue.mapUrl);
-    } else {
+    if (venue.mapUrl) {
+      // 高德 URI API + callnative=1，网页中间页自带"打开App"按钮
       window.location.href = venue.mapUrl;
     }
   };

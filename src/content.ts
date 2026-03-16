@@ -179,19 +179,19 @@ export const guideVenues: GuideVenue[] = [
     name: "\u82af\u5353\u56ed\u533a",
     address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u6ee8\u6e56\u533a\u80e1\u57ed\u5de5\u4e1a\u56ed\u5218\u95fe\u8def29\u53f7",
     mapAsset: "guide-map-xinzhuo.png",
-    mapUrl: "https://uri.amap.com/marker?position=120.198,31.475&name=\u82af\u5353\u56ed\u533a",
+    mapUrl: "https://uri.amap.com/marker?position=120.198,31.475&name=\u82af\u5353\u56ed\u533a&callnative=1",
   },
   {
     name: "\u592a\u6e56\u996d\u5e97",
     address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u9526\u56ed\u8def1\u53f7",
     mapAsset: "guide-map-taihu-hotel.png",
-    mapUrl: "https://uri.amap.com/marker?position=120.275,31.547&name=\u592a\u6e56\u996d\u5e97",
+    mapUrl: "https://uri.amap.com/marker?position=120.275,31.547&name=\u592a\u6e56\u996d\u5e97&callnative=1",
   },
   {
     name: "\u7ba1\u793e\u5c71\u5e84",
     address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u6ee8\u6e56\u533a\u9f0b\u6e1a\u8def1\u53f7",
     mapAsset: "guide-map-guanshe.png",
-    mapUrl: "https://uri.amap.com/marker?position=120.217,31.510&name=\u7ba1\u793e\u5c71\u5e84",
+    mapUrl: "https://uri.amap.com/marker?position=120.217,31.510&name=\u7ba1\u793e\u5c71\u5e84&callnative=1",
   },
 ];
 
