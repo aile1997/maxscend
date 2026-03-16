@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { copy, guideVenues } from "../content";
 import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
@@ -28,7 +28,7 @@ function VenueCard({ venue, onToast, onMapClick }: {
 
   const handleViewMap = () => {
     if (venue.mapUrl) {
-      window.open(venue.mapUrl, "_blank", "noopener");
+      window.location.href = venue.mapUrl;
     }
   };
 
@@ -70,6 +70,15 @@ function MapLightbox({ src, label, onClose }: { src: string; label: string; onCl
 
 export function GuideScreen({ onToast }: GuideScreenProps) {
   const [lightbox, setLightbox] = useState<{ src: string; label: string } | null>(null);
+
+  useEffect(() => {
+    if (lightbox) {
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "";
+    }
+    return () => { document.documentElement.style.overflow = ""; };
+  }, [lightbox]);
 
   return (
     <section className="screen guide-screen">

@@ -543,13 +543,13 @@ svg {
 .agenda-secondary-carousel {
   position: absolute;
   left: calc(38 * var(--design-unit));
+  right: 0;
   top: calc(1748 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  width: calc(330 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(47 * var(--design-unit));
+  padding-right: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -576,7 +576,7 @@ svg {
 .aa__date {
   position: absolute;
   left: calc(16 * var(--design-unit));
-  top: calc(7 * var(--design-unit));
+  top: calc(16 * var(--design-unit));
   font-size: calc(32 * var(--design-unit));
   line-height: 1;
   font-weight: 700;
@@ -651,13 +651,13 @@ svg {
 .guide-carousel {
   position: absolute;
   left: calc(38 * var(--design-unit));
+  right: 0;
   top: calc(199 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  width: calc(330 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(47 * var(--design-unit));
+  padding-right: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -755,6 +755,7 @@ svg {
   justify-content: center;
   background: rgba(0, 0, 0, 0.85);
   animation: lightbox-in 200ms ease;
+  overscroll-behavior: none;
 }
 
 @keyframes lightbox-in {
@@ -773,6 +774,9 @@ svg {
   max-height: 85vh;
   border-radius: 8px;
   object-fit: contain;
+  touch-action: pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .lightbox__close {
