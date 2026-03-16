@@ -155,7 +155,7 @@ function App() {
     window.__bootScreen?.finish();
   }, [isBooting]);
 
-  const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
+  const noScroll = isBooting || page === "home" || page === "guide";
 
   return (
     <div className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
