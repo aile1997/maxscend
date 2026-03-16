@@ -13,7 +13,7 @@ const assetPath = (name: string) => `${import.meta.env.BASE_URL}figma-assets/${e
 export const designAssets = {
   eventBackdrop: assetPath("Group 251.svg"),
   headerLogo: assetPath("header-logo.svg"),
-  splashVisualBg: assetPath("splash-visual-bg.png"),
+  splashVisualBg: assetPath("20周年视觉方案to外部 1.svg"),
   splashTwenty: assetPath("splash-20-full.svg"),
   splashLogo: assetPath("splash-logo.svg"),
   homeCopyImage: assetPath("home-copy.svg"),

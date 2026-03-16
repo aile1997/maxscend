@@ -11,7 +11,7 @@
       content="MAXSCEND 20th Anniversary event microsite"
     />
     <link rel="icon" href="data:," />
-    <link rel="preload" as="image" href="./figma-assets/splash-visual-bg.png" />
+    <link rel="preload" as="image" href="./figma-assets/20%E5%91%A8%E5%B9%B4%E8%A7%86%E8%A7%89%E6%96%B9%E6%A1%88to%E5%A4%96%E9%83%A8%201.svg" />
     <link rel="preload" as="image" href="./figma-assets/splash-20-full.svg" />
     <link rel="preload" as="image" href="./figma-assets/splash-logo.svg" />
     <link rel="preload" as="image" href="./figma-assets/header-logo.svg" />
@@ -57,18 +57,19 @@
 
       .boot-screen--hidden {
         opacity: 0;
+        filter: blur(6px);
+        transform: scale(1.02);
         pointer-events: none;
-        transition: opacity 180ms ease;
+        transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
       }
 
       .boot-screen__bg {
         position: absolute;
-        left: 0;
-        top: 0;
+        inset: 0;
         width: 100%;
-        height: calc(690 * var(--boot-unit));
+        height: 100%;
         object-fit: cover;
-        object-position: center top;
+        object-position: center 30%;
       }
 
       .boot-screen__hero,
@@ -124,7 +125,7 @@
   </head>
   <body>
     <div id="boot-screen" class="boot-screen" aria-hidden="true">
-      <img class="boot-screen__bg" src="./figma-assets/splash-visual-bg.png" alt="" />
+      <img class="boot-screen__bg" src="./figma-assets/20%E5%91%A8%E5%B9%B4%E8%A7%86%E8%A7%89%E6%96%B9%E6%A1%88to%E5%A4%96%E9%83%A8%201.svg" alt="" />
       <img class="boot-screen__hero" src="./figma-assets/splash-20-full.svg" alt="" />
       <div class="boot-screen__copy">
         <p>MAXSCEND</p>
@@ -147,7 +148,7 @@
           bootScreen.classList.add("boot-screen--hidden");
           window.setTimeout(() => {
             bootScreen.remove();
-          }, 200);
+          }, 600);
         },
       };
     </script>

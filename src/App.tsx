@@ -42,16 +42,20 @@ const preloadImage = (src: string) =>
     }
   });
 
-const launchAssetSources = [
+const allAssetSources = [
   designAssets.splashVisualBg,
   designAssets.splashTwenty,
   designAssets.splashLogo,
   designAssets.headerLogo,
   designAssets.homeCopyImage,
+  designAssets.eventBackdrop,
+  designAssets.contactPhoneLeft,
+  designAssets.contactPhoneRight,
+  designAssets.guideMapXinzhuo,
+  designAssets.guideMapTaihuHotel,
+  designAssets.guideMapGuanshe,
   ...Object.values(navIconAssets).flatMap((icon) => (icon.active ? [icon.active, icon.inactive] : [icon.inactive])),
 ];
-
-const secondaryAssetSources = [designAssets.contactPhoneLeft, designAssets.contactPhoneRight];
 
 declare global {
   interface Window {
@@ -79,7 +83,7 @@ function App() {
     let cancelled = false;
 
     Promise.all([
-      ...launchAssetSources.map((src) => preloadImage(src)),
+      ...allAssetSources.map((src) => preloadImage(src)),
       document.fonts?.ready ?? Promise.resolve(),
     ]).finally(() => {
       if (!cancelled) {
@@ -142,14 +146,6 @@ function App() {
   const shellStyle = {
     "--screen-height": `${screenHeight}`,
   } as CSSProperties;
-
-  useEffect(() => {
-    if (isBooting) {
-      return;
-    }
-
-    void Promise.allSettled(secondaryAssetSources.map((src) => preloadImage(src)));
-  }, [isBooting]);
 
   useEffect(() => {
     if (isBooting) {

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "Bash(claude mcp:*)",
+      "Bash(claude.cmd mcp:*)",
+      "Bash(npx @anthropic-ai/claude-code mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp)",
+      "mcp__figma-remote-mcp__get_design_context",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/bab5c223-20f3-4278-8ccf-2fe1aa737b7f\" -o \"d:/Coding/Work/maxscend/public/figma-assets/guide-map-guanshe.png\")",
+      "mcp__figma-remote-mcp__get_metadata"
+    ]
+  }
+}
