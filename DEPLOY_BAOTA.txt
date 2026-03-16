@@ -1,0 +1,36 @@
+MAXSCEND 20th Anniversary
+Baota static deployment instructions
+
+1. This project is a pure static site.
+   No Node.js runtime is required on the server.
+   No npm install is required on the server.
+   No PM2 or process manager is required.
+
+2. Deploy target:
+   https://www.maxscend.com/20th-anniversary/
+
+3. Upload the contents of the package to:
+   /www/wwwroot/www.maxscend.com/20th-anniversary/
+
+4. After extraction, the target directory should directly contain:
+   index.html
+   assets/
+   figma-assets/
+
+5. Do not upload the outer dist folder itself.
+   Correct:
+   /www/wwwroot/www.maxscend.com/20th-anniversary/index.html
+
+   Incorrect:
+   /www/wwwroot/www.maxscend.com/20th-anniversary/dist/index.html
+
+6. Nginx redirect recommendation:
+   Redirect /20th-anniversary to /20th-anniversary/
+
+   location = /20th-anniversary {
+       return 301 /20th-anniversary/;
+   }
+
+7. Access URL:
+   https://www.maxscend.com/20th-anniversary/
+

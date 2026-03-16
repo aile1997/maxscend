@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="MAXSCEND 20th Anniversary event microsite"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="preload" as="image" href="./figma-assets/splash-visual-bg.png" />
+    <link rel="preload" as="image" href="./figma-assets/splash-20-full.svg" />
+    <link rel="preload" as="image" href="./figma-assets/splash-logo.svg" />
+    <link rel="preload" as="image" href="./figma-assets/header-logo.svg" />
+    <link rel="preload" as="image" href="./figma-assets/home-copy.svg" />
+    <link rel="preload" as="image" href="./figma-assets/nav-home-active.svg" />
+    <link rel="preload" as="image" href="./figma-assets/nav-agenda-inactive.svg" />
+    <link rel="preload" as="image" href="./figma-assets/nav-story-inactive.svg" />
+    <link rel="preload" as="image" href="./figma-assets/nav-guide-inactive.svg" />
+    <link rel="preload" as="image" href="./figma-assets/nav-contact-inactive.svg" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        background: #000;
+      }
+
+      #root {
+        min-height: 100dvh;
+      }
+
+      html:not(.app-ready) #root {
+        visibility: hidden;
+      }
+
+      .boot-screen {
+        --boot-unit: calc(100vw / 402);
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        overflow: hidden;
+        background: #000;
+        color: #fff;
+        font-family:
+          "Source Han Sans CN",
+          "Source Han Sans SC",
+          "Noto Sans SC",
+          "PingFang SC",
+          "Hiragino Sans GB",
+          "Microsoft YaHei",
+          sans-serif;
+      }
+
+      .boot-screen--hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+      }
+
+      .boot-screen__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: calc(690 * var(--boot-unit));
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .boot-screen__hero,
+      .boot-screen__copy,
+      .boot-screen__logo {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .boot-screen__hero {
+        left: calc(73 * var(--boot-unit));
+        top: calc(240 * var(--boot-unit));
+        width: calc(288 * var(--boot-unit));
+        height: calc(138.4 * var(--boot-unit));
+      }
+
+      .boot-screen__copy {
+        left: calc(111 * var(--boot-unit));
+        top: calc(480 * var(--boot-unit));
+        width: calc(180 * var(--boot-unit));
+        text-align: center;
+      }
+
+      .boot-screen__copy p {
+        margin: 0;
+      }
+
+      .boot-screen__copy p:nth-child(1) {
+        font-size: calc(26 * var(--boot-unit));
+        line-height: calc(31 * var(--boot-unit));
+      }
+
+      .boot-screen__copy p:nth-child(2) {
+        font-size: calc(18 * var(--boot-unit));
+        line-height: calc(22 * var(--boot-unit));
+      }
+
+      .boot-screen__copy p:nth-child(3) {
+        margin-top: calc(2 * var(--boot-unit));
+        font-size: calc(20 * var(--boot-unit));
+        line-height: calc(29 * var(--boot-unit));
+        font-weight: 700;
+      }
+
+      .boot-screen__logo {
+        left: calc(140 * var(--boot-unit));
+        top: calc(680 * var(--boot-unit));
+        width: calc(123 * var(--boot-unit));
+        height: calc(30.035 * var(--boot-unit));
+      }
+    </style>
+    <title>MAXSCEND 20th Anniversary</title>
+  </head>
+  <body>
+    <div id="boot-screen" class="boot-screen" aria-hidden="true">
+      <img class="boot-screen__bg" src="./figma-assets/splash-visual-bg.png" alt="" />
+      <img class="boot-screen__hero" src="./figma-assets/splash-20-full.svg" alt="" />
+      <div class="boot-screen__copy">
+        <p>MAXSCEND</p>
+        <p>20th Anniversary</p>
+        <p>&#21331;&#32988;&#24494;&#21512;&#20316;&#20249;&#20276;&#22823;&#20250;</p>
+      </div>
+      <img class="boot-screen__logo" src="./figma-assets/splash-logo.svg" alt="" />
+    </div>
+    <div id="root"></div>
+    <script>
+      window.__bootScreen = {
+        finish() {
+          document.documentElement.classList.add("app-ready");
+          const bootScreen = document.getElementById("boot-screen");
+
+          if (!bootScreen) {
+            return;
+          }
+
+          bootScreen.classList.add("boot-screen--hidden");
+          window.setTimeout(() => {
+            bootScreen.remove();
+          }, 200);
+        },
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
