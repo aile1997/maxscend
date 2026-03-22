@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import { AgendaScreen } from "./screens/AgendaScreen";
 import { BottomNav } from "./components/BottomNav";
+import { BrandStoryScreen } from "./screens/BrandStoryScreen";
 import { ContactScreen } from "./screens/ContactScreen";
 import { GuideScreen } from "./screens/GuideScreen";
 import { copy, navItems } from "./content";
@@ -12,6 +13,7 @@ import type { NavItemDefinition, PageId } from "./types";
 const DEFAULT_SCREEN_HEIGHT = 774;
 const AGENDA_SCREEN_HEIGHT = 2200;
 const GUIDE_SCREEN_HEIGHT = 774;
+const BRAND_STORY_SCREEN_HEIGHT = 3212;
 const MIN_SPLASH_MS = 1400;
 
 const preloadImage = (src: string) =>
@@ -114,7 +116,7 @@ function App() {
       return;
     }
 
-    if (item.id === "home" || item.id === "agenda" || item.id === "guide" || item.id === "contact") {
+    if (item.id === "home" || item.id === "agenda" || item.id === "story" || item.id === "guide" || item.id === "contact") {
       setPage(item.id);
     }
   };
@@ -142,7 +144,9 @@ function App() {
       ? AGENDA_SCREEN_HEIGHT
       : page === "guide"
         ? GUIDE_SCREEN_HEIGHT
-        : DEFAULT_SCREEN_HEIGHT;
+        : page === "story"
+          ? BRAND_STORY_SCREEN_HEIGHT
+          : DEFAULT_SCREEN_HEIGHT;
   const shellStyle = {
     "--screen-height": `${screenHeight}`,
   } as CSSProperties;
@@ -155,7 +159,7 @@ function App() {
     window.__bootScreen?.finish();
   }, [isBooting]);
 
-  const noScroll = isBooting || page === "home" || page === "guide";
+  const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
 
   return (
     <div className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
@@ -164,6 +168,7 @@ function App() {
           <>
             {page === "home" && <HomeScreen />}
             {page === "agenda" && <AgendaScreen />}
+            {page === "story" && <BrandStoryScreen />}
             {page === "guide" && <GuideScreen onToast={setToast} />}
             {page === "contact" && <ContactScreen onSubmitFeedback={handleFeedbackSubmit} />}
           </>

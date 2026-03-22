@@ -81,6 +81,7 @@ export const navIconAssets: Record<
     inactive: assetPath("nav-agenda-inactive.svg"),
   },
   story: {
+    active: assetPath("nav-story-active.svg"),
     inactive: assetPath("nav-story-inactive.svg"),
   },
   guide: {

@@ -1,4 +1,4 @@
-export type PageId = "home" | "agenda" | "guide" | "contact";
+export type PageId = "home" | "agenda" | "story" | "guide" | "contact";
 
 export type NavId = "home" | "agenda" | "story" | "guide" | "contact";
 

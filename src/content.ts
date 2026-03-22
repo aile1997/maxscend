@@ -38,7 +38,7 @@ export const copy = {
 export const navItems: NavItemDefinition[] = [
   { id: "home", label: copy.navHome },
   { id: "agenda", label: copy.navAgenda },
-  { id: "story", label: copy.navStory, disabled: true, message: copy.storyPending },
+  { id: "story", label: copy.navStory },
   { id: "guide", label: copy.navGuide },
   { id: "contact", label: copy.navContact },
 ];
