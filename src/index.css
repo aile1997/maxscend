@@ -972,6 +972,7 @@ svg {
 
 .brand-story-screen {
   background: #21201e;
+  overflow: hidden;
 }
 
 /* Decorative vectors */
@@ -981,23 +982,29 @@ svg {
   pointer-events: none;
 }
 
+/* Vector 1: Figma x=414 (outside 402px frame), mostly hidden by overflow */
 .brand-story__deco--1 {
   top: calc(753 * var(--design-unit));
-  right: calc(-40 * var(--design-unit));
-  width: calc(180 * var(--design-unit));
+  left: calc(414 * var(--design-unit));
+  width: calc(803 * var(--design-unit));
+  height: calc(627 * var(--design-unit));
   transform: rotate(156.66deg) scaleY(-1);
 }
 
+/* Vector 2: Figma x=9, extends beyond right edge */
 .brand-story__deco--2 {
   top: calc(1041 * var(--design-unit));
-  left: calc(-30 * var(--design-unit));
-  width: calc(280 * var(--design-unit));
+  left: calc(9 * var(--design-unit));
+  width: calc(551 * var(--design-unit));
+  height: calc(462 * var(--design-unit));
 }
 
+/* Vector 3: Figma x=-85, extends beyond left edge */
 .brand-story__deco--3 {
   top: calc(1990 * var(--design-unit));
-  left: calc(-50 * var(--design-unit));
-  width: calc(250 * var(--design-unit));
+  left: calc(-85 * var(--design-unit));
+  width: calc(487 * var(--design-unit));
+  height: calc(408 * var(--design-unit));
 }
 
 /* Section headings */
@@ -1115,15 +1122,19 @@ svg {
   left: calc(23 * var(--design-unit));
   z-index: 2;
   width: calc(355 * var(--design-unit));
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
   font-size: calc(18 * var(--design-unit));
   font-weight: 700;
   color: #ff7600;
   line-height: normal;
   letter-spacing: -0.3px;
   white-space: pre-wrap;
+  word-break: break-all;
+  background: none;
 }
-
-.brand-story__ip-desc p { margin: 0; }
 
 /* Info row: namecard + slogan side by side */
 .brand-story__info-row {

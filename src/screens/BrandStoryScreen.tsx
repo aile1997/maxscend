@@ -57,13 +57,11 @@ export function BrandStoryScreen() {
         <img src={`${B}mascot-photo-1.png`} alt="小卓吉祥物" />
       </div>
 
-      <div className="brand-story__ip-desc">
-        <p>{"> **print(\"我是小卓。\")"}</p>
-        <p>{"                         > **print(\"我是卓胜微技术灵魂"}</p>
-        <p>{"                                                           的感性表达。\")"}</p>
-        <p>{"> **print(\"我的使命是:"}</p>
-        <p>{"                         在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。\""}</p>
-      </div>
+      <pre className="brand-story__ip-desc">{`> **print("我是小卓。")
+                         > **print("我是卓胜微技术灵魂
+                                                           的感性表达。")
+> **print("我的使命是:
+                         在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。"`}</pre>
 
       {/* Namecard + Slogan side by side */}
       <div className="brand-story__info-row">
