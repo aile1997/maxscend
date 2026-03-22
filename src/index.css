@@ -983,21 +983,21 @@ svg {
 
 .brand-story__deco--1 {
   top: calc(753 * var(--design-unit));
-  left: calc(355 * var(--design-unit));
-  width: calc(250 * var(--design-unit));
+  right: calc(-40 * var(--design-unit));
+  width: calc(180 * var(--design-unit));
   transform: rotate(156.66deg) scaleY(-1);
 }
 
 .brand-story__deco--2 {
   top: calc(1041 * var(--design-unit));
-  left: calc(9 * var(--design-unit));
-  width: calc(380 * var(--design-unit));
+  left: calc(-30 * var(--design-unit));
+  width: calc(280 * var(--design-unit));
 }
 
 .brand-story__deco--3 {
   top: calc(1990 * var(--design-unit));
-  left: calc(-85 * var(--design-unit));
-  width: calc(350 * var(--design-unit));
+  left: calc(-50 * var(--design-unit));
+  width: calc(250 * var(--design-unit));
 }
 
 /* Section headings */
@@ -1118,8 +1118,9 @@ svg {
   font-size: calc(18 * var(--design-unit));
   font-weight: 700;
   color: #ff7600;
-  line-height: calc(32 * var(--design-unit));
+  line-height: normal;
   letter-spacing: -0.3px;
+  white-space: pre-wrap;
 }
 
 .brand-story__ip-desc p { margin: 0; }

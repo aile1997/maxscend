@@ -4,9 +4,9 @@ const B = `${import.meta.env.BASE_URL}brand-assets/`;
 
 const yearbooks = [
   { cover: `${B}yearbook-2025.png`, title: "时间的刻度", sub: "卓胜微 20 周年" },
-  { cover: `${B}yearbook-2025.png`, title: "在这里遇见有为的年轻", sub: "2024 卓胜微，有胆、有量" },
-  { cover: `${B}yearbook-2025.png`, title: "在这里遇见有为的年轻", sub: "2023 · 芯途璀璨" },
-  { cover: `${B}yearbook-2025.png`, title: "在这里遇见有为的年轻", sub: "2022 · 星河漫漫" },
+  { cover: `${B}yearbook-2024.png`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
+  { cover: `${B}yearbook-2023.png`, title: "在这里遇见有为的年轻", sub: "2023—芯途探索" },
+  { cover: `${B}yearbook-2022.png`, title: "在这里遇见有为的年轻", sub: "2022—星河漫漫" },
 ];
 
 export function BrandStoryScreen() {
@@ -59,10 +59,10 @@ export function BrandStoryScreen() {
 
       <div className="brand-story__ip-desc">
         <p>{"> **print(\"我是小卓。\")"}</p>
-        <p style={{ textAlign: "right" }}>{"> **print(\"我是卓胜微技术灵魂"}</p>
-        <p style={{ textAlign: "right" }}>{"的感性表达。\")"}</p>
+        <p>{"                         > **print(\"我是卓胜微技术灵魂"}</p>
+        <p>{"                                                           的感性表达。\")"}</p>
         <p>{"> **print(\"我的使命是:"}</p>
-        <p style={{ textAlign: "right" }}>{"在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。\""}</p>
+        <p>{"                         在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。\""}</p>
       </div>
 
       {/* Namecard + Slogan side by side */}
