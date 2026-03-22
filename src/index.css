@@ -968,31 +968,45 @@ svg {
   transform: translate(-50%, 0) scale(1);
 }
 
-/* Brand Story Screen */
+/* ======== Brand Story Screen ======== */
 
 .brand-story-screen {
   background: #21201e;
   overflow: hidden;
 }
 
-/* SVG text layer - contains ALL text/graphics from Figma, pixel-perfect */
-.brand-story__text-layer {
+/* Shared helpers */
+.bs__o { color: #ff7600; }
+.bs__w { color: #ffffff; }
+
+/* Header background strip */
+.bs__header-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(402 * var(--design-unit));
-  z-index: 1;
-  pointer-events: none;
+  width: 100%;
+  height: calc(100 * var(--design-unit));
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bs__header-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(874 * var(--design-unit));
+  object-fit: cover;
 }
 
 /* Decorative vectors */
-.brand-story__deco {
+.bs__deco {
   position: absolute;
   z-index: 0;
   pointer-events: none;
 }
 
-.brand-story__deco--1 {
+.bs__deco--1 {
   top: calc(753 * var(--design-unit));
   left: calc(414 * var(--design-unit));
   width: calc(803 * var(--design-unit));
@@ -1000,53 +1014,278 @@ svg {
   transform: rotate(156.66deg) scaleY(-1);
 }
 
-.brand-story__deco--2 {
+.bs__deco--2 {
   top: calc(1041 * var(--design-unit));
   left: calc(9 * var(--design-unit));
   width: calc(551 * var(--design-unit));
   height: calc(462 * var(--design-unit));
 }
 
-.brand-story__deco--3 {
+.bs__deco--3 {
   top: calc(1990 * var(--design-unit));
   left: calc(-85 * var(--design-unit));
   width: calc(487 * var(--design-unit));
   height: calc(408 * var(--design-unit));
 }
 
-/* Mascot photos */
-.brand-story__mascot-photo {
+/* ---- Section titles ---- */
+.bs__title {
   position: absolute;
-  z-index: 0;
-  overflow: hidden;
+  left: calc(37 * var(--design-unit));
+  z-index: 1;
+  margin: 0;
+  font-size: calc(20 * var(--design-unit));
+  font-weight: 700;
+  color: #ff7600;
+  line-height: normal;
+  white-space: nowrap;
 }
 
-.brand-story__mascot-photo img {
+.bs__title--bg     { top: calc(216 * var(--design-unit)); }
+.bs__title--spirit { top: calc(561 * var(--design-unit)); }
+.bs__title--ip     { top: calc(1043 * var(--design-unit)); }
+.bs__title--yearbook { top: calc(2828 * var(--design-unit)); }
+
+/* ---- 品牌背景 code block ---- */
+.bs__code {
+  position: absolute;
+  top: calc(255 * var(--design-unit));
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.bs__code-line {
+  position: absolute;
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.bs__code-line--brace-open  { left: calc(41.5 * var(--design-unit)); top: 0; }
+.bs__code-line--name        { left: calc(62 * var(--design-unit)); top: calc(27 * var(--design-unit)); }
+.bs__code-line--tag1        { left: calc(77 * var(--design-unit)); top: calc(50 * var(--design-unit)); color: #ff7600; }
+.bs__code-line--slogan-key  { left: calc(62 * var(--design-unit)); top: calc(113 * var(--design-unit)); }
+.bs__code-line--slogan-val  { left: calc(62 * var(--design-unit)); top: calc(138 * var(--design-unit)); color: #ff7600; }
+.bs__code-line--core-key    { left: calc(240 * var(--design-unit)); top: calc(193 * var(--design-unit)); }
+.bs__code-line--core-val    { left: calc(272 * var(--design-unit)); top: calc(217 * var(--design-unit)); color: #ff7600; }
+.bs__code-line--brace-close { right: calc(18.5 * var(--design-unit)); top: calc(243 * var(--design-unit)); }
+
+/* ---- 品牌精神 seals ---- */
+.bs__seals {
+  position: absolute;
+  top: calc(601 * var(--design-unit));
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.bs__seal {
+  position: absolute;
+  width: calc(138 * var(--design-unit));
+  height: calc(141 * var(--design-unit));
+}
+
+.bs__seal--0 { left: calc(35 * var(--design-unit)); top: calc(2 * var(--design-unit)); }
+.bs__seal--1 { left: calc(230 * var(--design-unit)); top: 0; }
+.bs__seal--2 { left: calc(39 * var(--design-unit)); top: calc(202 * var(--design-unit)); }
+.bs__seal--3 { left: calc(230 * var(--design-unit)); top: calc(204 * var(--design-unit)); }
+
+.bs__seal-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
-.brand-story__mascot-photo--1 {
+.bs__seal-motto {
+  position: absolute;
+  left: 50%;
+  top: calc(37 * var(--design-unit));
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: calc(14 * var(--design-unit));
+  font-weight: 700;
+  color: #f67206;
+  letter-spacing: -0.3px;
+  text-align: center;
+  white-space: pre;
+}
+
+.bs__seal-power {
+  position: absolute;
+  left: 50%;
+  top: calc(133 * var(--design-unit));
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  color: #f67206;
+  letter-spacing: -0.3px;
+  text-align: center;
+  white-space: pre;
+}
+
+/* ---- Mascot photo 1 ---- */
+.bs__mascot1 {
+  position: absolute;
   top: calc(1102 * var(--design-unit));
   left: calc(35 * var(--design-unit));
   width: calc(334 * var(--design-unit));
   height: calc(462 * var(--design-unit));
   border-radius: calc(12 * var(--design-unit));
+  overflow: hidden;
+  z-index: 1;
 }
 
-.brand-story__mascot-photo--2 {
-  top: calc(1958 * var(--design-unit));
+.bs__mascot1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Print statements ---- */
+.bs__print {
+  position: absolute;
+  top: calc(1666 * var(--design-unit));
+  left: calc(23 * var(--design-unit));
+  width: calc(355 * var(--design-unit));
+  z-index: 1;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.bs__print p {
+  margin: 0;
+  line-height: normal;
+}
+
+/* ---- Character info ---- */
+.bs__char-info {
+  position: absolute;
+  top: calc(1835 * var(--design-unit));
+  left: calc(31 * var(--design-unit));
+  z-index: 1;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: normal;
+}
+
+.bs__char-info p {
+  margin: 0;
+}
+
+/* ---- SLOGAN ---- */
+.bs__slogan {
+  position: absolute;
+  top: calc(1827 * var(--design-unit));
+  left: calc(254 * var(--design-unit));
+  z-index: 1;
+  color: #ffffff;
+}
+
+.bs__slogan-label {
+  margin: 0;
+  font-size: calc(28 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: normal;
+}
+
+.bs__slogan-text {
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: normal;
+}
+
+/* ---- Mascot photo 2 ---- */
+.bs__mascot2 {
+  position: absolute;
+  top: calc(2017 * var(--design-unit));
   left: calc(9 * var(--design-unit));
   width: calc(384 * var(--design-unit));
   height: calc(384 * var(--design-unit));
   border-radius: calc(12 * var(--design-unit));
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Yearbook carousel */
-.brand-story__yearbook-carousel {
+.bs__mascot2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- 性格 / 能力 traits ---- */
+.bs__trait {
   position: absolute;
-  top: calc(2824 * var(--design-unit));
+  left: calc(31 * var(--design-unit));
+  z-index: 1;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.bs__trait--char { top: calc(2383 * var(--design-unit)); }
+.bs__trait--cap  { top: calc(2507 * var(--design-unit)); }
+
+.bs__trait-title {
+  margin: 0;
+  font-size: calc(28 * var(--design-unit));
+  color: #ffffff;
+  line-height: normal;
+}
+
+.bs__trait-line,
+.bs__trait-line2 {
+  margin: calc(8 * var(--design-unit)) 0 0;
+  font-size: calc(18 * var(--design-unit));
+  line-height: normal;
+  white-space: pre-wrap;
+}
+
+.bs__trait-line2 {
+  margin-top: 0;
+}
+
+/* >>> prompt */
+.bs__prompt {
+  position: absolute;
+  top: calc(2635 * var(--design-unit));
+  left: calc(350 * var(--design-unit));
+  z-index: 1;
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+/* Closing brace */
+.bs__brace-close {
+  position: absolute;
+  top: calc(2629 * var(--design-unit));
+  right: calc(8 * var(--design-unit));
+  z-index: 1;
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+/* ---- Yearbook carousel ---- */
+.bs__yearbook-carousel {
+  position: absolute;
+  top: calc(2883 * var(--design-unit));
   left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 2;
@@ -1059,14 +1298,14 @@ svg {
   -ms-overflow-style: none;
 }
 
-.brand-story__yearbook-carousel::-webkit-scrollbar { display: none; }
+.bs__yearbook-carousel::-webkit-scrollbar { display: none; }
 
-.brand-story__yearbook-card {
+.bs__yearbook-card {
   flex: 0 0 calc(300 * var(--design-unit));
   scroll-snap-align: start;
 }
 
-.brand-story__yearbook-cover {
+.bs__yearbook-cover {
   position: relative;
   width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
@@ -1074,13 +1313,13 @@ svg {
   overflow: hidden;
 }
 
-.brand-story__yearbook-cover img {
+.bs__yearbook-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.brand-story__yearbook-btn {
+.bs__yearbook-btn {
   position: absolute;
   left: 50%;
   bottom: calc(16 * var(--design-unit));
@@ -1094,10 +1333,9 @@ svg {
   font-size: calc(10 * var(--design-unit));
   font-weight: 400;
   cursor: pointer;
-  pointer-events: auto;
 }
 
-.brand-story__yearbook-title {
+.bs__yearbook-title {
   margin: calc(12 * var(--design-unit)) 0 0;
   font-size: calc(16 * var(--design-unit));
   font-weight: 700;
@@ -1105,7 +1343,7 @@ svg {
   line-height: normal;
 }
 
-.brand-story__yearbook-sub {
+.bs__yearbook-sub {
   margin: calc(2 * var(--design-unit)) 0 0;
   font-size: calc(14 * var(--design-unit));
   font-weight: 400;
