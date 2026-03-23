@@ -94,11 +94,14 @@ export function BrandStoryScreen() {
       </div>
 
       {/* ---- IP介绍 + 吉祥物 (橙色背景) ---- */}
-      <div className="brand-story__ip" style={{ backgroundImage: `url(${B}figma-ip-bg.png)` }}>
-        <h2 className="brand-story__ip-title">IP介绍</h2>
-        <div className="brand-story__mascot1">
-          <img src={`${B}figma-mascot1.png`} alt="小卓" />
-          <img className="brand-story__mascot1-overlay" src={`${B}figma-mascot1-overlay.png`} alt="" aria-hidden="true" />
+      <div className="brand-story__ip">
+        <img className="brand-story__ip-bg" src={`${B}figma-ip-bg.png`} alt="" aria-hidden="true" />
+        <div className="brand-story__ip-content">
+          <h2 className="brand-story__ip-title">IP介绍</h2>
+          <div className="brand-story__mascot1">
+            <img className="brand-story__mascot1-clip" src={`${B}figma-mascot1-overlay.png`} alt="" aria-hidden="true" />
+            <img className="brand-story__mascot1-photo" src={`${B}figma-mascot1.png`} alt="小卓" />
+          </div>
         </div>
       </div>
 

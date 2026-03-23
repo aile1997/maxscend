@@ -1079,8 +1079,20 @@ svg {
   left: 0;
   right: 0;
   z-index: 1;
-  background-size: cover;
-  background-position: center;
+}
+
+.brand-story__ip-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.brand-story__ip-content {
+  position: relative;
+  z-index: 1;
   padding-top: calc(68 * var(--design-unit));
 }
 
@@ -1093,22 +1105,23 @@ svg {
 
 .brand-story__mascot1 {
   position: relative;
-  margin: 0 calc(35 * var(--design-unit)) calc(82 * var(--design-unit));
+  margin: 0 calc(9 * var(--design-unit)) calc(82 * var(--design-unit));
 }
 
-.brand-story__mascot1 img {
+.brand-story__mascot1-clip {
   width: 100%;
   height: calc(462 * var(--design-unit));
   object-fit: fill;
 }
 
-.brand-story__mascot1-overlay {
+.brand-story__mascot1-photo {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: calc(61 * var(--design-unit));
+  left: calc(26 * var(--design-unit));
+  right: calc(26 * var(--design-unit));
   height: calc(462 * var(--design-unit));
   object-fit: fill;
+  z-index: 1;
 }
 
 /* ---- Print statements ---- */
