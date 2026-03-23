@@ -611,17 +611,22 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(1748 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(38 * var(--design-unit));
+  padding-left: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.agenda-secondary-carousel::after {
+  content: "";
+  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .agenda-secondary-carousel::-webkit-scrollbar {
@@ -738,17 +743,22 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(38 * var(--design-unit));
+  padding-left: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.guide-carousel::after {
+  content: "";
+  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .guide-carousel::-webkit-scrollbar {
@@ -884,38 +894,56 @@ svg {
 }
 
 .lightbox__close {
-  position: absolute;
-  top: -36px;
-  right: 0;
-  width: 32px;
-  height: 32px;
+  position: fixed;
+  bottom: calc(100 * var(--design-unit));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(44 * var(--design-unit));
+  height: calc(44 * var(--design-unit));
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: calc(24 * var(--design-unit));
+  line-height: calc(44 * var(--design-unit));
   text-align: center;
   cursor: pointer;
+  backdrop-filter: blur(8px);
 }
 
 .contact-screen__title {
   top: calc(113 * var(--design-unit));
 }
 
-.contact-screen__grid {
+.contact-screen__carousel {
   position: absolute;
-  left: calc(37 * var(--design-unit));
+  left: 0;
+  right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, calc(159 * var(--design-unit)));
+  display: flex;
   gap: calc(12 * var(--design-unit));
+  overflow-x: auto;
+  padding-left: calc(37 * var(--design-unit));
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.contact-screen__carousel::after {
+  content: "";
+  flex: 0 0 calc(24 * var(--design-unit));
+}
+
+.contact-screen__carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .contact-card {
-  width: calc(159 * var(--design-unit));
+  flex: 0 0 calc(159 * var(--design-unit));
   height: calc(153 * var(--design-unit));
+  scroll-snap-align: start;
   border: 1px solid var(--glass-border);
   border-radius: calc(12 * var(--design-unit));
   background: linear-gradient(102deg, rgba(89, 123, 211, 0.58) 0%, rgba(92, 177, 215, 0.26) 58%, rgba(193, 187, 230, 0.24) 100%);
@@ -1238,16 +1266,21 @@ svg {
 .brand-story__traits-carousel {
   position: absolute;
   top: calc(2453 * var(--design-unit));
-  left: calc(31 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(24 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(31 * var(--design-unit));
+  padding-left: calc(31 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__traits-carousel::after {
+  content: "";
+  flex: 0 0 calc(16 * var(--design-unit));
 }
 
 .brand-story__traits-carousel::-webkit-scrollbar {
@@ -1313,16 +1346,21 @@ svg {
 .brand-story__yearbook-carousel {
   position: absolute;
   top: calc(2821 * var(--design-unit));
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
   overflow-x: auto;
-  padding-right: calc(38 * var(--design-unit));
+  padding-left: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__yearbook-carousel::after {
+  content: "";
+  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .brand-story__yearbook-carousel::-webkit-scrollbar {

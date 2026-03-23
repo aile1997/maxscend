@@ -12,15 +12,15 @@ export function ContactScreen({ onSubmitFeedback }: ContactScreenProps) {
 
       <h1 className="screen__section-title contact-screen__title">{copy.emergencyContacts}</h1>
 
-      <div className="contact-screen__grid">
-        {contacts.map((person, index) => (
+      <div className="contact-screen__carousel">
+        {contacts.map((person) => (
           <article className="contact-card" key={person.phone}>
             <h2 className="contact-card__name">{person.name}</h2>
             <p className="contact-card__role">{person.role}</p>
             <a className="contact-card__action" href={`tel:${person.phone}`}>
               <img
                 className="contact-card__phone"
-                src={index === 0 ? designAssets.contactPhoneLeft : designAssets.contactPhoneRight}
+                src={designAssets.contactPhoneRight}
                 alt=""
                 aria-hidden="true"
               />

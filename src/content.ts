@@ -196,14 +196,10 @@ export const guideVenues: GuideVenue[] = [
 ];
 
 export const contacts: ContactPerson[] = [
-  {
-    role: "\u63a5\u5f85",
-    name: "X \u7ecf\u7406",
-    phone: "+8613800000000",
-  },
-  {
-    role: "\u6280\u672f\u95ee\u9898",
-    name: "X \u5de5",
-    phone: "+8613900000000",
-  },
+  { role: "总协调", name: "贺娟娟", phone: "+8613800000001" },
+  { role: "总统筹", name: "王娜", phone: "+8613800000002" },
+  { role: "总控", name: "林思华", phone: "+8613800000003" },
+  { role: "场务", name: "刘米园", phone: "+8613800000004" },
+  { role: "后勤", name: "林灵", phone: "+8613800000005" },
+  { role: "志愿者", name: "乔浪浪", phone: "+8613800000006" },
 ];
