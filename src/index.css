@@ -1035,23 +1035,45 @@ svg {
 
 /* ---- Scroll-triggered animations ---- */
 @keyframes bs-fade-up {
-  from { opacity: 0; transform: translateY(32px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes bs-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes bs-scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes bs-slide-left {
-  from { opacity: 0; transform: translateX(40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Animations */
@@ -1074,7 +1096,7 @@ svg {
 /* ---- Full-page text layer SVG ---- */
 .brand-story__text-layer {
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
   width: 100%;
   z-index: 1;
@@ -1084,7 +1106,7 @@ svg {
 /* ---- IP header (title + simjo logo) ---- */
 .brand-story__ip-header {
   position: absolute;
-  top: calc(1043 * var(--design-unit));
+  top: calc(1032 * var(--design-unit));
   left: 0;
   z-index: 2;
   animation: bs-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
@@ -1101,6 +1123,7 @@ svg {
   width: calc(145 * var(--design-unit));
   height: auto;
   margin-left: calc(20 * var(--design-unit));
+  margin-top: 20px;
 }
 
 /* ---- IP illustration (absolute, overlaps with text layer) ---- */
@@ -1188,16 +1211,20 @@ svg {
 }
 
 .brand-story__trait-line--indent {
-  margin-left: calc(148 * var(--design-unit));
+  margin-left: calc(188 * var(--design-unit));
 }
 
-.brand-story__code-w { color: #fff; }
-.brand-story__code-o { color: #ff7600; }
+.brand-story__code-w {
+  color: #fff;
+}
+.brand-story__code-o {
+  color: #ff7600;
+}
 
 /* >>> */
 .brand-story__prompt {
   position: absolute;
-  top: calc(2635 * var(--design-unit));
+  top: calc(2755 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
   margin: 0;
