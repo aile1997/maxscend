@@ -79,7 +79,7 @@ svg {
   min-height: max(100dvh, calc(var(--screen-height) * var(--design-unit) + var(--nav-height)));
   padding-bottom: var(--nav-height);
   overflow: hidden;
-  background: #0a1227;
+  background: #000000;
 }
 
 .device-shell--booting {
@@ -1094,7 +1094,7 @@ svg {
   margin: 0 0 calc(4 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
-  color: #ff7600;
+  color: #000;
 }
 
 .brand-story__simjo-logo {
@@ -1193,6 +1193,19 @@ svg {
 
 .brand-story__code-w { color: #fff; }
 .brand-story__code-o { color: #ff7600; }
+
+/* >>> */
+.brand-story__prompt {
+  position: absolute;
+  top: calc(2635 * var(--design-unit));
+  right: calc(23 * var(--design-unit));
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
 
 .brand-story__trait-svg {
   width: 100%;

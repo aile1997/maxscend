@@ -69,6 +69,9 @@ export function BrandStoryScreen() {
         </article>
       </div>
 
+      {/* >>> */}
+      <p className="brand-story__prompt">{">>>"}</p>
+
       {/* 年刊滑动栏 */}
       <div className="brand-story__yearbook-carousel">
         {yearbooks.map((book, i) => (
