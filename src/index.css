@@ -1100,7 +1100,7 @@ svg {
 
 .brand-story__ip-illustration {
   position: absolute;
-  top: calc(-60 * var(--design-unit));
+  top: calc(-200 * var(--design-unit));
   left: 0;
   width: 100%;
   height: auto;
