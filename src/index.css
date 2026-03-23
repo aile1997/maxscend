@@ -1034,33 +1034,70 @@ svg {
 
 /* ---- Brand Story animations ---- */
 @keyframes bs-blur-in {
-  from { opacity: 0; filter: blur(8px); transform: scale(1.03); }
-  to   { opacity: 1; filter: blur(0);   transform: scale(1); }
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }
 
 @keyframes bs-slide-up {
-  from { opacity: 0; transform: translateY(40px); filter: blur(2px); }
-  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 @keyframes bs-slide-left {
-  from { opacity: 0; transform: translateX(60px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes bs-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(calc(-6 * var(--design-unit))); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-6 * var(--design-unit)));
+  }
 }
 
 @keyframes bs-glow {
-  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
-  50%      { filter: drop-shadow(0 0 calc(16 * var(--design-unit)) rgba(255,118,0,0.25)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 calc(16 * var(--design-unit)) rgba(255, 118, 0, 0.25));
+  }
 }
 
 @keyframes bs-blink {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 /* Text layer �� cinematic blur-in */
@@ -1127,13 +1164,10 @@ svg {
   z-index: 0;
 }
 
-.brand-story__mascot2-section {
-  animation: bs-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-}
-
 /* ---- Mascot 2 + bottom vector ---- */
 .brand-story__mascot2-section {
   position: absolute;
+  animation: bs-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
   top: calc(1975 * var(--design-unit));
   left: 0;
   right: 0;
@@ -1164,7 +1198,7 @@ svg {
 /* ---- Traits carousel (horizontal scroll like guide-carousel) ---- */
 .brand-story__traits-carousel {
   position: absolute;
-  top: calc(2483 * var(--design-unit));
+  top: calc(2453 * var(--design-unit));
   left: calc(31 * var(--design-unit));
   right: 0;
   z-index: 1;
@@ -1221,7 +1255,7 @@ svg {
 /* >>> */
 .brand-story__prompt {
   position: absolute;
-  top: calc(2755 * var(--design-unit));
+  top: calc(2715 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
   margin: 0;
@@ -1244,7 +1278,7 @@ svg {
   right: 0;
   z-index: 1;
   display: flex;
-  gap: calc(14 * var(--design-unit));
+  gap: calc(28 * var(--design-unit));
   overflow-x: auto;
   padding-right: calc(38 * var(--design-unit));
   scroll-snap-type: x mandatory;

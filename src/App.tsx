@@ -61,7 +61,7 @@ const allAssetSources = [
   `${import.meta.env.BASE_URL}brand-assets/Group 337.svg`,
   `${import.meta.env.BASE_URL}brand-assets/Group 335.svg`,
   `${import.meta.env.BASE_URL}brand-assets/Group 333.svg`,
-  `${import.meta.env.BASE_URL}brand-assets/figma-mascot2.png`,
+  `${import.meta.env.BASE_URL}brand-assets/mascot2.webp`,
   `${import.meta.env.BASE_URL}brand-assets/figma-vector-bottom.png`,
 ];
 

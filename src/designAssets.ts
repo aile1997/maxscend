@@ -17,13 +17,11 @@ export const designAssets = {
   splashTwenty: assetPath("splash-20-full.svg"),
   splashLogo: assetPath("splash-logo.svg"),
   homeCopyImage: assetPath("home-copy.svg"),
-  homeBrandMaxscend: assetPath("home-brand-maxscend.svg"),
-  homeBrandAnniversary: assetPath("home-brand-anniversary.svg"),
   contactPhoneLeft: assetPath("Group 302.svg"),
   contactPhoneRight: assetPath("Group 302.svg"),
-  guideMapXinzhuo: assetPath("guide-map-xinzhuo.png"),
-  guideMapTaihuHotel: assetPath("guide-map-taihu-hotel.png"),
-  guideMapGuanshe: assetPath("guide-map-guanshe.png"),
+  guideMapXinzhuo: assetPath("guide-map-xinzhuo.webp"),
+  guideMapTaihuHotel: assetPath("guide-map-taihu-hotel.webp"),
+  guideMapGuanshe: assetPath("guide-map-guanshe.webp"),
 } as const;
 
 export const homeHeadlineAssets: PositionedAsset[] = [

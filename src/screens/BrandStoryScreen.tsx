@@ -3,9 +3,9 @@ import { designAssets } from "../designAssets";
 const B = `${import.meta.env.BASE_URL}brand-assets/`;
 
 const yearbooks = [
-  { cover: `${B}截屏2026-03-10 19.10.39 1.svg`, title: "时间的刻度", sub: "卓胜微 20 周年" },
-  { cover: `${B}9546ac3bd6cfdea7ec5ae6863b039e7f 1.svg`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
-  { cover: `${B}Union.svg`, title: "在这里遇见有为的年轻", sub: "2023—芯途探索" },
+  { cover: `${B}yearbook-2025.webp`, title: "时间的刻度", sub: "卓胜微 20 周年" },
+  { cover: `${B}yearbook-2024.webp`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
+  { cover: `${B}yearbook-2023.webp`, title: "在这里遇见有为的年轻", sub: "2023—芯途探索" },
 ];
 
 export function BrandStoryScreen() {
@@ -29,7 +29,7 @@ export function BrandStoryScreen() {
       {/* 吉祥物2 + 底部向量 */}
       <div className="brand-story__mascot2-section">
         <img className="brand-story__vector-bg" src={`${B}figma-vector-bottom.png`} alt="" aria-hidden="true" />
-        <img className="brand-story__mascot2" src={`${B}figma-mascot2.png`} alt="小卓" />
+        <img className="brand-story__mascot2" src={`${B}mascot2.webp`} alt="小卓" />
       </div>
 
       {/* 性格/能力/爱好/造型 水平滑动栏 */}
