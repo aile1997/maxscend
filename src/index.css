@@ -1054,32 +1054,13 @@ svg {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-.brand-story__code {
-  animation: bs-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+/* Animations */
+.brand-story__text-layer {
+  animation: bs-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
-
-.brand-story__seal-grid {
-  animation: bs-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-}
-
-.brand-story__seal {
-  animation: bs-scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.brand-story__seal:nth-child(1) { animation-delay: 0.2s; }
-.brand-story__seal:nth-child(2) { animation-delay: 0.35s; }
-.brand-story__seal:nth-child(3) { animation-delay: 0.5s; }
-.brand-story__seal:nth-child(4) { animation-delay: 0.65s; }
 
 .brand-story__ip-illustration {
   animation: bs-fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-}
-
-.brand-story__print {
-  animation: bs-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-}
-
-.brand-story__namecard {
-  animation: bs-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .brand-story__traits-carousel {
@@ -1090,197 +1071,24 @@ svg {
   animation: bs-slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
-.brand-story__title {
-  top: calc(155 * var(--design-unit));
-  color: #ff7600;
-}
-.brand-story__title--spirit {
-  top: calc(561 * var(--design-unit));
-}
-.brand-story__title--yearbook {
-  top: calc(2805 * var(--design-unit));
-}
-
-/* ---- Code block ---- */
-.brand-story__code {
+/* ---- Full-page text layer SVG ---- */
+.brand-story__text-layer {
   position: absolute;
-  top: calc(210 * var(--design-unit));
-  left: calc(37 * var(--design-unit));
-  right: calc(17 * var(--design-unit));
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.brand-story__code-w {
-  color: #fff;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-}
-
-.brand-story__code-o {
-  color: #ff7600;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-}
-
-.brand-story__code-o--push {
-  margin-left: calc(59 * var(--design-unit));
-}
-
-.brand-story__code-block {
-  display: flex;
-  flex-direction: column;
-  margin-left: calc(8 * var(--design-unit));
-  margin-bottom: calc(37 * var(--design-unit));
-}
-
-.brand-story__code-end {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-}
-
-/* ---- Seal grid (2×2) ---- */
-.brand-story__seal-grid {
-  position: absolute;
-  top: calc(595 * var(--design-unit));
-  left: calc(35 * var(--design-unit));
-  right: calc(35 * var(--design-unit));
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: calc(10 * var(--design-unit)) calc(20 * var(--design-unit));
-}
-
-.brand-story__seal {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: calc(18 * var(--design-unit));
-}
-
-.brand-story__seal-img {
-  width: calc(138 * var(--design-unit));
-  height: calc(141 * var(--design-unit));
-  object-fit: fill;
-}
-
-.brand-story__seal-motto {
-  position: absolute;
-  top: calc(41 * var(--design-unit));
+  top: 0;
   left: 0;
-  right: 0;
-  color: #ff7600;
-  font-size: calc(14 * var(--design-unit));
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.3px;
-  white-space: pre;
-}
-
-.brand-story__seal-power {
-  color: #ff7600;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.3px;
-  white-space: pre;
-}
-
-/* ---- IP section ---- */
-.brand-story__ip {
-  position: absolute;
-  top: calc(1000 * var(--design-unit));
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1;
+  pointer-events: none;
 }
 
-.brand-story__ip-title {
-  position: relative;
-  z-index: 2;
-  margin: 30px 0 calc(4 * var(--design-unit)) calc(33 * var(--design-unit));
-  font-size: calc(20 * var(--design-unit));
-  font-weight: 700;
-  color: #000;
-}
-
-.brand-story__simjo-logo {
-  position: relative;
-  z-index: 2;
-  width: calc(145 * var(--design-unit));
-  height: auto;
-  margin-left: calc(20 * var(--design-unit));
-  margin-top: 20px;
-}
-
+/* ---- IP illustration (absolute, overlaps with text layer) ---- */
 .brand-story__ip-illustration {
   position: absolute;
-  top: calc(-200 * var(--design-unit));
+  top: calc(800 * var(--design-unit));
   left: 0;
   width: 100%;
   height: auto;
   z-index: 0;
-}
-
-/* ---- Print statements ---- */
-.brand-story__print {
-  position: absolute;
-  top: calc(1666 * var(--design-unit));
-  left: calc(23 * var(--design-unit));
-  right: calc(23 * var(--design-unit));
-  z-index: 1;
-  margin: 0;
-  color: #ff7600;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: pre-wrap;
-  line-height: normal;
-}
-
-/* ---- Namecard + SLOGAN ---- */
-.brand-story__namecard {
-  position: absolute;
-  top: calc(1914 * var(--design-unit));
-  left: calc(31 * var(--design-unit));
-  right: calc(40 * var(--design-unit));
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-}
-
-.brand-story__namecard-info {
-  color: #fff;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: pre-wrap;
-  line-height: normal;
-  width: calc(134 * var(--design-unit));
-  flex-shrink: 0;
-}
-
-.brand-story__namecard-slogan {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  flex: 1;
-  color: #fff;
-  font-weight: 700;
-}
-
-.brand-story__namecard-slogan-label {
-  font-size: calc(28 * var(--design-unit));
-}
-
-.brand-story__namecard-slogan-text {
-  font-size: calc(18 * var(--design-unit));
 }
 
 /* ---- Mascot 2 + bottom vector ---- */
@@ -1333,51 +1141,9 @@ svg {
   color: #fff;
 }
 
-.brand-story__trait-section {
-  margin-bottom: calc(23 * var(--design-unit));
-}
-
-.brand-story__trait-title {
-  margin: 0 0 calc(15 * var(--design-unit));
-  font-size: calc(28 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-}
-
-.brand-story__trait-line {
-  margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: pre-wrap;
-}
-
-.brand-story__trait-line--indent {
-  margin-left: calc(190 * var(--design-unit));
-}
-
 .brand-story__trait-svg {
   width: 100%;
   height: auto;
-}
-
-.brand-story__namecard-svg {
-  width: calc(135 * var(--design-unit));
-  height: auto;
-  flex-shrink: 0;
-}
-
-/* >>> */
-.brand-story__prompt {
-  position: absolute;
-  top: calc(2755 * var(--design-unit));
-  right: calc(23 * var(--design-unit));
-  z-index: 1;
-  margin: 0;
-  color: #fff;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
 }
 
 /* ---- Yearbook carousel (same pattern as guide-carousel) ---- */
