@@ -1055,7 +1055,7 @@ svg {
   top: calc(41 * var(--design-unit));
   left: 0;
   right: 0;
-  color: #f67206;
+  color: #ff7600;
   font-size: calc(14 * var(--design-unit));
   font-weight: 700;
   text-align: center;
@@ -1064,7 +1064,7 @@ svg {
 }
 
 .brand-story__seal-power {
-  color: #f67206;
+  color: #ff7600;
   font-size: calc(18 * var(--design-unit));
   font-weight: 700;
   text-align: center;
@@ -1082,6 +1082,8 @@ svg {
 }
 
 .brand-story__ip-title {
+  position: relative;
+  z-index: 2;
   margin: 0 0 calc(4 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
@@ -1089,14 +1091,20 @@ svg {
 }
 
 .brand-story__simjo-logo {
+  position: relative;
+  z-index: 2;
   width: calc(145 * var(--design-unit));
   height: auto;
   margin-left: calc(20 * var(--design-unit));
 }
 
 .brand-story__ip-illustration {
+  position: absolute;
+  top: calc(-60 * var(--design-unit));
+  left: 0;
   width: 100%;
   height: auto;
+  z-index: 0;
 }
 
 /* ---- Print statements ---- */
