@@ -11,30 +11,23 @@ const yearbooks = [
 export function BrandStoryScreen() {
   return (
     <section className="screen brand-story-screen">
-      {/* Logo */}
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
-      {/* 全页文字层 SVG */}
-      <img className="brand-story__text-layer" src={`${B}Group 337.svg`} alt="品牌故事内容" />
+      <img className="brand-story__text-layer" src={`${B}text-layer.svg`} alt="品牌故事内容" />
 
-      {/* IP介绍 + simjo logo */}
       <div className="brand-story__ip-header">
         <h2 className="brand-story__ip-title">IP介绍</h2>
-        <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
+        <img className="brand-story__simjo-logo" src={`${B}simjo-logo.svg`} alt="simjo" />
       </div>
 
-      {/* IP 插图 */}
-      <img className="brand-story__ip-illustration" src={`${B}Group 335.svg`} alt="小卓吉祥物" />
+      <img className="brand-story__ip-illustration" src={`${B}ip-illustration.svg`} alt="小卓吉祥物" />
 
-      {/* 吉祥物2 + 底部向量 */}
       <div className="brand-story__mascot2-section">
-        <img className="brand-story__vector-bg" src={`${B}figma-vector-bottom.png`} alt="" aria-hidden="true" />
+        <img className="brand-story__vector-bg" src={`${B}vector-bottom.png`} alt="" aria-hidden="true" />
         <img className="brand-story__mascot2" src={`${B}mascot2.webp`} alt="小卓" />
       </div>
 
-      {/* 性格/能力/爱好/造型 水平滑动栏 */}
       <div className="brand-story__traits-carousel">
-        {/* 第一张: 性格+能力 (HTML文字) */}
         <article className="brand-story__trait-card">
           <div className="brand-story__trait-section">
             <h3 className="brand-story__trait-title">性格.CHARACTER</h3>
@@ -59,20 +52,16 @@ export function BrandStoryScreen() {
             </p>
           </div>
         </article>
-        {/* 第二张: 爱好 (SVG) */}
         <article className="brand-story__trait-card">
-          <img className="brand-story__trait-svg" src={`${B}爱好.svg`} alt="" />
+          <img className="brand-story__trait-svg" src={`${B}trait-hobby.svg`} alt="" />
         </article>
-        {/* 第三张: 造型 (SVG) */}
         <article className="brand-story__trait-card">
-          <img className="brand-story__trait-svg" src={`${B}造型.svg`} alt="" />
+          <img className="brand-story__trait-svg" src={`${B}trait-style.svg`} alt="" />
         </article>
       </div>
 
-      {/* >>> */}
       <p className="brand-story__prompt">{">>>"}</p>
 
-      {/* 年刊滑动栏 */}
       <div className="brand-story__yearbook-carousel">
         {yearbooks.map((book, i) => (
           <div key={i} className="brand-story__yearbook-card">

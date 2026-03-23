@@ -58,11 +58,14 @@ const allAssetSources = [
   designAssets.guideMapGuanshe,
   ...Object.values(navIconAssets).flatMap((icon) => (icon.active ? [icon.active, icon.inactive] : [icon.inactive])),
   // Brand story assets
-  `${import.meta.env.BASE_URL}brand-assets/Group 337.svg`,
-  `${import.meta.env.BASE_URL}brand-assets/Group 335.svg`,
-  `${import.meta.env.BASE_URL}brand-assets/Group 333.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/text-layer.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/ip-illustration.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/simjo-logo.svg`,
   `${import.meta.env.BASE_URL}brand-assets/mascot2.webp`,
-  `${import.meta.env.BASE_URL}brand-assets/figma-vector-bottom.png`,
+  `${import.meta.env.BASE_URL}brand-assets/vector-bottom.png`,
+  `${import.meta.env.BASE_URL}brand-assets/yearbook-2025.webp`,
+  `${import.meta.env.BASE_URL}brand-assets/yearbook-2024.webp`,
+  `${import.meta.env.BASE_URL}brand-assets/yearbook-2023.webp`,
 ];
 
 declare global {
