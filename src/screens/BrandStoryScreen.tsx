@@ -41,9 +41,9 @@ export function BrandStoryScreen() {
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
       {/* 3 decorative vectors */}
-      <img className="bs-v bs-v1" src={`${B}vector-1.svg`} alt="" aria-hidden="true" />
-      <img className="bs-v bs-v2" src={`${B}vector-2.svg`} alt="" aria-hidden="true" />
-      <img className="bs-v bs-v3" src={`${B}vector-3.svg`} alt="" aria-hidden="true" />
+      <img className="bs-v bs-v1" src={`${B}deco-vector-1.svg`} alt="" aria-hidden="true" />
+      <img className="bs-v bs-v2" src={`${B}deco-vector-2.svg`} alt="" aria-hidden="true" />
+      <img className="bs-v bs-v3" src={`${B}deco-vector-3.svg`} alt="" aria-hidden="true" />
 
       {/* ===== 品牌背景 ===== Figma exact positions */}
       <p className="bs-t" style={pos(37, 216)}>品牌背景</p>
@@ -60,22 +60,22 @@ export function BrandStoryScreen() {
       <p className="bs-t" style={pos(37, 561)}>品牌精神</p>
 
       {/* 勤 */}
-      <img style={pos(35.1, 603, { width: u(138), height: u(141.15), zIndex: 1 })} src={`${B}seal-qin.svg`} alt="" />
+      <img style={pos(35.1, 603, { width: u(138), height: u(141.15), zIndex: 1 })} src={`${B}char-qin.svg`} alt="" />
       <p className="bs-sm" style={cpos(105, 640.1, { width: u(144) })}>以 勤 致 胜    奋 斗 为 本</p>
       <p className="bs-pw" style={cpos(105.5, 736.1)}>{"行          动          力"}</p>
 
       {/* 拙 */}
-      <img style={pos(229.7, 601, { width: u(138.6), height: u(139.95), zIndex: 1 })} src={`${B}seal-zhuo.svg`} alt="" />
+      <img style={pos(229.7, 601, { width: u(138.6), height: u(139.95), zIndex: 1 })} src={`${B}char-zhuo.svg`} alt="" />
       <p className="bs-sm" style={cpos(299.55, 636.1)}>拙 朴 求 进    长 期 主 义</p>
       <p className="bs-pw" style={cpos(304.3, 736.1)}>{"专          注          力"}</p>
 
       {/* 信 */}
-      <img style={pos(38.96, 803, { width: u(138.69), height: u(141.6), zIndex: 1 })} src={`${B}seal-xin.svg`} alt="" />
+      <img style={pos(38.96, 803, { width: u(138.69), height: u(141.6), zIndex: 1 })} src={`${B}char-xin.svg`} alt="" />
       <p className="bs-sm" style={cpos(106.5, 838.55)}>信 而 向 善    以 信 立 企</p>
       <p className="bs-pw" style={cpos(111.25, 938.55)}>{"信          任          力"}</p>
 
       {/* 和 */}
-      <img style={pos(229.75, 804.65, { width: u(134.4), height: u(139.35), zIndex: 1 })} src={`${B}seal-he.svg`} alt="" />
+      <img style={pos(229.75, 804.65, { width: u(134.4), height: u(139.35), zIndex: 1 })} src={`${B}char-he.svg`} alt="" />
       <p className="bs-sm" style={cpos(299.45, 838.55)}>和 融 共 促    协 同 共 生</p>
       <p className="bs-pw" style={cpos(304.2, 938.55)}>{"协          同          力"}</p>
 
@@ -83,7 +83,7 @@ export function BrandStoryScreen() {
       <p className="bs-t" style={pos(33, 1043)}>IP介绍</p>
 
       {/* Mascot photo 1: Figma inset 31.79%/8.31%/55.12%/8.72% of 402×3412 */}
-      <div className="bs-mascot1"><img src={`${B}mascot-1-figma.png`} alt="小卓" /></div>
+      <div className="bs-mascot1"><img src={`${B}mascot-photo-1.png`} alt="小卓" /></div>
 
       {/* Print statements: Figma left=23, top=1666, w=355 */}
       <div className="bs-print">
@@ -108,7 +108,7 @@ export function BrandStoryScreen() {
       </div>
 
       {/* Mascot photo 2: Figma left=9, top=2017, size=384 */}
-      <div className="bs-mascot2"><img src={`${B}mascot-2-figma.png`} alt="小卓" /></div>
+      <div className="bs-mascot2"><img src={`${B}mascot-photo-2.png`} alt="小卓" /></div>
 
       {/* 性格.CHARACTER — Figma exact positions */}
       <p className="bs-28" style={pos(31, 2383)}>性格.CHARACTER</p>
