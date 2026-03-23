@@ -968,212 +968,130 @@ svg {
   transform: translate(-50%, 0) scale(1);
 }
 
-/* ======== Brand Story Screen ======== */
+/* ======== Brand Story Screen — Flow Layout (from Figma export ref) ======== */
 
 .brand-story-screen {
   background: #21201e;
-  overflow: hidden;
-}
-
-/* Color helpers */
-.bs-o, .bs-orange { color: #ff7600; }
-.bs-w { color: #ffffff; }
-
-/* Header bg strip */
-.bs-hdr {
-  position: absolute;
-  top: 0; left: 0; width: 100%;
-  height: calc(100 * var(--design-unit));
-  overflow: hidden; z-index: 0;
-}
-.bs-hdr img {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: calc(874 * var(--design-unit));
-  object-fit: cover;
-}
-
-/* Decorative vectors — must set --fill-0 to override SVG default */
-.bs-v { position: absolute; z-index: 0; pointer-events: none; --fill-0: #ff7600; }
-.bs-v1 {
-  top: calc(766 * var(--design-unit));
-  left: calc(-323 * var(--design-unit));
-  width: calc(803 * var(--design-unit));
-  height: calc(627 * var(--design-unit));
-  transform: rotate(156.66deg) scaleY(-1);
-}
-.bs-v2 {
-  top: calc(1038 * var(--design-unit));
-  left: calc(9 * var(--design-unit));
-  width: calc(551 * var(--design-unit));
-  height: calc(436 * var(--design-unit));
-}
-.bs-v3 {
-  top: calc(1934 * var(--design-unit));
-  left: calc(-85 * var(--design-unit));
-  width: calc(487 * var(--design-unit));
-  height: calc(385 * var(--design-unit));
-}
-
-/* ---- Shared text classes (Figma: Source Han Sans CN Bold) ---- */
-.bs-t { /* section title: 20px bold orange */
-  z-index: 1; margin: 0;
-  font-size: calc(20 * var(--design-unit));
-  font-weight: 700; color: #ff7600;
-  line-height: normal; white-space: nowrap;
-}
-.bs-c { /* code text: 18px bold white, centered */
-  z-index: 1; margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700; color: #ffffff;
-  letter-spacing: -0.3px; white-space: nowrap;
-  line-height: normal;
-}
-.bs-sm { /* seal motto: 14px bold #f67206, centered */
-  z-index: 2; margin: 0;
-  font-size: calc(14 * var(--design-unit));
-  font-weight: 700; color: #f67206;
-  letter-spacing: -0.3px;
-  text-align: center; white-space: pre;
-  line-height: normal;
-}
-.bs-pw { /* seal power: 18px bold #f67206, centered */
-  z-index: 2; margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700; color: #f67206;
-  letter-spacing: -0.3px;
-  text-align: center; white-space: pre;
-  line-height: normal;
-}
-.bs-28 { /* 28px bold white */
-  z-index: 1; margin: 0;
-  font-size: calc(28 * var(--design-unit));
-  font-weight: 700; color: #ffffff;
-  letter-spacing: -0.3px; line-height: normal;
-}
-.bs-18 { /* 18px bold, mixed color */
-  z-index: 1; margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px; line-height: normal;
-  white-space: pre-wrap;
-}
-
-/* ---- Mascot photo 1: Figma inset 31.79%/8.31%/55.12%/8.72% → top=1085,left=35,w=334,h=446 ---- */
-.bs-mascot1 {
-  position: absolute; z-index: 1;
-  top: calc(1085 * var(--design-unit));
-  left: calc(35 * var(--design-unit));
-  width: calc(334 * var(--design-unit));
-  height: calc(446 * var(--design-unit));
-  border-radius: calc(12 * var(--design-unit));
-  overflow: hidden;
-}
-.bs-mascot1 img { width: 100%; height: 100%; object-fit: cover; }
-
-/* ---- Print statements: Figma left=23, top=1666, w=355 ---- */
-.bs-print {
-  position: absolute; z-index: 1;
-  top: calc(1666 * var(--design-unit));
-  left: calc(23 * var(--design-unit));
-  width: calc(355 * var(--design-unit));
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700; color: #ff7600;
-  letter-spacing: -0.3px;
-  white-space: pre-wrap; word-break: break-all;
-  line-height: normal;
-}
-.bs-print p { margin: 0; }
-
-/* ---- Character info: Figma top=1834, left=31, w=146 ---- */
-.bs-info {
-  position: absolute; z-index: 1;
-  top: calc(1834 * var(--design-unit));
-  left: calc(31 * var(--design-unit));
-  width: calc(146 * var(--design-unit));
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700; color: #ff7600;
-  letter-spacing: -0.3px; line-height: normal;
-}
-.bs-info p { margin: 0; }
-
-/* ---- SLOGAN: Figma top=1827, left=254, w=114 ---- */
-.bs-slogan {
-  position: absolute; z-index: 1;
-  top: calc(1827 * var(--design-unit));
-  left: calc(254 * var(--design-unit));
-  width: calc(114 * var(--design-unit));
-  color: #ffffff; font-weight: 700;
-  letter-spacing: -0.3px; line-height: normal;
-}
-.bs-slogan-l { margin: 0; font-size: calc(28 * var(--design-unit)); }
-.bs-slogan-t { margin: 0; font-size: calc(18 * var(--design-unit)); }
-
-/* ---- Mascot photo 2: Figma left=9, top=2017, 384×384, overflow-clip ---- */
-.bs-mascot2 {
-  position: absolute; z-index: 1;
-  top: calc(2017 * var(--design-unit));
-  left: calc(9 * var(--design-unit));
-  width: calc(384 * var(--design-unit));
-  height: calc(384 * var(--design-unit));
-  overflow: hidden;
-}
-.bs-mascot2 img { width: 100%; height: 100%; object-fit: cover; }
-
-/* ---- Yearbook carousel: Figma top=2883, left=38 ---- */
-.bs-yb-carousel {
-  position: absolute; z-index: 2;
-  top: calc(2883 * var(--design-unit));
-  left: calc(38 * var(--design-unit));
-  right: 0;
   display: flex;
-  gap: calc(14 * var(--design-unit));
-  overflow-x: auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Header image */
+.bs-header-img {
+  width: 100%;
+  height: calc(100 * var(--design-unit));
+  object-fit: fill;
+  margin-bottom: calc(47 * var(--design-unit));
+}
+
+/* Shared */
+.bs-title {
+  display: block;
+  color: #ff7600;
+  font-size: calc(20 * var(--design-unit));
+  font-weight: 700;
+  margin-bottom: calc(10 * var(--design-unit));
+}
+.bs-title--ip { color: #000; margin-left: calc(33 * var(--design-unit)); margin-bottom: calc(28 * var(--design-unit)); }
+
+.bs-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: calc(37 * var(--design-unit));
+  padding-right: calc(37 * var(--design-unit));
+}
+
+/* ---- Code block ---- */
+.bs-code-w { display: block; color: #fff; font-size: calc(18 * var(--design-unit)); font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; }
+.bs-code-o { display: block; color: #ff7600; font-size: calc(18 * var(--design-unit)); font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; }
+.bs-code-o--indent { margin-left: calc(59 * var(--design-unit)); }
+.bs-code-indent { display: flex; flex-direction: column; margin-left: calc(8 * var(--design-unit)); margin-bottom: calc(37 * var(--design-unit)); }
+.bs-code-right { display: flex; flex-direction: column; align-self: flex-end; margin-right: calc(-20 * var(--design-unit)); }
+.bs-section--code { margin-bottom: calc(37 * var(--design-unit)); }
+
+/* ---- Seals ---- */
+.bs-section--spirit { padding-left: calc(35 * var(--design-unit)); padding-right: calc(35 * var(--design-unit)); }
+.bs-seal-row { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: calc(40 * var(--design-unit)); }
+.bs-seal { display: flex; flex-direction: column; flex-shrink: 0; position: relative; padding-bottom: calc(18 * var(--design-unit)); }
+.bs-seal-img { width: calc(138 * var(--design-unit)); height: calc(141 * var(--design-unit)); object-fit: fill; }
+.bs-seal-bg {
+  width: calc(138 * var(--design-unit)); height: calc(141 * var(--design-unit));
+  background-size: cover; background-position: center;
+  padding-top: calc(35 * var(--design-unit));
+}
+.bs-seal-motto { color: #f67206; font-size: calc(14 * var(--design-unit)); font-weight: 700; text-align: center; letter-spacing: -0.3px; white-space: pre; }
+.bs-seal .bs-seal-motto { position: absolute; top: calc(41 * var(--design-unit)); left: calc(1 * var(--design-unit)); right: calc(1 * var(--design-unit)); }
+.bs-seal .bs-seal-power { position: absolute; bottom: 0; left: calc(6 * var(--design-unit)); right: calc(6 * var(--design-unit)); }
+.bs-seal-power { color: #f67206; font-size: calc(18 * var(--design-unit)); font-weight: 700; text-align: center; letter-spacing: -0.3px; white-space: pre; }
+
+/* Seal row 2 + IP */
+.bs-seal-ip-wrap { position: relative; width: 100%; margin-bottom: calc(82 * var(--design-unit)); }
+.bs-seal-row--abs { position: absolute; top: calc(9 * var(--design-unit)); left: 0; right: 0; display: flex; justify-content: space-between; z-index: 2; padding: 0 calc(3 * var(--design-unit)); margin-bottom: 0; }
+.bs-seal-img-abs { width: calc(138 * var(--design-unit)); height: calc(141 * var(--design-unit)); object-fit: fill; }
+.bs-seal-text-row2 { position: absolute; top: calc(9 * var(--design-unit)); left: 0; right: 0; display: flex; justify-content: space-between; z-index: 3; padding: 0 calc(3 * var(--design-unit)); }
+.bs-seal-text-col { width: calc(138 * var(--design-unit)); height: calc(160 * var(--design-unit)); position: relative; }
+.bs-seal-text-col .bs-seal-motto { position: absolute; top: calc(35 * var(--design-unit)); left: 0; right: 0; }
+.bs-seal-text-col .bs-seal-power { position: absolute; bottom: 0; left: 0; right: 0; }
+
+/* IP background */
+.bs-ip-bg { display: flex; flex-direction: column; width: 100%; background-size: cover; background-position: center; padding-top: calc(231 * var(--design-unit)); }
+.bs-mascot1-wrap { position: relative; width: calc(350 * var(--design-unit)); height: calc(462 * var(--design-unit)); margin: 0 calc(26 * var(--design-unit)) calc(82 * var(--design-unit)); }
+.bs-mascot1-img { width: 100%; height: calc(462 * var(--design-unit)); object-fit: fill; }
+.bs-mascot1-overlay { position: absolute; top: 0; left: 0; right: 0; height: calc(462 * var(--design-unit)); object-fit: fill; }
+
+/* ---- Print ---- */
+.bs-section--print { padding-left: calc(23 * var(--design-unit)); padding-right: calc(23 * var(--design-unit)); }
+.bs-print-text { color: #ff7600; font-size: calc(18 * var(--design-unit)); font-weight: 700; letter-spacing: -0.3px; white-space: pre-wrap; line-height: normal; }
+
+/* ---- Info + SLOGAN ---- */
+.bs-section--info { padding-left: calc(31 * var(--design-unit)); padding-right: calc(40 * var(--design-unit)); margin-bottom: calc(25 * var(--design-unit)); }
+.bs-info-row { display: flex; align-items: flex-start; width: 100%; }
+.bs-info-text { color: #fff; font-size: calc(18 * var(--design-unit)); font-weight: 700; letter-spacing: -0.3px; white-space: pre-wrap; width: calc(134 * var(--design-unit)); flex-shrink: 0; }
+.bs-slogan-block { display: flex; flex-direction: column; align-items: flex-end; flex: 1; }
+.bs-slogan-label { color: #fff; font-size: calc(28 * var(--design-unit)); font-weight: 700; }
+.bs-slogan-value { color: #fff; font-size: calc(18 * var(--design-unit)); font-weight: 700; }
+
+/* ---- Mascot 2 ---- */
+.bs-section--mascot2 { position: relative; padding: 0; margin-bottom: calc(67 * var(--design-unit)); }
+.bs-vector-bottom { width: 100%; height: calc(408 * var(--design-unit)); object-fit: fill; }
+.bs-mascot2-img { position: absolute; bottom: calc(56 * var(--design-unit)); left: calc(9 * var(--design-unit)); right: calc(9 * var(--design-unit)); height: calc(384 * var(--design-unit)); object-fit: fill; }
+
+/* ---- Traits ---- */
+.bs-section--trait { margin-bottom: calc(23 * var(--design-unit)); gap: calc(15 * var(--design-unit)); }
+.bs-trait-title { color: #fff; font-size: calc(28 * var(--design-unit)); font-weight: 700; letter-spacing: -0.3px; }
+.bs-trait-content { display: flex; flex-direction: column; }
+.bs-trait-indent { margin-left: calc(148 * var(--design-unit)); }
+.bs-trait-end { align-self: flex-end; }
+
+/* >>> */
+.bs-section--prompt { align-items: flex-end; margin-bottom: calc(9 * var(--design-unit)); padding-right: calc(23 * var(--design-unit)); }
+
+/* ---- Yearbook carousel ---- */
+.bs-section--yearbook { margin-bottom: calc(65 * var(--design-unit)); }
+.bs-yb-carousel {
+  display: flex; gap: calc(14 * var(--design-unit));
+  overflow-x: auto; width: calc(100% + 37 * var(--design-unit));
+  scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;
   padding-right: calc(38 * var(--design-unit));
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 .bs-yb-carousel::-webkit-scrollbar { display: none; }
-
-.bs-yb-card {
-  flex: 0 0 calc(300 * var(--design-unit));
-  scroll-snap-align: start;
-}
+.bs-yb-card { flex: 0 0 calc(300 * var(--design-unit)); scroll-snap-align: start; }
 .bs-yb-cover {
-  position: relative;
-  width: calc(300 * var(--design-unit));
-  height: calc(304 * var(--design-unit));
+  width: calc(300 * var(--design-unit)); height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
-  overflow: hidden;
+  background-size: cover; background-position: center;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 calc(108 * var(--design-unit)) calc(29 * var(--design-unit));
 }
-.bs-yb-cover img { width: 100%; height: 100%; object-fit: cover; }
-
 .bs-yb-btn {
-  position: absolute;
-  left: calc(20% + 65.6 * var(--design-unit));
-  top: calc(249 * var(--design-unit));
-  width: calc(85 * var(--design-unit));
-  height: calc(26 * var(--design-unit));
-  border: 1px solid #ffcca1;
-  border-radius: calc(43 * var(--design-unit));
-  background: #ff7600; color: #ffffff;
-  font-size: calc(10 * var(--design-unit));
-  font-weight: 400;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 40px rgba(0,0,0,0.1);
-  cursor: pointer;
+  padding: calc(8 * var(--design-unit)) calc(21 * var(--design-unit));
+  border: 1px solid transparent; border-radius: calc(43 * var(--design-unit));
+  background: #ff7600; color: #fff; font-size: calc(10 * var(--design-unit)); cursor: pointer;
 }
-
-.bs-yb-title {
-  margin: calc(12 * var(--design-unit)) 0 0;
-  font-size: calc(16 * var(--design-unit));
-  font-weight: 700; color: #ffffff; line-height: normal;
-}
-.bs-yb-sub {
-  margin: calc(2 * var(--design-unit)) 0 0;
-  font-size: calc(14 * var(--design-unit));
-  font-weight: 400; color: rgba(255,255,255,0.6); line-height: normal;
-}
+.bs-yb-title { display: block; margin-top: calc(12 * var(--design-unit)); font-size: calc(16 * var(--design-unit)); font-weight: 700; color: #fff; }
+.bs-yb-sub { display: block; margin-top: calc(2 * var(--design-unit)); font-size: calc(14 * var(--design-unit)); color: rgba(255,255,255,0.6); }
 
 @media (max-width: 430px) {
   .app-shell {
