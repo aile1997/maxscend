@@ -1,13 +1,6 @@
 :root {
   color-scheme: light;
-  font-family:
-    "Source Han Sans CN",
-    "Source Han Sans SC",
-    "Noto Sans SC",
-    "PingFang SC",
-    "Hiragino Sans GB",
-    "Microsoft YaHei",
-    sans-serif;
+  font-family: "Source Han Sans CN", "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --shell-width: 402px;
   --shell-height: 874px;
   --nav-active: #ff7600;
@@ -101,8 +94,14 @@ svg {
 }
 
 @keyframes screen-enter {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .status-bar {
@@ -314,10 +313,7 @@ svg {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: start;
   height: var(--nav-height);
-  padding:
-    calc(21 * var(--design-unit))
-    calc(23 * var(--design-unit))
-    calc(10 * var(--design-unit));
+  padding: calc(21 * var(--design-unit)) calc(23 * var(--design-unit)) calc(10 * var(--design-unit));
   background: #ffffff;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
 }
@@ -410,8 +406,14 @@ svg {
 }
 
 @keyframes splash-bg-drift {
-  from { transform: scale(1.15); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .splash-screen__hero,
@@ -430,8 +432,16 @@ svg {
 }
 
 @keyframes splash-hero-in {
-  from { transform: scale(0.85); opacity: 0; filter: blur(8px); }
-  to { transform: scale(1); opacity: 1; filter: blur(0); }
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .splash-screen__copy {
@@ -447,13 +457,25 @@ svg {
   animation: splash-text-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.splash-screen__copy p:nth-child(1) { animation-delay: 0.5s; }
-.splash-screen__copy p:nth-child(2) { animation-delay: 0.65s; }
-.splash-screen__copy p:nth-child(3) { animation-delay: 0.8s; }
+.splash-screen__copy p:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.splash-screen__copy p:nth-child(2) {
+  animation-delay: 0.65s;
+}
+.splash-screen__copy p:nth-child(3) {
+  animation-delay: 0.8s;
+}
 
 @keyframes splash-text-in {
-  from { transform: translateY(16px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .splash-screen__copy p:nth-child(1) {
@@ -481,8 +503,14 @@ svg {
 }
 
 @keyframes splash-logo-in {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .home-screen__brand-maxscend,
@@ -502,8 +530,6 @@ svg {
   width: calc(337.016 * var(--design-unit));
   height: calc(293 * var(--design-unit));
 }
-
-
 
 /* ---- Agenda v2 (single text flow) ---- */
 
@@ -536,8 +562,14 @@ svg {
 }
 
 @keyframes card-rise {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .agenda-secondary-carousel {
@@ -629,18 +661,37 @@ svg {
 }
 
 /* 12px Bold title */
-.aa__b { font-size: calc(12 * var(--design-unit)); font-weight: 700; }
+.aa__b {
+  font-size: calc(12 * var(--design-unit));
+  font-weight: 700;
+}
 /* 12px Heavy title */
-.aa__h { font-size: calc(12 * var(--design-unit)); font-weight: 900; }
+.aa__h {
+  font-size: calc(12 * var(--design-unit));
+  font-weight: 900;
+}
 /* 10px Bold subtitle/detail */
-.aa__i { font-size: calc(10 * var(--design-unit)); font-weight: 700; }
+.aa__i {
+  font-size: calc(10 * var(--design-unit));
+  font-weight: 700;
+}
 /* 10px Regular body */
-.aa__r { font-size: calc(10 * var(--design-unit)); font-weight: 400; }
+.aa__r {
+  font-size: calc(10 * var(--design-unit));
+  font-weight: 400;
+}
 /* 10px Medium */
-.aa__m { font-size: calc(10 * var(--design-unit)); font-weight: 500; }
+.aa__m {
+  font-size: calc(10 * var(--design-unit));
+  font-weight: 500;
+}
 /* spacer lines */
-.aa__s10 { font-size: calc(10 * var(--design-unit)); }
-.aa__s12 { font-size: calc(12 * var(--design-unit)); }
+.aa__s10 {
+  font-size: calc(10 * var(--design-unit));
+}
+.aa__s12 {
+  font-size: calc(12 * var(--design-unit));
+}
 
 /* ---- Guide ---- */
 
@@ -672,9 +723,15 @@ svg {
   animation: card-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.guide-card:nth-child(1) { animation-delay: 0.1s; }
-.guide-card:nth-child(2) { animation-delay: 0.2s; }
-.guide-card:nth-child(3) { animation-delay: 0.3s; }
+.guide-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.guide-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.guide-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
 .guide-card {
   scroll-snap-align: start;
@@ -759,8 +816,12 @@ svg {
 }
 
 @keyframes lightbox-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .lightbox__content {
@@ -819,16 +880,14 @@ svg {
   height: calc(153 * var(--design-unit));
   border: 1px solid var(--glass-border);
   border-radius: calc(12 * var(--design-unit));
-  background:
-    linear-gradient(102deg, rgba(89, 123, 211, 0.58) 0%, rgba(92, 177, 215, 0.26) 58%, rgba(193, 187, 230, 0.24) 100%);
+  background: linear-gradient(102deg, rgba(89, 123, 211, 0.58) 0%, rgba(92, 177, 215, 0.26) 58%, rgba(193, 187, 230, 0.24) 100%);
   box-shadow: var(--glass-shadow);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .contact-card:last-child {
-  background:
-    linear-gradient(102deg, rgba(103, 168, 211, 0.54) 0%, rgba(93, 177, 214, 0.3) 58%, rgba(203, 196, 232, 0.3) 100%);
+  background: linear-gradient(102deg, rgba(103, 168, 211, 0.54) 0%, rgba(93, 177, 214, 0.3) 58%, rgba(203, 196, 232, 0.3) 100%);
 }
 
 .contact-card__name,
@@ -978,8 +1037,12 @@ svg {
   top: calc(155 * var(--design-unit));
   color: #ff7600;
 }
-.brand-story__title--spirit { top: calc(561 * var(--design-unit)); }
-.brand-story__title--yearbook { top: calc(3010 * var(--design-unit)); }
+.brand-story__title--spirit {
+  top: calc(561 * var(--design-unit));
+}
+.brand-story__title--yearbook {
+  top: calc(2828 * var(--design-unit));
+}
 
 /* ---- Code block ---- */
 .brand-story__code {
@@ -1087,7 +1150,7 @@ svg {
   margin: 0 0 calc(4 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
-  color: #ff7600;
+  color: #000;
 }
 
 .brand-story__simjo-logo {
@@ -1110,7 +1173,7 @@ svg {
 /* ---- Print statements ---- */
 .brand-story__print {
   position: absolute;
-  top: calc(1980 * var(--design-unit));
+  top: calc(1666 * var(--design-unit));
   left: calc(23 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
@@ -1126,7 +1189,7 @@ svg {
 /* ---- Namecard + SLOGAN ---- */
 .brand-story__namecard {
   position: absolute;
-  top: calc(2170 * var(--design-unit));
+  top: calc(1834 * var(--design-unit));
   left: calc(31 * var(--design-unit));
   right: calc(40 * var(--design-unit));
   z-index: 1;
@@ -1165,7 +1228,7 @@ svg {
 /* ---- Mascot 2 + bottom vector ---- */
 .brand-story__mascot2-section {
   position: absolute;
-  top: calc(2300 * var(--design-unit));
+  top: calc(2017 * var(--design-unit));
   left: 0;
   right: 0;
   z-index: 1;
@@ -1189,7 +1252,7 @@ svg {
 /* ---- Traits carousel (horizontal scroll like guide-carousel) ---- */
 .brand-story__traits-carousel {
   position: absolute;
-  top: calc(2760 * var(--design-unit));
+  top: calc(2383 * var(--design-unit));
   left: calc(31 * var(--design-unit));
   right: 0;
   z-index: 1;
@@ -1249,7 +1312,7 @@ svg {
 /* >>> */
 .brand-story__prompt {
   position: absolute;
-  top: calc(2960 * var(--design-unit));
+  top: calc(2635 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
   margin: 0;
@@ -1262,7 +1325,7 @@ svg {
 /* ---- Yearbook carousel (same pattern as guide-carousel) ---- */
 .brand-story__yearbook-carousel {
   position: absolute;
-  top: calc(3060 * var(--design-unit));
+  top: calc(2883 * var(--design-unit));
   left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 1;
