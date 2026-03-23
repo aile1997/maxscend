@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { copy, guideVenues } from "../content";
 import { designAssets } from "../designAssets";
@@ -117,8 +118,9 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
         ))}
       </div>
 
-      {lightbox && (
-        <MapLightbox src={lightbox.src} label={lightbox.label} onClose={() => setLightbox(null)} />
+      {lightbox && createPortal(
+        <MapLightbox src={lightbox.src} label={lightbox.label} onClose={() => setLightbox(null)} />,
+        document.body
       )}
     </section>
   );

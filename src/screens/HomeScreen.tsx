@@ -20,14 +20,6 @@ export function HomeScreen() {
         fetchPriority="high"
       />
 
-      <a
-        className="home-screen__live-btn"
-        href="https://live.photoplus.cn/live/pc/71498478"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        进入图片直播
-      </a>
     </section>
   );
 }

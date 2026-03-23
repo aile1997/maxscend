@@ -174,6 +174,14 @@ function App() {
     window.__bootScreen?.finish();
   }, [isBooting]);
 
+  useEffect(() => {
+    const shell = document.querySelector(".app-shell");
+    if (shell) {
+      shell.scrollTop = 0;
+      requestAnimationFrame(() => { shell.scrollTop = 0; });
+    }
+  }, [page]);
+
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
 
   return (
@@ -190,6 +198,17 @@ function App() {
           </>
         )}
       </div>
+
+      {!isBooting && page === "home" && (
+        <a
+          className="home-screen__live-btn"
+          href="https://live.photoplus.cn/live/pc/71498478"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          进入图片直播
+        </a>
+      )}
 
       {!isBooting && <BottomNav activeId={page} items={navItems} onSelect={handleNavSelect} />}
 

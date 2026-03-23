@@ -434,9 +434,9 @@ svg {
 
 .splash-screen__hero {
   left: calc(73 * var(--design-unit));
-  top: calc(240 * var(--design-unit));
+  top: 27%;
   width: calc(288 * var(--design-unit));
-  height: calc(138 * var(--design-unit));
+  height: auto;
   animation: splash-hero-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
@@ -455,7 +455,7 @@ svg {
 
 .splash-screen__copy {
   left: 0;
-  top: calc(450 * var(--design-unit));
+  top: 52%;
   width: 100%;
   text-align: center;
 }
@@ -507,8 +507,9 @@ svg {
 }
 
 .splash-screen__logo {
-  left: calc(140 * var(--design-unit));
-  top: calc(680 * var(--design-unit));
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(60 * var(--design-unit));
   width: calc(123 * var(--design-unit));
   height: calc(31 * var(--design-unit));
   animation: splash-logo-in 1s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
@@ -516,11 +517,11 @@ svg {
 
 @keyframes splash-logo-in {
   from {
-    transform: translateY(20px);
+    transform: translateX(-50%) translateY(20px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
 }
@@ -894,7 +895,7 @@ svg {
 
 .lightbox__close {
   position: fixed;
-  bottom: calc(100 * var(--design-unit));
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -942,16 +943,26 @@ svg {
   flex: 0 0 calc(159 * var(--design-unit));
   height: calc(153 * var(--design-unit));
   scroll-snap-align: start;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: calc(12 * var(--design-unit));
-  background: linear-gradient(102deg, rgba(89, 123, 211, 0.58) 0%, rgba(92, 177, 215, 0.26) 58%, rgba(193, 187, 230, 0.24) 100%);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .contact-card:last-child {
-  background: linear-gradient(102deg, rgba(103, 168, 211, 0.54) 0%, rgba(93, 177, 214, 0.3) 58%, rgba(203, 196, 232, 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
 }
 
 .contact-card__name,
