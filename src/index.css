@@ -1,15 +1,25 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   font-family: "Source Han Sans CN", "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --shell-width: 402px;
   --shell-height: 874px;
   --nav-active: #ff7600;
   --nav-text: #5b5652;
+  --nav-bg: #ffffff;
+  --nav-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
   --glass-border: rgba(255, 255, 255, 0.9);
   --glass-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
   --browser-light-bg: rgba(250, 250, 250, 0.72);
   --browser-dark-bg: rgba(21, 21, 21, 0.8);
   --browser-border: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-bg: #191919;
+    --nav-text: #999999;
+    --nav-shadow: 0 -4px 4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 * {
@@ -312,8 +322,8 @@ svg {
   align-items: start;
   height: var(--nav-height);
   padding: calc(21 * var(--design-unit)) calc(23 * var(--design-unit)) calc(10 * var(--design-unit));
-  background: #ffffff;
-  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+  background: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
 }
 
 .bottom-nav__item {
@@ -478,19 +488,22 @@ svg {
 }
 
 .splash-screen__copy p:nth-child(1) {
-  font-size: calc(26 * var(--design-unit));
+  font-size: calc(24 * var(--design-unit));
   font-weight: 400;
+  letter-spacing: calc(6 * var(--design-unit));
 }
 
 .splash-screen__copy p:nth-child(2) {
-  font-size: calc(18 * var(--design-unit));
+  font-size: calc(16 * var(--design-unit));
   font-weight: 400;
+  margin-top: calc(2 * var(--design-unit));
 }
 
 .splash-screen__copy p:nth-child(3) {
-  margin-top: calc(2 * var(--design-unit));
+  margin-top: calc(8 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
+  letter-spacing: calc(3 * var(--design-unit));
 }
 
 .splash-screen__logo {
@@ -528,6 +541,31 @@ svg {
   top: calc(190 * var(--design-unit));
   width: calc(337.016 * var(--design-unit));
   height: calc(293 * var(--design-unit));
+}
+
+.home-screen__live-btn {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: calc(120 * var(--design-unit));
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(200 * var(--design-unit));
+  padding: calc(14 * var(--design-unit)) calc(40 * var(--design-unit));
+  background: #ff7600;
+  color: #ffffff;
+  font-size: calc(16 * var(--design-unit));
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: calc(30 * var(--design-unit));
+  letter-spacing: calc(1 * var(--design-unit));
+  transition: opacity 0.2s;
+}
+
+.home-screen__live-btn:active {
+  opacity: 0.8;
 }
 
 /* ---- Agenda v2 (single text flow) ---- */
@@ -1324,6 +1362,7 @@ svg {
   background: #ff7600;
   color: #fff;
   font-size: calc(10 * var(--design-unit));
+  text-decoration: none;
   cursor: pointer;
 }
 
