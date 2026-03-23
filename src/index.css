@@ -90,15 +90,17 @@ svg {
   position: relative;
   min-height: max(calc(var(--screen-height) * var(--design-unit)), calc(100dvh - var(--nav-height)));
   color: #ffffff;
-  animation: screen-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: screen-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes screen-enter {
   from {
-    transform: translateY(8px);
+    transform: scale(0.97) translateY(6px);
+    filter: blur(4px);
   }
   to {
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -1031,64 +1033,56 @@ svg {
   background: #21201e;
 }
 
-/* ---- Scroll-triggered animations ---- */
-@keyframes bs-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ---- Brand Story animations ---- */
+@keyframes bs-blur-in {
+  from { opacity: 0; filter: blur(8px); transform: scale(1.03); }
+  to   { opacity: 1; filter: blur(0);   transform: scale(1); }
 }
 
-@keyframes bs-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes bs-scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes bs-slide-up {
+  from { opacity: 0; transform: translateY(40px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
 }
 
 @keyframes bs-slide-left {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Animations */
+@keyframes bs-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(calc(-6 * var(--design-unit))); }
+}
+
+@keyframes bs-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50%      { filter: drop-shadow(0 0 calc(16 * var(--design-unit)) rgba(255,118,0,0.25)); }
+}
+
+@keyframes bs-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+/* Text layer �� cinematic blur-in */
 .brand-story__text-layer {
-  animation: bs-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  animation: bs-blur-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
+/* Illustration �� blur entrance + gentle float loop */
 .brand-story__ip-illustration {
-  animation: bs-fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  animation:
+    bs-blur-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both,
+    bs-float 6s ease-in-out 2s infinite;
 }
 
+/* Carousels �� slide in from right */
 .brand-story__traits-carousel {
   animation: bs-slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 .brand-story__yearbook-carousel {
-  animation: bs-slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  animation: bs-slide-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 /* ---- Full-page text layer SVG ---- */
@@ -1107,7 +1101,7 @@ svg {
   top: calc(1032 * var(--design-unit));
   left: 0;
   z-index: 2;
-  animation: bs-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  animation: bs-slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 .brand-story__ip-title {
@@ -1135,7 +1129,7 @@ svg {
 }
 
 .brand-story__mascot2-section {
-  animation: bs-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+  animation: bs-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 /* ---- Mascot 2 + bottom vector ---- */
@@ -1160,6 +1154,12 @@ svg {
   right: calc(9 * var(--design-unit));
   height: calc(384 * var(--design-unit));
   object-fit: fill;
+  animation: bs-glow 4s ease-in-out 1.5s infinite;
+}
+
+/* >>> blinking cursor */
+.brand-story__prompt {
+  animation: bs-blink 2s ease-in-out infinite;
 }
 
 /* ---- Traits carousel (horizontal scroll like guide-carousel) ---- */
