@@ -3,7 +3,6 @@ import { designAssets } from "../designAssets";
 const B = `${import.meta.env.BASE_URL}brand-assets/`;
 
 const traitCards = [
-  { svg: `${B}名字_小卓(simjo) MBTI人格_ISTP 星座_双子座.svg` },
   { svg: `${B}爱好.svg` },
   { svg: `${B}造型.svg` },
 ];
@@ -23,7 +22,7 @@ export function BrandStoryScreen() {
       {/* 全页文字层 SVG — 像素级还原 Figma 文字布局 */}
       <img
         className="brand-story__text-layer"
-        src={`${B}Group 336.svg`}
+        src={`${B}Group 337.svg`}
         alt="品牌故事内容"
       />
 
