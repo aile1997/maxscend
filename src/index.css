@@ -979,7 +979,7 @@ svg {
   color: #ff7600;
 }
 .brand-story__title--spirit { top: calc(561 * var(--design-unit)); }
-.brand-story__title--yearbook { top: calc(2828 * var(--design-unit)); }
+.brand-story__title--yearbook { top: calc(3010 * var(--design-unit)); }
 
 /* ---- Code block ---- */
 .brand-story__code {
@@ -1075,18 +1075,14 @@ svg {
 /* ---- IP section ---- */
 .brand-story__ip {
   position: absolute;
-  top: calc(975 * var(--design-unit));
+  top: calc(1000 * var(--design-unit));
   left: 0;
   right: 0;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: calc(68 * var(--design-unit));
 }
 
 .brand-story__ip-title {
-  margin: 0 0 calc(8 * var(--design-unit)) calc(33 * var(--design-unit));
+  margin: 0 0 calc(4 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
   color: #ff7600;
@@ -1094,9 +1090,8 @@ svg {
 
 .brand-story__simjo-logo {
   width: calc(145 * var(--design-unit));
-  height: calc(65 * var(--design-unit));
-  margin-left: calc(33 * var(--design-unit));
-  margin-bottom: calc(12 * var(--design-unit));
+  height: auto;
+  margin-left: calc(20 * var(--design-unit));
 }
 
 .brand-story__ip-illustration {
@@ -1107,7 +1102,7 @@ svg {
 /* ---- Print statements ---- */
 .brand-story__print {
   position: absolute;
-  top: calc(1666 * var(--design-unit));
+  top: calc(1980 * var(--design-unit));
   left: calc(23 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
@@ -1123,7 +1118,7 @@ svg {
 /* ---- Namecard + SLOGAN ---- */
 .brand-story__namecard {
   position: absolute;
-  top: calc(1900 * var(--design-unit));
+  top: calc(2170 * var(--design-unit));
   left: calc(31 * var(--design-unit));
   right: calc(40 * var(--design-unit));
   z-index: 1;
@@ -1162,7 +1157,7 @@ svg {
 /* ---- Mascot 2 + bottom vector ---- */
 .brand-story__mascot2-section {
   position: absolute;
-  top: calc(2000 * var(--design-unit));
+  top: calc(2300 * var(--design-unit));
   left: 0;
   right: 0;
   z-index: 1;
@@ -1186,7 +1181,7 @@ svg {
 /* ---- Traits carousel (horizontal scroll like guide-carousel) ---- */
 .brand-story__traits-carousel {
   position: absolute;
-  top: calc(2460 * var(--design-unit));
+  top: calc(2760 * var(--design-unit));
   left: calc(31 * var(--design-unit));
   right: 0;
   z-index: 1;
@@ -1232,10 +1227,21 @@ svg {
   margin-left: calc(100 * var(--design-unit));
 }
 
+.brand-story__trait-svg {
+  width: 100%;
+  height: auto;
+}
+
+.brand-story__namecard-svg {
+  width: calc(135 * var(--design-unit));
+  height: auto;
+  flex-shrink: 0;
+}
+
 /* >>> */
 .brand-story__prompt {
   position: absolute;
-  top: calc(2700 * var(--design-unit));
+  top: calc(2960 * var(--design-unit));
   right: calc(23 * var(--design-unit));
   z-index: 1;
   margin: 0;
@@ -1248,7 +1254,7 @@ svg {
 /* ---- Yearbook carousel (same pattern as guide-carousel) ---- */
 .brand-story__yearbook-carousel {
   position: absolute;
-  top: calc(2883 * var(--design-unit));
+  top: calc(3060 * var(--design-unit));
   left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 1;

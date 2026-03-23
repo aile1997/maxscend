@@ -28,33 +28,8 @@ const traitCards = [
       },
     ],
   },
-  {
-    sections: [
-      {
-        title: "爱好.CHARACTER",
-        lines: [
-          { w: '> **print( ', o: '监听来自深空的无线电静默音乐会     ' },
-          { w: '', o: '在纳米尺度的芯片迷宫中"散步"' },
-          { w: '', o: '将棘手的通信难题\n           当作最高级的解密游戏来享受' },
-          { w: '', o: '观察并偶尔引导一个凌乱的无线网络，' },
-          { w: '', o: '变得井然有序、流畅自如        ', end: '}', endW: true },
-        ],
-      },
-    ],
-  },
-  {
-    sections: [
-      {
-        title: "造型.CHARACTER",
-        lines: [
-          { w: '> **print( ', o: '可变形的护目镜，' },
-          { w: '', o: '            形态多变喜欢用来当作代码显示屏   ' },
-          { w: '', o: '头发将作为该"聚合"形态的外显载体，   ' },
-          { w: '', o: '并随着角色状态而改变       ', end: '}', endW: true },
-        ],
-      },
-    ],
-  },
+  { svg: `${B}爱好.svg` },
+  { svg: `${B}造型.svg` },
 ];
 
 const yearbooks = [
@@ -115,9 +90,9 @@ export function BrandStoryScreen() {
       {/* ---- Print 描述 (英文引号) ---- */}
       <p className="brand-story__print">{`> **print("我是小卓。")\n                         > **print("我是卓胜微技术灵魂\n                                                           的感性表达。")\n> **print("我的使命是:\n                         在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。"`}</p>
 
-      {/* ---- 名片 + SLOGAN ---- */}
+      {/* ---- 名片 + SLOGAN (用SVG保证文字布局精确) ---- */}
       <div className="brand-story__namecard">
-        <span className="brand-story__namecard-info">{"名字:小卓(simjo)\nMBTI人格:ISTP\n星座:双子座"}</span>
+        <img className="brand-story__namecard-svg" src={`${B}名字_小卓(simjo) MBTI人格_ISTP 星座_双子座.svg`} alt="名字:小卓(simjo) MBTI人格:ISTP 星座:双子座" />
         <div className="brand-story__namecard-slogan">
           <span className="brand-story__namecard-slogan-label">SLOGAN</span>
           <span className="brand-story__namecard-slogan-text">简于心 跃于行</span>
@@ -134,18 +109,22 @@ export function BrandStoryScreen() {
       <div className="brand-story__traits-carousel">
         {traitCards.map((card, ci) => (
           <article key={ci} className="brand-story__trait-card">
-            {card.sections.map((sec, si) => (
-              <div key={si} className="brand-story__trait-section">
-                <h3 className="brand-story__trait-title">{sec.title}</h3>
-                {sec.lines.map((line, li) => (
-                  <p key={li} className={`brand-story__trait-line${!line.w ? ' brand-story__trait-line--indent' : ''}`}>
-                    {line.w && <span className="brand-story__code-w">{line.w}</span>}
-                    <span className="brand-story__code-o">{line.o}</span>
-                    {line.end && <span className={line.endW ? 'brand-story__code-w' : 'brand-story__code-o'}>{line.end}</span>}
-                  </p>
-                ))}
-              </div>
-            ))}
+            {"svg" in card ? (
+              <img className="brand-story__trait-svg" src={card.svg} alt="" />
+            ) : (
+              card.sections.map((sec, si) => (
+                <div key={si} className="brand-story__trait-section">
+                  <h3 className="brand-story__trait-title">{sec.title}</h3>
+                  {sec.lines.map((line, li) => (
+                    <p key={li} className={`brand-story__trait-line${!line.w ? ' brand-story__trait-line--indent' : ''}`}>
+                      {line.w && <span className="brand-story__code-w">{line.w}</span>}
+                      <span className="brand-story__code-o">{line.o}</span>
+                      {line.end && <span className={line.endW ? 'brand-story__code-w' : 'brand-story__code-o'}>{line.end}</span>}
+                    </p>
+                  ))}
+                </div>
+              ))
+            )}
           </article>
         ))}
       </div>
