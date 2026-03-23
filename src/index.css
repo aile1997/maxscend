@@ -1211,7 +1211,7 @@ svg {
 }
 
 .brand-story__trait-card {
-  flex: 0 0 calc(300 * var(--design-unit));
+  flex: 0 0 calc(350 * var(--design-unit));
   scroll-snap-align: start;
   color: #fff;
 }
@@ -1231,8 +1231,8 @@ svg {
   white-space: pre-wrap;
 }
 
-.brand-story__trait-line--end {
-  margin-left: calc(148 * var(--design-unit));
+.brand-story__trait-line--indent {
+  margin-left: calc(100 * var(--design-unit));
 }
 
 /* >>> */

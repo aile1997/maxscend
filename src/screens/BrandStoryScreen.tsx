@@ -1,4 +1,3 @@
-import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
 
 const B = `${import.meta.env.BASE_URL}brand-assets/`;
@@ -8,6 +7,42 @@ const seals = [
   { img: `${B}figma-seal-zhuo.png`, motto: "拙 朴 求 进    长 期 主 义", power: "专          注          力" },
   { img: `${B}figma-seal-xin.png`, motto: "信 而 向 善    以 信 立 企", power: "信          任          力" },
   { img: `${B}figma-seal-he.png`, motto: "和 融 共 促    协 同 共 生", power: "协          同          力" },
+];
+
+const traits = [
+  {
+    title: "性格.CHARACTER",
+    lines: [
+      { w: '> **print( ', o: '沉稳/乐观' },
+      { w: '', o: '爱思考/注重逻辑   ', end: ' }', endW: true },
+    ],
+  },
+  {
+    title: "能力.CAPACITY",
+    lines: [
+      { w: '> **print( ', o: '频谱感知,波态切换' },
+      { w: '', o: '信号增益,频率调和 ', end: '}', endW: true },
+    ],
+  },
+  {
+    title: "爱好.CHARACTER",
+    lines: [
+      { w: '> **print( ', o: '监听来自深空的无线电静默音乐会     ' },
+      { w: '', o: '在纳米尺度的芯片迷宫中"散步"' },
+      { w: '', o: '将棘手的通信难题\n           当作最高级的解密游戏来享受' },
+      { w: '', o: '观察并偶尔引导一个凌乱的无线网络，' },
+      { w: '', o: '变得井然有序、流畅自如        ', end: '}', endW: true },
+    ],
+  },
+  {
+    title: "造型.CHARACTER",
+    lines: [
+      { w: '> **print( ', o: '可变形的护目镜，' },
+      { w: '', o: '            形态多变喜欢用来当作代码显示屏   ' },
+      { w: '', o: '头发将作为该"聚合"形态的外显载体，   ' },
+      { w: '', o: '并随着角色状态而改变       ', end: '}', endW: true },
+    ],
+  },
 ];
 
 const yearbooks = [
@@ -58,10 +93,8 @@ export function BrandStoryScreen() {
         ))}
       </div>
 
-      {/* ---- IP介绍 + 吉祥物 ---- */}
-      <div className="brand-story__ip"
-        style={{ backgroundImage: `url(${B}figma-ip-bg.png)` }}
-      >
+      {/* ---- IP介绍 + 吉祥物 (橙色背景) ---- */}
+      <div className="brand-story__ip" style={{ backgroundImage: `url(${B}figma-ip-bg.png)` }}>
         <h2 className="brand-story__ip-title">IP介绍</h2>
         <div className="brand-story__mascot1">
           <img src={`${B}figma-mascot1.png`} alt="小卓" />
@@ -69,12 +102,12 @@ export function BrandStoryScreen() {
         </div>
       </div>
 
-      {/* ---- Print 描述 ---- */}
+      {/* ---- Print 描述 (英文引号) ---- */}
       <p className="brand-story__print">{`> **print("我是小卓。")\n                         > **print("我是卓胜微技术灵魂\n                                                           的感性表达。")\n> **print("我的使命是:\n                         在探索物理资源边界的旅途中，守护每一次可靠且温暖的连接。"`}</p>
 
       {/* ---- 名片 + SLOGAN ---- */}
       <div className="brand-story__namecard">
-        <span className="brand-story__namecard-info">{"名字:小卓(simjo)\nMBTI人格:ISTP\n星座:双子座"}</span>
+        <span className="brand-story__namecard-info">{"名字:小卓\n(simjo)\nMBTI人格:ISTP\n星座:双子座"}</span>
         <div className="brand-story__namecard-slogan">
           <span className="brand-story__namecard-slogan-label">SLOGAN</span>
           <span className="brand-story__namecard-slogan-text">简于心 跃于行</span>
@@ -87,28 +120,20 @@ export function BrandStoryScreen() {
         <img className="brand-story__mascot2" src={`${B}figma-mascot2.png`} alt="小卓" />
       </div>
 
-      {/* ---- 性格 / 能力 (水平滑动栏) ---- */}
+      {/* ---- 性格/能力/爱好/造型 水平滑动栏 ---- */}
       <div className="brand-story__traits-carousel">
-        <article className="brand-story__trait-card">
-          <h3 className="brand-story__trait-title">性格.CHARACTER</h3>
-          <p className="brand-story__trait-line">
-            <span className="brand-story__code-w">{"> **print( "}</span>
-            <span className="brand-story__code-o">沉稳/乐观</span>
-          </p>
-          <p className="brand-story__trait-line brand-story__trait-line--end">
-            <span className="brand-story__code-o">{"爱思考/注重逻辑    }"}</span>
-          </p>
-        </article>
-        <article className="brand-story__trait-card">
-          <h3 className="brand-story__trait-title">能力.CAPACITY</h3>
-          <p className="brand-story__trait-line">
-            <span className="brand-story__code-w">{"> **print( "}</span>
-            <span className="brand-story__code-o">频谱感知,波态切换</span>
-          </p>
-          <p className="brand-story__trait-line brand-story__trait-line--end">
-            <span className="brand-story__code-o">{"信号增益,频率调和 }"}</span>
-          </p>
-        </article>
+        {traits.map((t, ti) => (
+          <article key={ti} className="brand-story__trait-card">
+            <h3 className="brand-story__trait-title">{t.title}</h3>
+            {t.lines.map((line, li) => (
+              <p key={li} className={`brand-story__trait-line${!line.w ? ' brand-story__trait-line--indent' : ''}`}>
+                {line.w && <span className="brand-story__code-w">{line.w}</span>}
+                <span className="brand-story__code-o">{line.o}</span>
+                {line.end && <span className={line.endW ? 'brand-story__code-w' : 'brand-story__code-o'}>{line.end}</span>}
+              </p>
+            ))}
+          </article>
+        ))}
       </div>
 
       {/* >>> */}
