@@ -81,8 +81,8 @@ function MapLightbox({ src, label, onClose }: { src: string; label: string; onCl
             <img className="lightbox__img" src={src} alt={label} draggable={false} />
           </TransformComponent>
         </TransformWrapper>
-        <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">×</button>
       </div>
+      <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">×</button>
       <p className="lightbox__hint">双指缩放 · 双击放大</p>
     </div>
   );

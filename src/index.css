@@ -490,20 +490,20 @@ svg {
 .splash-screen__copy p:nth-child(1) {
   font-size: calc(24 * var(--design-unit));
   font-weight: 400;
-  letter-spacing: calc(6 * var(--design-unit));
+  letter-spacing: calc(2 * var(--design-unit));
 }
 
 .splash-screen__copy p:nth-child(2) {
   font-size: calc(16 * var(--design-unit));
   font-weight: 400;
-  margin-top: calc(2 * var(--design-unit));
+  margin-top: calc(1 * var(--design-unit));
 }
 
 .splash-screen__copy p:nth-child(3) {
-  margin-top: calc(4 * var(--design-unit));
+  margin-top: calc(1 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
-  letter-spacing: calc(3 * var(--design-unit));
+  letter-spacing: calc(1 * var(--design-unit));
 }
 
 .splash-screen__logo {
@@ -544,11 +544,13 @@ svg {
 }
 
 .home-screen__live-btn {
-  position: absolute;
-  z-index: 2;
-  left: calc(37 * var(--design-unit));
-  right: calc(37 * var(--design-unit));
-  bottom: calc(30 * var(--design-unit));
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--nav-height) + 20 * var(--design-unit));
+  width: calc(328 * var(--design-unit));
+  max-width: calc(100% - 74 * var(--design-unit));
   display: flex;
   align-items: center;
   justify-content: center;

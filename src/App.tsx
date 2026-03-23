@@ -127,8 +127,12 @@ function App() {
     }
 
     if (item.id === "home" || item.id === "agenda" || item.id === "story" || item.id === "guide" || item.id === "contact") {
+      const shell = document.querySelector(".app-shell");
+      if (shell) shell.scrollTop = 0;
       setPage(item.id);
-      document.querySelector(".app-shell")?.scrollTo(0, 0);
+      requestAnimationFrame(() => {
+        if (shell) shell.scrollTop = 0;
+      });
     }
   };
 
