@@ -1043,7 +1043,7 @@ svg {
 
 .bs__title--bg     { top: calc(216 * var(--design-unit)); }
 .bs__title--spirit { top: calc(561 * var(--design-unit)); }
-.bs__title--ip     { top: calc(1043 * var(--design-unit)); }
+.bs__title--ip     { top: calc(1043 * var(--design-unit)); left: calc(33 * var(--design-unit)); }
 .bs__title--yearbook { top: calc(2828 * var(--design-unit)); }
 
 /* ---- 品牌背景 code block ---- */
@@ -1063,16 +1063,19 @@ svg {
   letter-spacing: -0.3px;
   white-space: nowrap;
   color: #ffffff;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
+/* Figma left values = center point of text (due to -translate-x-1/2) */
 .bs__code-line--brace-open  { left: calc(41.5 * var(--design-unit)); top: 0; }
-.bs__code-line--name        { left: calc(62 * var(--design-unit)); top: calc(27 * var(--design-unit)); }
+.bs__code-line--name        { left: calc(157.5 * var(--design-unit)); top: calc(27 * var(--design-unit)); }
 .bs__code-line--tag1        { left: calc(77 * var(--design-unit)); top: calc(50 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--slogan-key  { left: calc(62 * var(--design-unit)); top: calc(113 * var(--design-unit)); }
-.bs__code-line--slogan-val  { left: calc(62 * var(--design-unit)); top: calc(138 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--core-key    { left: calc(240 * var(--design-unit)); top: calc(193 * var(--design-unit)); }
-.bs__code-line--core-val    { left: calc(272 * var(--design-unit)); top: calc(217 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--brace-close { right: calc(18.5 * var(--design-unit)); top: calc(243 * var(--design-unit)); }
+.bs__code-line--slogan-key  { left: calc(108.5 * var(--design-unit)); top: calc(113 * var(--design-unit)); }
+.bs__code-line--slogan-val  { left: calc(122 * var(--design-unit)); top: calc(138 * var(--design-unit)); color: #ff7600; }
+.bs__code-line--core-key    { left: calc(296 * var(--design-unit)); top: calc(193 * var(--design-unit)); }
+.bs__code-line--core-val    { left: calc(328 * var(--design-unit)); top: calc(217 * var(--design-unit)); color: #ff7600; }
+.bs__code-line--brace-close { left: calc(383.5 * var(--design-unit)); top: calc(243 * var(--design-unit)); }
 
 /* ---- 品牌精神 seals ---- */
 .bs__seals {
@@ -1107,18 +1110,20 @@ svg {
   top: calc(37 * var(--design-unit));
   transform: translateX(-50%);
   margin: 0;
+  width: calc(144 * var(--design-unit));
+  height: calc(29 * var(--design-unit));
   font-size: calc(14 * var(--design-unit));
   font-weight: 700;
   color: #f67206;
   letter-spacing: -0.3px;
   text-align: center;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .bs__seal-power {
   position: absolute;
   left: 50%;
-  top: calc(133 * var(--design-unit));
+  top: calc(135 * var(--design-unit));
   transform: translateX(-50%);
   margin: 0;
   font-size: calc(18 * var(--design-unit));
@@ -1132,10 +1137,10 @@ svg {
 /* ---- Mascot photo 1 ---- */
 .bs__mascot1 {
   position: absolute;
-  top: calc(1102 * var(--design-unit));
+  top: calc(1085 * var(--design-unit));
   left: calc(35 * var(--design-unit));
   width: calc(334 * var(--design-unit));
-  height: calc(462 * var(--design-unit));
+  height: calc(446 * var(--design-unit));
   border-radius: calc(12 * var(--design-unit));
   overflow: hidden;
   z-index: 1;
@@ -1244,16 +1249,18 @@ svg {
   line-height: normal;
 }
 
-.bs__trait-line,
-.bs__trait-line2 {
-  margin: calc(8 * var(--design-unit)) 0 0;
+.bs__trait-line {
+  margin: calc(16 * var(--design-unit)) 0 0;
   font-size: calc(18 * var(--design-unit));
   line-height: normal;
   white-space: pre-wrap;
 }
 
 .bs__trait-line2 {
-  margin-top: 0;
+  margin: calc(4 * var(--design-unit)) 0 0;
+  font-size: calc(18 * var(--design-unit));
+  line-height: normal;
+  white-space: pre-wrap;
 }
 
 /* >>> prompt */
