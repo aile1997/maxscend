@@ -524,7 +524,7 @@ svg {
 
 .home-screen__copy-image {
   left: calc(33 * var(--design-unit));
-  top: calc(242 * var(--design-unit));
+  top: calc(200 * var(--design-unit));
   width: calc(337.016 * var(--design-unit));
   height: calc(293 * var(--design-unit));
 }
@@ -764,6 +764,7 @@ svg {
 }
 
 .guide-card__btn {
+  flex: 1;
   height: calc(24 * var(--design-unit));
   padding: 0 calc(12 * var(--design-unit));
   border-radius: calc(12 * var(--design-unit));
@@ -1086,7 +1087,7 @@ svg {
 /* ---- Full-page text layer SVG ---- */
 .brand-story__text-layer {
   position: absolute;
-  top: -30px;
+  top: calc(-72 * var(--design-unit));
   left: 0;
   width: 100%;
   z-index: 1;
@@ -1096,7 +1097,7 @@ svg {
 /* ---- IP header (title + simjo logo) ---- */
 .brand-story__ip-header {
   position: absolute;
-  top: calc(1032 * var(--design-unit));
+  top: calc(990 * var(--design-unit));
   left: 0;
   z-index: 2;
   animation: bs-slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
@@ -1119,7 +1120,7 @@ svg {
 /* ---- IP illustration (absolute, overlaps with text layer) ---- */
 .brand-story__ip-illustration {
   position: absolute;
-  top: calc(800 * var(--design-unit));
+  top: calc(758 * var(--design-unit));
   left: 0;
   width: 100%;
   height: auto;
@@ -1133,7 +1134,7 @@ svg {
 /* ---- Mascot 2 + bottom vector ---- */
 .brand-story__mascot2-section {
   position: absolute;
-  top: calc(2017 * var(--design-unit));
+  top: calc(1975 * var(--design-unit));
   left: 0;
   right: 0;
   z-index: 1;
@@ -1238,7 +1239,7 @@ svg {
 /* ---- Yearbook carousel (same pattern as guide-carousel) ---- */
 .brand-story__yearbook-carousel {
   position: absolute;
-  top: calc(2863 * var(--design-unit));
+  top: calc(2821 * var(--design-unit));
   left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 1;
