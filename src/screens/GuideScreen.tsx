@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { copy, guideVenues } from "../content";
-import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
 import type { GuideVenue } from "../types";
 
@@ -103,8 +102,6 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
 
   return (
     <section className="screen guide-screen">
-      <EventBackdrop />
-
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
       <h1 className="screen__section-title guide-screen__title">{copy.guideTitle}</h1>

@@ -7,6 +7,7 @@ import { ContactScreen } from "./screens/ContactScreen";
 import { GuideScreen } from "./screens/GuideScreen";
 import { copy, navItems } from "./content";
 import { designAssets, navIconAssets } from "./designAssets";
+import { EventBackdrop } from "./components/EventBackdrop";
 import { HomeScreen } from "./screens/HomeScreen";
 import type { NavItemDefinition, PageId } from "./types";
 
@@ -173,6 +174,7 @@ function App() {
   return (
     <div className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
       <div className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
+        {!isBooting && <EventBackdrop />}
         {!isBooting && (
           <>
             {page === "home" && <HomeScreen />}

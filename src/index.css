@@ -79,7 +79,7 @@ svg {
   min-height: max(100dvh, calc(var(--screen-height) * var(--design-unit) + var(--nav-height)));
   padding-bottom: var(--nav-height);
   overflow: hidden;
-  background: #000000;
+  background: #21201e;
 }
 
 .device-shell--booting {
@@ -90,7 +90,7 @@ svg {
   position: relative;
   min-height: max(calc(var(--screen-height) * var(--design-unit)), calc(100dvh - var(--nav-height)));
   color: #ffffff;
-  animation: screen-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: screen-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes screen-enter {
@@ -98,7 +98,7 @@ svg {
     filter: blur(6px);
   }
   to {
-    filter: blur(0);
+    filter: none;
   }
 }
 
@@ -333,6 +333,7 @@ svg {
 
 .bottom-nav__item.is-active {
   color: var(--nav-active);
+  --fill-0: var(--nav-active);
 }
 
 .bottom-nav__icon {
@@ -524,7 +525,7 @@ svg {
 
 .home-screen__copy-image {
   left: calc(33 * var(--design-unit));
-  top: calc(200 * var(--design-unit));
+  top: calc(190 * var(--design-unit));
   width: calc(337.016 * var(--design-unit));
   height: calc(293 * var(--design-unit));
 }
@@ -926,13 +927,13 @@ svg {
 }
 
 .contact-screen__feedback-title {
-  top: calc(383 * var(--design-unit));
+  top: calc(338 * var(--design-unit));
 }
 
 .contact-feedback {
   position: absolute;
   left: calc(37 * var(--design-unit));
-  top: calc(422 * var(--design-unit));
+  top: calc(380 * var(--design-unit));
   z-index: 1;
   width: calc(327 * var(--design-unit));
   height: calc(263 * var(--design-unit));
@@ -1124,7 +1125,7 @@ svg {
 /* ---- Full-page text layer SVG ---- */
 .brand-story__text-layer {
   position: absolute;
-  top: calc(-72 * var(--design-unit));
+  top: calc(-76 * var(--design-unit));
   left: 0;
   width: 100%;
   z-index: 1;

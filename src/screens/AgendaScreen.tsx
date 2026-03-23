@@ -1,4 +1,3 @@
-import { EventBackdrop } from "../components/EventBackdrop";
 import { copy } from "../content";
 import { designAssets } from "../designAssets";
 
@@ -194,7 +193,6 @@ function SecondaryCard028() {
 export function AgendaScreen() {
   return (
     <section className="screen agenda-screen-v2">
-      <EventBackdrop />
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
       <h1 className="screen__section-title agenda-screen-v2__main-title">{copy.mainVenue}</h1>
       <PrimaryCard />

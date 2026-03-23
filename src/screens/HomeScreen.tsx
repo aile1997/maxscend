@@ -1,11 +1,9 @@
 import { copy } from "../content";
-import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
 
 export function HomeScreen() {
   return (
     <section className="screen home-screen">
-      <EventBackdrop />
 
       <img
         className="screen__header-logo"

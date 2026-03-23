@@ -1,5 +1,4 @@
 import { contacts, copy } from "../content";
-import { EventBackdrop } from "../components/EventBackdrop";
 import { designAssets } from "../designAssets";
 
 interface ContactScreenProps {
@@ -9,8 +8,6 @@ interface ContactScreenProps {
 export function ContactScreen({ onSubmitFeedback }: ContactScreenProps) {
   return (
     <section className="screen contact-screen">
-      <EventBackdrop />
-
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
       <h1 className="screen__section-title contact-screen__title">{copy.emergencyContacts}</h1>
