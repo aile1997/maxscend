@@ -500,7 +500,7 @@ svg {
 }
 
 .splash-screen__copy p:nth-child(3) {
-  margin-top: calc(6 * var(--design-unit));
+  margin-top: calc(1 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
   letter-spacing: calc(1 * var(--design-unit));
@@ -544,11 +544,13 @@ svg {
 }
 
 .home-screen__live-btn {
-  position: absolute;
-  z-index: 2;
-  left: calc(37 * var(--design-unit));
-  right: calc(37 * var(--design-unit));
-  bottom: calc(40 * var(--design-unit));
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--nav-height) + 20 * var(--design-unit));
+  width: calc(328 * var(--design-unit));
+  max-width: calc(100% - 74 * var(--design-unit));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,13 +612,12 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
   top: calc(1748 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  padding-left: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -742,13 +743,12 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  padding-left: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -893,8 +893,8 @@ svg {
 }
 
 .lightbox__close {
-  position: absolute;
-  bottom: calc(60 * var(--design-unit));
+  position: fixed;
+  bottom: calc(100 * var(--design-unit));
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -917,13 +917,12 @@ svg {
 
 .contact-screen__carousel {
   position: absolute;
-  left: 0;
+  left: calc(37 * var(--design-unit));
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(12 * var(--design-unit));
-  padding-left: calc(37 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -1265,12 +1264,11 @@ svg {
 .brand-story__traits-carousel {
   position: absolute;
   top: calc(2453 * var(--design-unit));
-  left: 0;
+  left: calc(31 * var(--design-unit));
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(24 * var(--design-unit));
-  padding-left: calc(31 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -1345,12 +1343,11 @@ svg {
 .brand-story__yearbook-carousel {
   position: absolute;
   top: calc(2821 * var(--design-unit));
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
-  padding-left: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;

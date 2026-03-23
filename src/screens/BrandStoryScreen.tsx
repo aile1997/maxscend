@@ -13,7 +13,7 @@ export function BrandStoryScreen() {
     <section className="screen brand-story-screen">
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
-      <img className="brand-story__text-layer" src={`${B}text-layer.svg`} alt="品牌故事内容" fetchPriority="high" />
+      <img className="brand-story__text-layer" src={`${B}text-layer.svg`} alt="品牌故事内容" />
 
       <div className="brand-story__ip-header">
         <h2 className="brand-story__ip-title">IP介绍</h2>
