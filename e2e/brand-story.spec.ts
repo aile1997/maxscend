@@ -57,7 +57,7 @@ test("Brand Story - full page & sections", async ({ page }) => {
   await page.screenshot({ path: "e2e/screenshots/bs-7-yearbook-scrolled.png" });
 
   // Verify element dimensions match Figma specs
-  const sealImg = page.locator("img[src*='char-qin']");
+  const sealImg = page.locator("img[src*='seal-qin']");
   const sealBox = await sealImg.boundingBox();
   if (sealBox) {
     // Seal should be ~138x141 at 402px viewport (design-unit=1)

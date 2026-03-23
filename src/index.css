@@ -992,8 +992,8 @@ svg {
   object-fit: cover;
 }
 
-/* Decorative vectors */
-.bs-v { position: absolute; z-index: 0; pointer-events: none; }
+/* Decorative vectors — must set --fill-0 to override SVG default */
+.bs-v { position: absolute; z-index: 0; pointer-events: none; --fill-0: #ff7600; }
 .bs-v1 {
   top: calc(766 * var(--design-unit));
   left: calc(-323 * var(--design-unit));
