@@ -2,11 +2,6 @@ import { designAssets } from "../designAssets";
 
 const B = `${import.meta.env.BASE_URL}brand-assets/`;
 
-const traitCards = [
-  { svg: `${B}爱好.svg` },
-  { svg: `${B}造型.svg` },
-];
-
 const yearbooks = [
   { cover: `${B}截屏2026-03-10 19.10.39 1.svg`, title: "时间的刻度", sub: "卓胜微 20 周年" },
   { cover: `${B}9546ac3bd6cfdea7ec5ae6863b039e7f 1.svg`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
@@ -19,14 +14,16 @@ export function BrandStoryScreen() {
       {/* Logo */}
       <img className="screen__header-logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
-      {/* 全页文字层 SVG — 像素级还原 Figma 文字布局 */}
-      <img
-        className="brand-story__text-layer"
-        src={`${B}Group 337.svg`}
-        alt="品牌故事内容"
-      />
+      {/* 全页文字层 SVG */}
+      <img className="brand-story__text-layer" src={`${B}Group 337.svg`} alt="品牌故事内容" />
 
-      {/* IP 插图 (绝对定位，透明区域叠加) */}
+      {/* IP介绍 + simjo logo */}
+      <div className="brand-story__ip-header">
+        <h2 className="brand-story__ip-title">IP介绍</h2>
+        <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
+      </div>
+
+      {/* IP 插图 (绝对定位) */}
       <img className="brand-story__ip-illustration" src={`${B}Group 335.svg`} alt="小卓吉祥物" />
 
       {/* 吉祥物2 + 底部向量 */}
@@ -37,11 +34,18 @@ export function BrandStoryScreen() {
 
       {/* 性格/能力/爱好/造型 水平滑动栏 */}
       <div className="brand-story__traits-carousel">
-        {traitCards.map((card, ci) => (
-          <article key={ci} className="brand-story__trait-card">
-            <img className="brand-story__trait-svg" src={card.svg} alt="" />
-          </article>
-        ))}
+        {/* 第一张: 名片SVG */}
+        <article className="brand-story__trait-card">
+          <img className="brand-story__trait-svg" src={`${B}名字_小卓(simjo) MBTI人格_ISTP 星座_双子座.svg`} alt="" />
+        </article>
+        {/* 第二张: 爱好 */}
+        <article className="brand-story__trait-card">
+          <img className="brand-story__trait-svg" src={`${B}爱好.svg`} alt="" />
+        </article>
+        {/* 第三张: 造型 */}
+        <article className="brand-story__trait-card">
+          <img className="brand-story__trait-svg" src={`${B}造型.svg`} alt="" />
+        </article>
       </div>
 
       {/* 年刊滑动栏 */}
