@@ -9,46 +9,58 @@ const seals = [
   { img: `${B}figma-seal-he.png`, motto: "和 融 共 促    协 同 共 生", power: "协          同          力" },
 ];
 
-const traits = [
+const traitCards = [
   {
-    title: "性格.CHARACTER",
-    lines: [
-      { w: '> **print( ', o: '沉稳/乐观' },
-      { w: '', o: '爱思考/注重逻辑   ', end: ' }', endW: true },
+    sections: [
+      {
+        title: "性格.CHARACTER",
+        lines: [
+          { w: '> **print( ', o: '沉稳/乐观' },
+          { w: '', o: '爱思考/注重逻辑   ', end: ' }', endW: true },
+        ],
+      },
+      {
+        title: "能力.CAPACITY",
+        lines: [
+          { w: '> **print( ', o: '频谱感知,波态切换' },
+          { w: '', o: '信号增益,频率调和 ', end: '}', endW: true },
+        ],
+      },
     ],
   },
   {
-    title: "能力.CAPACITY",
-    lines: [
-      { w: '> **print( ', o: '频谱感知,波态切换' },
-      { w: '', o: '信号增益,频率调和 ', end: '}', endW: true },
+    sections: [
+      {
+        title: "爱好.CHARACTER",
+        lines: [
+          { w: '> **print( ', o: '监听来自深空的无线电静默音乐会     ' },
+          { w: '', o: '在纳米尺度的芯片迷宫中"散步"' },
+          { w: '', o: '将棘手的通信难题\n           当作最高级的解密游戏来享受' },
+          { w: '', o: '观察并偶尔引导一个凌乱的无线网络，' },
+          { w: '', o: '变得井然有序、流畅自如        ', end: '}', endW: true },
+        ],
+      },
     ],
   },
   {
-    title: "爱好.CHARACTER",
-    lines: [
-      { w: '> **print( ', o: '监听来自深空的无线电静默音乐会     ' },
-      { w: '', o: '在纳米尺度的芯片迷宫中"散步"' },
-      { w: '', o: '将棘手的通信难题\n           当作最高级的解密游戏来享受' },
-      { w: '', o: '观察并偶尔引导一个凌乱的无线网络，' },
-      { w: '', o: '变得井然有序、流畅自如        ', end: '}', endW: true },
-    ],
-  },
-  {
-    title: "造型.CHARACTER",
-    lines: [
-      { w: '> **print( ', o: '可变形的护目镜，' },
-      { w: '', o: '            形态多变喜欢用来当作代码显示屏   ' },
-      { w: '', o: '头发将作为该"聚合"形态的外显载体，   ' },
-      { w: '', o: '并随着角色状态而改变       ', end: '}', endW: true },
+    sections: [
+      {
+        title: "造型.CHARACTER",
+        lines: [
+          { w: '> **print( ', o: '可变形的护目镜，' },
+          { w: '', o: '            形态多变喜欢用来当作代码显示屏   ' },
+          { w: '', o: '头发将作为该"聚合"形态的外显载体，   ' },
+          { w: '', o: '并随着角色状态而改变       ', end: '}', endW: true },
+        ],
+      },
     ],
   },
 ];
 
 const yearbooks = [
-  { cover: `${B}figma-yearbook.png`, title: "时间的刻度", sub: "卓胜微 20 周年" },
-  { cover: `${B}yearbook-2024.png`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
-  { cover: `${B}yearbook-2023.png`, title: "在这里遇见有为的年轻", sub: "2023—芯途探索" },
+  { cover: `${B}截屏2026-03-10 19.10.39 1.svg`, title: "时间的刻度", sub: "卓胜微 20 周年" },
+  { cover: `${B}9546ac3bd6cfdea7ec5ae6863b039e7f 1.svg`, title: "在这里度过有为的年展", sub: "2024—担当、突围、向善" },
+  { cover: `${B}Union.svg`, title: "在这里遇见有为的年轻", sub: "2023—芯途探索" },
   { cover: `${B}yearbook-2022.png`, title: "在这里遇见有为的年轻", sub: "2022—星河漫漫" },
 ];
 
@@ -98,6 +110,7 @@ export function BrandStoryScreen() {
         <img className="brand-story__ip-bg" src={`${B}figma-ip-bg.png`} alt="" aria-hidden="true" />
         <div className="brand-story__ip-content">
           <h2 className="brand-story__ip-title">IP介绍</h2>
+          <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
           <div className="brand-story__mascot1">
             <img className="brand-story__mascot1-clip" src={`${B}figma-mascot1-overlay.png`} alt="" aria-hidden="true" />
             <img className="brand-story__mascot1-photo" src={`${B}figma-mascot1.png`} alt="小卓" />
@@ -110,7 +123,7 @@ export function BrandStoryScreen() {
 
       {/* ---- 名片 + SLOGAN ---- */}
       <div className="brand-story__namecard">
-        <span className="brand-story__namecard-info">{"名字:小卓\n(simjo)\nMBTI人格:ISTP\n星座:双子座"}</span>
+        <span className="brand-story__namecard-info">{"名字:小卓(simjo)\nMBTI人格:ISTP\n星座:双子座"}</span>
         <div className="brand-story__namecard-slogan">
           <span className="brand-story__namecard-slogan-label">SLOGAN</span>
           <span className="brand-story__namecard-slogan-text">简于心 跃于行</span>
@@ -125,15 +138,19 @@ export function BrandStoryScreen() {
 
       {/* ---- 性格/能力/爱好/造型 水平滑动栏 ---- */}
       <div className="brand-story__traits-carousel">
-        {traits.map((t, ti) => (
-          <article key={ti} className="brand-story__trait-card">
-            <h3 className="brand-story__trait-title">{t.title}</h3>
-            {t.lines.map((line, li) => (
-              <p key={li} className={`brand-story__trait-line${!line.w ? ' brand-story__trait-line--indent' : ''}`}>
-                {line.w && <span className="brand-story__code-w">{line.w}</span>}
-                <span className="brand-story__code-o">{line.o}</span>
-                {line.end && <span className={line.endW ? 'brand-story__code-w' : 'brand-story__code-o'}>{line.end}</span>}
-              </p>
+        {traitCards.map((card, ci) => (
+          <article key={ci} className="brand-story__trait-card">
+            {card.sections.map((sec, si) => (
+              <div key={si} className="brand-story__trait-section">
+                <h3 className="brand-story__trait-title">{sec.title}</h3>
+                {sec.lines.map((line, li) => (
+                  <p key={li} className={`brand-story__trait-line${!line.w ? ' brand-story__trait-line--indent' : ''}`}>
+                    {line.w && <span className="brand-story__code-w">{line.w}</span>}
+                    <span className="brand-story__code-o">{line.o}</span>
+                    {line.end && <span className={line.endW ? 'brand-story__code-w' : 'brand-story__code-o'}>{line.end}</span>}
+                  </p>
+                ))}
+              </div>
             ))}
           </article>
         ))}
@@ -148,7 +165,8 @@ export function BrandStoryScreen() {
       <div className="brand-story__yearbook-carousel">
         {yearbooks.map((book, i) => (
           <div key={i} className="brand-story__yearbook-card">
-            <div className="brand-story__yearbook-cover" style={{ backgroundImage: `url(${book.cover})` }}>
+            <div className="brand-story__yearbook-cover">
+              <img className="brand-story__yearbook-img" src={book.cover} alt={book.title} />
               <button className="brand-story__yearbook-btn" type="button">点击阅读</button>
             </div>
             <p className="brand-story__yearbook-title">{book.title}</p>

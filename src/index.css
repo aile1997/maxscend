@@ -1097,10 +1097,17 @@ svg {
 }
 
 .brand-story__ip-title {
-  margin: 0 0 calc(28 * var(--design-unit)) calc(33 * var(--design-unit));
+  margin: 0 0 calc(8 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
   color: #000;
+}
+
+.brand-story__simjo-logo {
+  width: calc(145 * var(--design-unit));
+  height: calc(65 * var(--design-unit));
+  margin-left: calc(33 * var(--design-unit));
+  margin-bottom: calc(12 * var(--design-unit));
 }
 
 .brand-story__mascot1 {
@@ -1229,6 +1236,10 @@ svg {
   color: #fff;
 }
 
+.brand-story__trait-section {
+  margin-bottom: calc(23 * var(--design-unit));
+}
+
 .brand-story__trait-title {
   margin: 0 0 calc(15 * var(--design-unit));
   font-size: calc(28 * var(--design-unit));
@@ -1287,18 +1298,27 @@ svg {
 }
 
 .brand-story__yearbook-cover {
+  position: relative;
   width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 calc(108 * var(--design-unit)) calc(29 * var(--design-unit));
+  overflow: hidden;
+}
+
+.brand-story__yearbook-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand-story__yearbook-btn {
+  position: absolute;
+  left: 50%;
+  bottom: calc(29 * var(--design-unit));
+  transform: translateX(-50%);
+  z-index: 1;
   padding: calc(8 * var(--design-unit)) calc(21 * var(--design-unit));
   border: 1px solid #ffcca1;
   border-radius: calc(43 * var(--design-unit));
