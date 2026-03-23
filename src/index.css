@@ -975,327 +975,156 @@ svg {
   overflow: hidden;
 }
 
-/* Shared helpers */
-.bs__o { color: #ff7600; }
-.bs__w { color: #ffffff; }
+/* Color helpers */
+.bs-o, .bs-orange { color: #ff7600; }
+.bs-w { color: #ffffff; }
 
-/* Header background strip */
-.bs__header-bg {
+/* Header bg strip */
+.bs-hdr {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0; left: 0; width: 100%;
   height: calc(100 * var(--design-unit));
-  overflow: hidden;
-  z-index: 0;
+  overflow: hidden; z-index: 0;
 }
-
-.bs__header-bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(874 * var(--design-unit));
+.bs-hdr img {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: calc(874 * var(--design-unit));
   object-fit: cover;
 }
 
 /* Decorative vectors */
-.bs__deco {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bs__deco--1 {
-  top: calc(753 * var(--design-unit));
-  left: calc(414 * var(--design-unit));
+.bs-v { position: absolute; z-index: 0; pointer-events: none; }
+.bs-v1 {
+  top: calc(766 * var(--design-unit));
+  left: calc(-323 * var(--design-unit));
   width: calc(803 * var(--design-unit));
   height: calc(627 * var(--design-unit));
   transform: rotate(156.66deg) scaleY(-1);
 }
-
-.bs__deco--2 {
-  top: calc(1041 * var(--design-unit));
+.bs-v2 {
+  top: calc(1038 * var(--design-unit));
   left: calc(9 * var(--design-unit));
   width: calc(551 * var(--design-unit));
-  height: calc(462 * var(--design-unit));
+  height: calc(436 * var(--design-unit));
 }
-
-.bs__deco--3 {
-  top: calc(1990 * var(--design-unit));
+.bs-v3 {
+  top: calc(1934 * var(--design-unit));
   left: calc(-85 * var(--design-unit));
   width: calc(487 * var(--design-unit));
-  height: calc(408 * var(--design-unit));
+  height: calc(385 * var(--design-unit));
 }
 
-/* ---- Section titles ---- */
-.bs__title {
-  position: absolute;
-  left: calc(37 * var(--design-unit));
-  z-index: 1;
-  margin: 0;
+/* ---- Shared text classes (Figma: Source Han Sans CN Bold) ---- */
+.bs-t { /* section title: 20px bold orange */
+  z-index: 1; margin: 0;
   font-size: calc(20 * var(--design-unit));
-  font-weight: 700;
-  color: #ff7600;
+  font-weight: 700; color: #ff7600;
+  line-height: normal; white-space: nowrap;
+}
+.bs-c { /* code text: 18px bold white, centered */
+  z-index: 1; margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700; color: #ffffff;
+  letter-spacing: -0.3px; white-space: nowrap;
   line-height: normal;
-  white-space: nowrap;
 }
-
-.bs__title--bg     { top: calc(216 * var(--design-unit)); }
-.bs__title--spirit { top: calc(561 * var(--design-unit)); }
-.bs__title--ip     { top: calc(1043 * var(--design-unit)); left: calc(33 * var(--design-unit)); }
-.bs__title--yearbook { top: calc(2828 * var(--design-unit)); }
-
-/* ---- 品牌背景 code block ---- */
-.bs__code {
-  position: absolute;
-  top: calc(255 * var(--design-unit));
-  left: 0;
-  width: 100%;
-  z-index: 1;
+.bs-sm { /* seal motto: 14px bold #f67206, centered */
+  z-index: 2; margin: 0;
+  font-size: calc(14 * var(--design-unit));
+  font-weight: 700; color: #f67206;
+  letter-spacing: -0.3px;
+  text-align: center; white-space: pre;
+  line-height: normal;
 }
-
-.bs__code-line {
-  position: absolute;
-  margin: 0;
+.bs-pw { /* seal power: 18px bold #f67206, centered */
+  z-index: 2; margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700; color: #f67206;
+  letter-spacing: -0.3px;
+  text-align: center; white-space: pre;
+  line-height: normal;
+}
+.bs-28 { /* 28px bold white */
+  z-index: 1; margin: 0;
+  font-size: calc(28 * var(--design-unit));
+  font-weight: 700; color: #ffffff;
+  letter-spacing: -0.3px; line-height: normal;
+}
+.bs-18 { /* 18px bold, mixed color */
+  z-index: 1; margin: 0;
   font-size: calc(18 * var(--design-unit));
   font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: nowrap;
-  color: #ffffff;
-  text-align: center;
-  transform: translateX(-50%);
-}
-
-/* Figma left values = center point of text (due to -translate-x-1/2) */
-.bs__code-line--brace-open  { left: calc(41.5 * var(--design-unit)); top: 0; }
-.bs__code-line--name        { left: calc(157.5 * var(--design-unit)); top: calc(27 * var(--design-unit)); }
-.bs__code-line--tag1        { left: calc(77 * var(--design-unit)); top: calc(50 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--slogan-key  { left: calc(108.5 * var(--design-unit)); top: calc(113 * var(--design-unit)); }
-.bs__code-line--slogan-val  { left: calc(122 * var(--design-unit)); top: calc(138 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--core-key    { left: calc(296 * var(--design-unit)); top: calc(193 * var(--design-unit)); }
-.bs__code-line--core-val    { left: calc(328 * var(--design-unit)); top: calc(217 * var(--design-unit)); color: #ff7600; }
-.bs__code-line--brace-close { left: calc(383.5 * var(--design-unit)); top: calc(243 * var(--design-unit)); }
-
-/* ---- 品牌精神 seals ---- */
-.bs__seals {
-  position: absolute;
-  top: calc(601 * var(--design-unit));
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.bs__seal {
-  position: absolute;
-  width: calc(138 * var(--design-unit));
-  height: calc(141 * var(--design-unit));
-}
-
-.bs__seal--0 { left: calc(35 * var(--design-unit)); top: calc(2 * var(--design-unit)); }
-.bs__seal--1 { left: calc(230 * var(--design-unit)); top: 0; }
-.bs__seal--2 { left: calc(39 * var(--design-unit)); top: calc(202 * var(--design-unit)); }
-.bs__seal--3 { left: calc(230 * var(--design-unit)); top: calc(204 * var(--design-unit)); }
-
-.bs__seal-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.bs__seal-motto {
-  position: absolute;
-  left: 50%;
-  top: calc(37 * var(--design-unit));
-  transform: translateX(-50%);
-  margin: 0;
-  width: calc(144 * var(--design-unit));
-  height: calc(29 * var(--design-unit));
-  font-size: calc(14 * var(--design-unit));
-  font-weight: 700;
-  color: #f67206;
-  letter-spacing: -0.3px;
-  text-align: center;
+  letter-spacing: -0.3px; line-height: normal;
   white-space: pre-wrap;
 }
 
-.bs__seal-power {
-  position: absolute;
-  left: 50%;
-  top: calc(135 * var(--design-unit));
-  transform: translateX(-50%);
-  margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  color: #f67206;
-  letter-spacing: -0.3px;
-  text-align: center;
-  white-space: pre;
-}
-
-/* ---- Mascot photo 1 ---- */
-.bs__mascot1 {
-  position: absolute;
+/* ---- Mascot photo 1: Figma inset 31.79%/8.31%/55.12%/8.72% → top=1085,left=35,w=334,h=446 ---- */
+.bs-mascot1 {
+  position: absolute; z-index: 1;
   top: calc(1085 * var(--design-unit));
   left: calc(35 * var(--design-unit));
   width: calc(334 * var(--design-unit));
   height: calc(446 * var(--design-unit));
   border-radius: calc(12 * var(--design-unit));
   overflow: hidden;
-  z-index: 1;
 }
+.bs-mascot1 img { width: 100%; height: 100%; object-fit: cover; }
 
-.bs__mascot1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Print statements ---- */
-.bs__print {
-  position: absolute;
+/* ---- Print statements: Figma left=23, top=1666, w=355 ---- */
+.bs-print {
+  position: absolute; z-index: 1;
   top: calc(1666 * var(--design-unit));
   left: calc(23 * var(--design-unit));
   width: calc(355 * var(--design-unit));
-  z-index: 1;
   font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
+  font-weight: 700; color: #ff7600;
   letter-spacing: -0.3px;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.bs__print p {
-  margin: 0;
+  white-space: pre-wrap; word-break: break-all;
   line-height: normal;
 }
+.bs-print p { margin: 0; }
 
-/* ---- Character info ---- */
-.bs__char-info {
-  position: absolute;
-  top: calc(1835 * var(--design-unit));
+/* ---- Character info: Figma top=1834, left=31, w=146 ---- */
+.bs-info {
+  position: absolute; z-index: 1;
+  top: calc(1834 * var(--design-unit));
   left: calc(31 * var(--design-unit));
-  z-index: 1;
+  width: calc(146 * var(--design-unit));
   font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: normal;
+  font-weight: 700; color: #ff7600;
+  letter-spacing: -0.3px; line-height: normal;
 }
+.bs-info p { margin: 0; }
 
-.bs__char-info p {
-  margin: 0;
-}
-
-/* ---- SLOGAN ---- */
-.bs__slogan {
-  position: absolute;
+/* ---- SLOGAN: Figma top=1827, left=254, w=114 ---- */
+.bs-slogan {
+  position: absolute; z-index: 1;
   top: calc(1827 * var(--design-unit));
   left: calc(254 * var(--design-unit));
-  z-index: 1;
-  color: #ffffff;
+  width: calc(114 * var(--design-unit));
+  color: #ffffff; font-weight: 700;
+  letter-spacing: -0.3px; line-height: normal;
 }
+.bs-slogan-l { margin: 0; font-size: calc(28 * var(--design-unit)); }
+.bs-slogan-t { margin: 0; font-size: calc(18 * var(--design-unit)); }
 
-.bs__slogan-label {
-  margin: 0;
-  font-size: calc(28 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: normal;
-}
-
-.bs__slogan-text {
-  margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: normal;
-}
-
-/* ---- Mascot photo 2 ---- */
-.bs__mascot2 {
-  position: absolute;
+/* ---- Mascot photo 2: Figma left=9, top=2017, 384×384, overflow-clip ---- */
+.bs-mascot2 {
+  position: absolute; z-index: 1;
   top: calc(2017 * var(--design-unit));
   left: calc(9 * var(--design-unit));
   width: calc(384 * var(--design-unit));
   height: calc(384 * var(--design-unit));
-  border-radius: calc(12 * var(--design-unit));
   overflow: hidden;
-  z-index: 1;
 }
+.bs-mascot2 img { width: 100%; height: 100%; object-fit: cover; }
 
-.bs__mascot2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- 性格 / 能力 traits ---- */
-.bs__trait {
-  position: absolute;
-  left: calc(31 * var(--design-unit));
-  z-index: 1;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-}
-
-.bs__trait--char { top: calc(2383 * var(--design-unit)); }
-.bs__trait--cap  { top: calc(2507 * var(--design-unit)); }
-
-.bs__trait-title {
-  margin: 0;
-  font-size: calc(28 * var(--design-unit));
-  color: #ffffff;
-  line-height: normal;
-}
-
-.bs__trait-line {
-  margin: calc(16 * var(--design-unit)) 0 0;
-  font-size: calc(18 * var(--design-unit));
-  line-height: normal;
-  white-space: pre-wrap;
-}
-
-.bs__trait-line2 {
-  margin: calc(4 * var(--design-unit)) 0 0;
-  font-size: calc(18 * var(--design-unit));
-  line-height: normal;
-  white-space: pre-wrap;
-}
-
-/* >>> prompt */
-.bs__prompt {
-  position: absolute;
-  top: calc(2635 * var(--design-unit));
-  left: calc(350 * var(--design-unit));
-  z-index: 1;
-  margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.3px;
-}
-
-/* Closing brace */
-.bs__brace-close {
-  position: absolute;
-  top: calc(2629 * var(--design-unit));
-  right: calc(8 * var(--design-unit));
-  z-index: 1;
-  margin: 0;
-  font-size: calc(18 * var(--design-unit));
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.3px;
-}
-
-/* ---- Yearbook carousel ---- */
-.bs__yearbook-carousel {
-  position: absolute;
+/* ---- Yearbook carousel: Figma top=2883, left=38 ---- */
+.bs-yb-carousel {
+  position: absolute; z-index: 2;
   top: calc(2883 * var(--design-unit));
   left: calc(38 * var(--design-unit));
   right: 0;
-  z-index: 2;
   display: flex;
   gap: calc(14 * var(--design-unit));
   overflow-x: auto;
@@ -1304,58 +1133,46 @@ svg {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+.bs-yb-carousel::-webkit-scrollbar { display: none; }
 
-.bs__yearbook-carousel::-webkit-scrollbar { display: none; }
-
-.bs__yearbook-card {
+.bs-yb-card {
   flex: 0 0 calc(300 * var(--design-unit));
   scroll-snap-align: start;
 }
-
-.bs__yearbook-cover {
+.bs-yb-cover {
   position: relative;
   width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
   overflow: hidden;
 }
+.bs-yb-cover img { width: 100%; height: 100%; object-fit: cover; }
 
-.bs__yearbook-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bs__yearbook-btn {
+.bs-yb-btn {
   position: absolute;
-  left: 50%;
-  bottom: calc(16 * var(--design-unit));
-  transform: translateX(-50%);
+  left: calc(20% + 65.6 * var(--design-unit));
+  top: calc(249 * var(--design-unit));
   width: calc(85 * var(--design-unit));
   height: calc(26 * var(--design-unit));
   border: 1px solid #ffcca1;
   border-radius: calc(43 * var(--design-unit));
-  background: #ff7600;
-  color: #ffffff;
+  background: #ff7600; color: #ffffff;
   font-size: calc(10 * var(--design-unit));
   font-weight: 400;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.1);
   cursor: pointer;
 }
 
-.bs__yearbook-title {
+.bs-yb-title {
   margin: calc(12 * var(--design-unit)) 0 0;
   font-size: calc(16 * var(--design-unit));
-  font-weight: 700;
-  color: #ffffff;
-  line-height: normal;
+  font-weight: 700; color: #ffffff; line-height: normal;
 }
-
-.bs__yearbook-sub {
+.bs-yb-sub {
   margin: calc(2 * var(--design-unit)) 0 0;
   font-size: calc(14 * var(--design-unit));
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: normal;
+  font-weight: 400; color: rgba(255,255,255,0.6); line-height: normal;
 }
 
 @media (max-width: 430px) {

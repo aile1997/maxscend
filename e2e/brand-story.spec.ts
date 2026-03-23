@@ -40,15 +40,15 @@ test("Brand Story - full page & sections", async ({ page }) => {
 
   // Assertions - structure
   await expect(page.locator(".brand-story-screen")).toBeVisible();
-  await expect(page.locator(".bs__title--bg")).toHaveText("品牌背景");
-  await expect(page.locator(".bs__title--spirit")).toHaveText("品牌精神");
-  await expect(page.locator(".bs__title--ip")).toHaveText("IP介绍");
-  await expect(page.locator(".bs__title--yearbook")).toHaveText("年刊");
+  await expect(page.locator("text=品牌背景")).toBeVisible();
+  await expect(page.locator("text=品牌精神")).toBeVisible();
+  await expect(page.locator("text=IP介绍")).toBeVisible();
+  await expect(page.locator("text=年刊").first()).toBeVisible();
 
   // Verify yearbook carousel is scrollable
-  const carousel = page.locator(".bs__yearbook-carousel");
+  const carousel = page.locator(".bs-yb-carousel");
   await expect(carousel).toBeVisible();
-  const cards = page.locator(".bs__yearbook-card");
+  const cards = page.locator(".bs-yb-card");
   await expect(cards).toHaveCount(4);
 
   // Scroll carousel and verify second card becomes visible
@@ -57,7 +57,7 @@ test("Brand Story - full page & sections", async ({ page }) => {
   await page.screenshot({ path: "e2e/screenshots/bs-7-yearbook-scrolled.png" });
 
   // Verify element dimensions match Figma specs
-  const sealImg = page.locator(".bs__seal-img").first();
+  const sealImg = page.locator("img[src*='char-qin']");
   const sealBox = await sealImg.boundingBox();
   if (sealBox) {
     // Seal should be ~138x141 at 402px viewport (design-unit=1)
@@ -65,7 +65,7 @@ test("Brand Story - full page & sections", async ({ page }) => {
     expect(sealBox.height).toBeCloseTo(141, -1);
   }
 
-  const mascot1 = page.locator(".bs__mascot1");
+  const mascot1 = page.locator(".bs-mascot1");
   const m1Box = await mascot1.boundingBox();
   if (m1Box) {
     // Mascot 1 should be ~334x446 at 402px viewport
@@ -73,7 +73,7 @@ test("Brand Story - full page & sections", async ({ page }) => {
     expect(m1Box.height).toBeCloseTo(446, -1);
   }
 
-  const mascot2 = page.locator(".bs__mascot2");
+  const mascot2 = page.locator(".bs-mascot2");
   const m2Box = await mascot2.boundingBox();
   if (m2Box) {
     // Mascot 2 should be ~384x384
@@ -82,7 +82,7 @@ test("Brand Story - full page & sections", async ({ page }) => {
   }
 
   // Check yearbook card dimensions
-  const ybCover = page.locator(".bs__yearbook-cover").first();
+  const ybCover = page.locator(".bs-yb-cover").first();
   const ybBox = await ybCover.boundingBox();
   if (ybBox) {
     expect(ybBox.width).toBeCloseTo(300, -1);
