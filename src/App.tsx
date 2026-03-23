@@ -128,6 +128,7 @@ function App() {
 
     if (item.id === "home" || item.id === "agenda" || item.id === "story" || item.id === "guide" || item.id === "contact") {
       setPage(item.id);
+      document.querySelector(".app-shell")?.scrollTo(0, 0);
     }
   };
 

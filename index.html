@@ -2,14 +2,8 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <meta
-      name="description"
-      content="MAXSCEND 20th Anniversary event microsite"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="MAXSCEND 20th Anniversary event microsite" />
     <link rel="icon" href="data:," />
     <link rel="preload" as="image" href="./figma-assets/20%E5%91%A8%E5%B9%B4%E8%A7%86%E8%A7%89%E6%96%B9%E6%A1%88to%E5%A4%96%E9%83%A8%201.svg" />
     <link rel="preload" as="image" href="./figma-assets/splash-20-full.svg" />
@@ -45,14 +39,7 @@
         overflow: hidden;
         background: #000;
         color: #fff;
-        font-family:
-          "Source Han Sans CN",
-          "Source Han Sans SC",
-          "Noto Sans SC",
-          "PingFang SC",
-          "Hiragino Sans GB",
-          "Microsoft YaHei",
-          sans-serif;
+        font-family: "Source Han Sans CN", "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       }
 
       .boot-screen--hidden {
@@ -60,7 +47,10 @@
         filter: blur(6px);
         transform: scale(1.02);
         pointer-events: none;
-        transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
+        transition:
+          opacity 0.5s ease,
+          filter 0.5s ease,
+          transform 0.5s ease;
       }
 
       .boot-screen__bg {
@@ -74,8 +64,14 @@
       }
 
       @keyframes boot-bg-drift {
-        from { transform: scale(1.15); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
+        from {
+          transform: scale(1.15);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
 
       .boot-screen__hero,
@@ -94,8 +90,16 @@
       }
 
       @keyframes boot-hero-in {
-        from { transform: scale(0.85); opacity: 0; filter: blur(8px); }
-        to { transform: scale(1); opacity: 1; filter: blur(0); }
+        from {
+          transform: scale(0.85);
+          opacity: 0;
+          filter: blur(8px);
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+          filter: blur(0);
+        }
       }
 
       .boot-screen__copy {
@@ -110,13 +114,25 @@
         animation: boot-text-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
-      .boot-screen__copy p:nth-child(1) { animation-delay: 0.5s; }
-      .boot-screen__copy p:nth-child(2) { animation-delay: 0.65s; }
-      .boot-screen__copy p:nth-child(3) { animation-delay: 0.8s; }
+      .boot-screen__copy p:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      .boot-screen__copy p:nth-child(2) {
+        animation-delay: 0.65s;
+      }
+      .boot-screen__copy p:nth-child(3) {
+        animation-delay: 0.8s;
+      }
 
       @keyframes boot-text-in {
-        from { transform: translateY(16px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+          transform: translateY(16px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       .boot-screen__copy p:nth-child(1) {
@@ -145,8 +161,14 @@
       }
 
       @keyframes boot-logo-in {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
     </style>
     <title>MAXSCEND 20th Anniversary</title>
