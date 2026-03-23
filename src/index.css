@@ -1072,27 +1072,16 @@ svg {
   white-space: pre;
 }
 
-/* ---- IP section with orange bg ---- */
+/* ---- IP section ---- */
 .brand-story__ip {
   position: absolute;
   top: calc(975 * var(--design-unit));
   left: 0;
   right: 0;
   z-index: 1;
-}
-
-.brand-story__ip-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 0;
-}
-
-.brand-story__ip-content {
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-top: calc(68 * var(--design-unit));
 }
 
@@ -1100,7 +1089,7 @@ svg {
   margin: 0 0 calc(8 * var(--design-unit)) calc(33 * var(--design-unit));
   font-size: calc(20 * var(--design-unit));
   font-weight: 700;
-  color: #000;
+  color: #ff7600;
 }
 
 .brand-story__simjo-logo {
@@ -1110,25 +1099,9 @@ svg {
   margin-bottom: calc(12 * var(--design-unit));
 }
 
-.brand-story__mascot1 {
-  position: relative;
-  margin: 0 calc(9 * var(--design-unit)) calc(82 * var(--design-unit));
-}
-
-.brand-story__mascot1-clip {
+.brand-story__ip-illustration {
   width: 100%;
-  height: calc(462 * var(--design-unit));
-  object-fit: fill;
-}
-
-.brand-story__mascot1-photo {
-  position: absolute;
-  top: calc(61 * var(--design-unit));
-  left: calc(26 * var(--design-unit));
-  right: calc(26 * var(--design-unit));
-  height: calc(462 * var(--design-unit));
-  object-fit: fill;
-  z-index: 1;
+  height: auto;
 }
 
 /* ---- Print statements ---- */

@@ -105,17 +105,11 @@ export function BrandStoryScreen() {
         ))}
       </div>
 
-      {/* ---- IP介绍 + 吉祥物 (橙色背景) ---- */}
+      {/* ---- IP介绍 + 吉祥物 (合成SVG: 橙色背景+白色裁切+吉祥物) ---- */}
       <div className="brand-story__ip">
-        <img className="brand-story__ip-bg" src={`${B}figma-ip-bg.png`} alt="" aria-hidden="true" />
-        <div className="brand-story__ip-content">
-          <h2 className="brand-story__ip-title">IP介绍</h2>
-          <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
-          <div className="brand-story__mascot1">
-            <img className="brand-story__mascot1-clip" src={`${B}figma-mascot1-overlay.png`} alt="" aria-hidden="true" />
-            <img className="brand-story__mascot1-photo" src={`${B}figma-mascot1.png`} alt="小卓" />
-          </div>
-        </div>
+        <h2 className="brand-story__ip-title">IP介绍</h2>
+        <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
+        <img className="brand-story__ip-illustration" src={`${B}Group 335.svg`} alt="小卓吉祥物" />
       </div>
 
       {/* ---- Print 描述 (英文引号) ---- */}
