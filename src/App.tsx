@@ -57,6 +57,12 @@ const allAssetSources = [
   designAssets.guideMapTaihuHotel,
   designAssets.guideMapGuanshe,
   ...Object.values(navIconAssets).flatMap((icon) => (icon.active ? [icon.active, icon.inactive] : [icon.inactive])),
+  // Brand story assets
+  `${import.meta.env.BASE_URL}brand-assets/Group 337.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/Group 335.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/Group 333.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/figma-mascot2.png`,
+  `${import.meta.env.BASE_URL}brand-assets/figma-vector-bottom.png`,
 ];
 
 declare global {

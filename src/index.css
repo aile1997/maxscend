@@ -1167,6 +1167,33 @@ svg {
   color: #fff;
 }
 
+.brand-story__trait-section {
+  margin-bottom: calc(23 * var(--design-unit));
+}
+
+.brand-story__trait-title {
+  margin: 0 0 calc(15 * var(--design-unit));
+  font-size: calc(28 * var(--design-unit));
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.brand-story__trait-line {
+  margin: 0;
+  font-size: calc(18 * var(--design-unit));
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: pre-wrap;
+}
+
+.brand-story__trait-line--indent {
+  margin-left: calc(148 * var(--design-unit));
+}
+
+.brand-story__code-w { color: #fff; }
+.brand-story__code-o { color: #ff7600; }
+
 .brand-story__trait-svg {
   width: 100%;
   height: auto;

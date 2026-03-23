@@ -23,7 +23,7 @@ export function BrandStoryScreen() {
         <img className="brand-story__simjo-logo" src={`${B}Group 333.svg`} alt="simjo" />
       </div>
 
-      {/* IP 插图 (绝对定位) */}
+      {/* IP 插图 */}
       <img className="brand-story__ip-illustration" src={`${B}Group 335.svg`} alt="小卓吉祥物" />
 
       {/* 吉祥物2 + 底部向量 */}
@@ -34,15 +34,36 @@ export function BrandStoryScreen() {
 
       {/* 性格/能力/爱好/造型 水平滑动栏 */}
       <div className="brand-story__traits-carousel">
-        {/* 第一张: 名片SVG */}
+        {/* 第一张: 性格+能力 (HTML文字) */}
         <article className="brand-story__trait-card">
-          <img className="brand-story__trait-svg" src={`${B}名字_小卓(simjo) MBTI人格_ISTP 星座_双子座.svg`} alt="" />
+          <div className="brand-story__trait-section">
+            <h3 className="brand-story__trait-title">性格.CHARACTER</h3>
+            <p className="brand-story__trait-line">
+              <span className="brand-story__code-w">{"> **print( "}</span>
+              <span className="brand-story__code-o">沉稳/乐观</span>
+            </p>
+            <p className="brand-story__trait-line brand-story__trait-line--indent">
+              <span className="brand-story__code-o">{"爱思考/注重逻辑   "}</span>
+              <span className="brand-story__code-w">{"}"}</span>
+            </p>
+          </div>
+          <div className="brand-story__trait-section">
+            <h3 className="brand-story__trait-title">能力.CAPACITY</h3>
+            <p className="brand-story__trait-line">
+              <span className="brand-story__code-w">{"> **print( "}</span>
+              <span className="brand-story__code-o">频谱感知,波态切换</span>
+            </p>
+            <p className="brand-story__trait-line brand-story__trait-line--indent">
+              <span className="brand-story__code-o">{"信号增益,频率调和 "}</span>
+              <span className="brand-story__code-w">{"}"}</span>
+            </p>
+          </div>
         </article>
-        {/* 第二张: 爱好 */}
+        {/* 第二张: 爱好 (SVG) */}
         <article className="brand-story__trait-card">
           <img className="brand-story__trait-svg" src={`${B}爱好.svg`} alt="" />
         </article>
-        {/* 第三张: 造型 */}
+        {/* 第三张: 造型 (SVG) */}
         <article className="brand-story__trait-card">
           <img className="brand-story__trait-svg" src={`${B}造型.svg`} alt="" />
         </article>
