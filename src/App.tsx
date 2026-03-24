@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AgendaScreen } from "./screens/AgendaScreen";
 import { BottomNav } from "./components/BottomNav";
 import { BrandStoryScreen } from "./screens/BrandStoryScreen";
@@ -120,6 +120,8 @@ function App() {
     return () => window.clearTimeout(timer);
   }, [toast]);
 
+  const shellRef = useRef<HTMLDivElement>(null);
+
   const handleNavSelect = (item: NavItemDefinition) => {
     if (item.disabled) {
       setToast(item.message ?? "");
@@ -127,12 +129,9 @@ function App() {
     }
 
     if (item.id === "home" || item.id === "agenda" || item.id === "story" || item.id === "guide" || item.id === "contact") {
-      const shell = document.querySelector(".app-shell");
-      if (shell) shell.scrollTop = 0;
+      // 同步重置滚动位置（在 React 更新 DOM 之前）
+      if (shellRef.current) shellRef.current.scrollTop = 0;
       setPage(item.id);
-      requestAnimationFrame(() => {
-        if (shell) shell.scrollTop = 0;
-      });
     }
   };
 
@@ -174,50 +173,17 @@ function App() {
     window.__bootScreen?.finish();
   }, [isBooting]);
 
-  useEffect(() => {
-    const shell = document.querySelector(".app-shell");
-    if (!shell) return;
-
-    // Immediate reset
-    shell.scrollTop = 0;
-    console.log(`[scroll-reset] page=${page}, immediate scrollTop=${shell.scrollTop}`);
-
-    // After React render
-    requestAnimationFrame(() => {
-      shell.scrollTop = 0;
-      console.log(`[scroll-reset] rAF scrollTop=${shell.scrollTop}`);
-    });
-
-    // After images may have triggered layout shifts
-    const timers = [50, 150, 300, 600].map(ms =>
-      setTimeout(() => {
-        if (shell.scrollTop !== 0) {
-          console.warn(`[scroll-reset] drift detected at ${ms}ms: scrollTop=${shell.scrollTop}, forcing reset`);
-          shell.scrollTop = 0;
-        }
-      }, ms)
-    );
-
-    // Watch for scroll events during the first second (something is pushing scroll)
-    const onScroll = () => {
-      console.warn(`[scroll-reset] unexpected scroll event: scrollTop=${shell.scrollTop}`);
-    };
-    shell.addEventListener("scroll", onScroll);
-    const cleanup = setTimeout(() => {
-      shell.removeEventListener("scroll", onScroll);
-    }, 1000);
-
-    return () => {
-      timers.forEach(clearTimeout);
-      clearTimeout(cleanup);
-      shell.removeEventListener("scroll", onScroll);
-    };
+  // useLayoutEffect 在浏览器绘制前同步执行，确保用户看不到旧的滚动位置
+  useLayoutEffect(() => {
+    if (shellRef.current) {
+      shellRef.current.scrollTop = 0;
+    }
   }, [page]);
 
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
 
   return (
-    <div className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
+    <div ref={shellRef} className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
       <div className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
         {!isBooting && <EventBackdrop />}
         {!isBooting && (
