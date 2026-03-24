@@ -104,6 +104,26 @@ svg {
   background: #010101;
 }
 
+/* 页面切换淡入效果 — 用独立的遮罩层，不影响子元素 backdrop-filter */
+.device-shell:not(.device-shell--booting)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #fff;
+  animation: page-reveal 0.4s ease-out forwards;
+  pointer-events: none;
+}
+
+.app-shell[data-page="story"] > .device-shell::before {
+  background: #21201e;
+}
+
+@keyframes page-reveal {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 .screen {
   position: relative;
   min-height: max(calc(var(--screen-height) * var(--design-unit)), calc(100dvh - var(--nav-height)));
@@ -624,21 +644,18 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(1537 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
+  padding-left: calc(38 * var(--design-unit));
+  padding-right: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.agenda-secondary-carousel::after {
-  content: "";
-  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .agenda-secondary-carousel::-webkit-scrollbar {
@@ -755,8 +772,10 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
+  padding-left: calc(38 * var(--design-unit));
+  padding-right: calc(38 * var(--design-unit));
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
@@ -767,10 +786,6 @@ svg {
   -ms-overflow-style: none;
 }
 
-.guide-carousel::after {
-  content: "";
-  flex: 0 0 calc(24 * var(--design-unit));
-}
 
 .guide-carousel::-webkit-scrollbar {
   display: none;
@@ -926,21 +941,18 @@ svg {
 
 .contact-screen__carousel {
   position: absolute;
-  left: calc(37 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(12 * var(--design-unit));
+  padding-left: calc(37 * var(--design-unit));
+  padding-right: calc(37 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.contact-screen__carousel::after {
-  content: "";
-  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .contact-screen__carousel::-webkit-scrollbar {
@@ -1006,7 +1018,7 @@ svg {
 .contact-feedback {
   position: absolute;
   left: calc(37 * var(--design-unit));
-  top: calc(380 * var(--design-unit));
+  top: calc(375 * var(--design-unit));
   z-index: 1;
   width: calc(327 * var(--design-unit));
   height: calc(263 * var(--design-unit));
@@ -1273,20 +1285,17 @@ svg {
 .brand-story__traits-carousel {
   position: absolute;
   top: calc(2453 * var(--design-unit));
-  left: calc(31 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(24 * var(--design-unit));
+  padding-left: calc(31 * var(--design-unit));
+  padding-right: calc(31 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.brand-story__traits-carousel::after {
-  content: "";
-  flex: 0 0 calc(16 * var(--design-unit));
 }
 
 .brand-story__traits-carousel::-webkit-scrollbar {
@@ -1352,20 +1361,17 @@ svg {
 .brand-story__yearbook-carousel {
   position: absolute;
   top: calc(2821 * var(--design-unit));
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
+  padding-left: calc(38 * var(--design-unit));
+  padding-right: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.brand-story__yearbook-carousel::after {
-  content: "";
-  flex: 0 0 calc(24 * var(--design-unit));
 }
 
 .brand-story__yearbook-carousel::-webkit-scrollbar {
