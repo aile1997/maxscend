@@ -706,7 +706,7 @@ svg {
   left: calc(16 * var(--design-unit));
   font-size: calc(12 * var(--design-unit));
   font-weight: 700;
-  line-height: calc(21 * var(--design-unit));
+  line-height: calc(30 * var(--design-unit));
 }
 
 .aa__time {
