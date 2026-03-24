@@ -104,14 +104,14 @@ svg {
   background: #010101;
 }
 
-/* 页面切换效果 — 遮罩层渐显，不影响子元素 backdrop-filter */
+/* 页面切换效果 — 遮罩层淡出，不影响子元素 backdrop-filter */
 .device-shell:not(.device-shell--booting)::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 50;
   background: #fff;
-  animation: page-curtain 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: page-fade 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   pointer-events: none;
 }
 
@@ -119,19 +119,9 @@ svg {
   background: #21201e;
 }
 
-@keyframes page-curtain {
-  0% {
-    opacity: 0.85;
-    clip-path: inset(0 0 100% 0);
-  }
-  30% {
-    opacity: 0.6;
-    clip-path: inset(0 0 30% 0);
-  }
-  100% {
-    opacity: 0;
-    clip-path: inset(0 0 0 0);
-  }
+@keyframes page-fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 .screen {
@@ -654,7 +644,7 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(1537 * var(--design-unit));
   z-index: 1;
@@ -662,8 +652,13 @@ svg {
   gap: calc(14 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: calc(38 * var(--design-unit));
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.agenda-secondary-carousel > :first-child {
+  margin-left: calc(38 * var(--design-unit));
 }
 
 .agenda-secondary-carousel > :last-child {
@@ -784,8 +779,9 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
+  scroll-padding-left: calc(38 * var(--design-unit));
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
@@ -799,6 +795,10 @@ svg {
 
 .guide-carousel::-webkit-scrollbar {
   display: none;
+}
+
+.guide-carousel > :first-child {
+  margin-left: calc(38 * var(--design-unit));
 }
 
 .guide-carousel > :last-child {
@@ -955,16 +955,21 @@ svg {
 
 .contact-screen__carousel {
   position: absolute;
-  left: calc(37 * var(--design-unit));
+  left: 0;
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(12 * var(--design-unit));
+  scroll-padding-left: calc(37 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.contact-screen__carousel > :first-child {
+  margin-left: calc(37 * var(--design-unit));
 }
 
 .contact-screen__carousel > :last-child {
@@ -1301,15 +1306,20 @@ svg {
 .brand-story__traits-carousel {
   position: absolute;
   top: calc(2453 * var(--design-unit));
-  left: calc(31 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(24 * var(--design-unit));
+  scroll-padding-left: calc(31 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__traits-carousel > :first-child {
+  margin-left: calc(31 * var(--design-unit));
 }
 
 .brand-story__traits-carousel > :last-child {
@@ -1379,15 +1389,20 @@ svg {
 .brand-story__yearbook-carousel {
   position: absolute;
   top: calc(2821 * var(--design-unit));
-  left: calc(38 * var(--design-unit));
+  left: 0;
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
+  scroll-padding-left: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__yearbook-carousel > :first-child {
+  margin-left: calc(38 * var(--design-unit));
 }
 
 .brand-story__yearbook-carousel > :last-child {
