@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { wishBrands } from "../data/wish-brands";
 import { designAssets } from "../designAssets";
@@ -53,8 +54,12 @@ function NotFound() {
 
 export function WishScreen() {
   const { slug } = useParams<{ slug: string }>();
-  // URL 是 /wish-oppo，slug="wish-oppo"，数据里也是 "wish-oppo"
   const brand = wishBrands.find((b) => b.slug === slug);
+
+  // 树牌页面不走主站 splash，立即显示
+  useEffect(() => {
+    window.__bootScreen?.finish();
+  }, []);
 
   if (!brand) return <NotFound />;
 
