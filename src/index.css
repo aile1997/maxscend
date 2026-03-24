@@ -104,14 +104,14 @@ svg {
   background: #010101;
 }
 
-/* 页面切换淡入效果 — 用独立的遮罩层，不影响子元素 backdrop-filter */
+/* 页面切换效果 — 遮罩层渐显，不影响子元素 backdrop-filter */
 .device-shell:not(.device-shell--booting)::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 50;
   background: #fff;
-  animation: page-reveal 0.4s ease-out forwards;
+  animation: page-curtain 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   pointer-events: none;
 }
 
@@ -119,9 +119,19 @@ svg {
   background: #21201e;
 }
 
-@keyframes page-reveal {
-  from { opacity: 1; }
-  to { opacity: 0; }
+@keyframes page-curtain {
+  0% {
+    opacity: 0.85;
+    clip-path: inset(0 0 100% 0);
+  }
+  30% {
+    opacity: 0.6;
+    clip-path: inset(0 0 30% 0);
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .screen {
@@ -644,18 +654,20 @@ svg {
 
 .agenda-secondary-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
   top: calc(1537 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));
-  padding-left: calc(38 * var(--design-unit));
-  padding-right: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.agenda-secondary-carousel > :last-child {
+  margin-right: calc(38 * var(--design-unit));
 }
 
 .agenda-secondary-carousel::-webkit-scrollbar {
@@ -772,10 +784,8 @@ svg {
 
 .guide-carousel {
   position: absolute;
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
-  padding-left: calc(38 * var(--design-unit));
-  padding-right: calc(38 * var(--design-unit));
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
@@ -789,6 +799,10 @@ svg {
 
 .guide-carousel::-webkit-scrollbar {
   display: none;
+}
+
+.guide-carousel > :last-child {
+  margin-right: calc(38 * var(--design-unit));
 }
 
 .guide-card {
@@ -941,18 +955,20 @@ svg {
 
 .contact-screen__carousel {
   position: absolute;
-  left: 0;
+  left: calc(37 * var(--design-unit));
   right: 0;
   top: calc(157 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(12 * var(--design-unit));
-  padding-left: calc(37 * var(--design-unit));
-  padding-right: calc(37 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.contact-screen__carousel > :last-child {
+  margin-right: calc(37 * var(--design-unit));
 }
 
 .contact-screen__carousel::-webkit-scrollbar {
@@ -1285,17 +1301,19 @@ svg {
 .brand-story__traits-carousel {
   position: absolute;
   top: calc(2453 * var(--design-unit));
-  left: 0;
+  left: calc(31 * var(--design-unit));
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(24 * var(--design-unit));
-  padding-left: calc(31 * var(--design-unit));
-  padding-right: calc(31 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__traits-carousel > :last-child {
+  margin-right: calc(31 * var(--design-unit));
 }
 
 .brand-story__traits-carousel::-webkit-scrollbar {
@@ -1361,17 +1379,19 @@ svg {
 .brand-story__yearbook-carousel {
   position: absolute;
   top: calc(2821 * var(--design-unit));
-  left: 0;
+  left: calc(38 * var(--design-unit));
   right: 0;
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
-  padding-left: calc(38 * var(--design-unit));
-  padding-right: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.brand-story__yearbook-carousel > :last-child {
+  margin-right: calc(38 * var(--design-unit));
 }
 
 .brand-story__yearbook-carousel::-webkit-scrollbar {
@@ -1379,14 +1399,12 @@ svg {
 }
 
 .brand-story__yearbook-card {
-  flex: 0 0 calc(300 * var(--design-unit));
-  width: calc(300 * var(--design-unit));
+  flex: 0 0 auto;
   scroll-snap-align: start;
 }
 
 .brand-story__yearbook-cover {
   position: relative;
-  width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
   overflow: hidden;
@@ -1394,9 +1412,8 @@ svg {
 
 .brand-story__yearbook-img {
   display: block;
-  width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
-  object-fit: cover;
+  width: auto;
 }
 
 .brand-story__yearbook-btn {
