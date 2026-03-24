@@ -9,12 +9,7 @@ interface GuideScreenProps {
   onToast: (message: string) => void;
 }
 
-
-function VenueCard({ venue, onToast, onMapClick }: {
-  venue: GuideVenue;
-  onToast: (msg: string) => void;
-  onMapClick: (src: string, label: string) => void;
-}) {
+function VenueCard({ venue, onToast, onMapClick }: { venue: GuideVenue; onToast: (msg: string) => void; onMapClick: (src: string, label: string) => void }) {
   const mapSrc = `${import.meta.env.BASE_URL}figma-assets/${encodeURIComponent(venue.mapAsset)}`;
 
   const handleCopy = () => {
@@ -68,13 +63,7 @@ function MapLightbox({ src, label, onClose }: { src: string; label: string; onCl
   return (
     <div className="lightbox" onClick={onClose}>
       <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
-        <TransformWrapper
-          initialScale={1}
-          minScale={1}
-          maxScale={5}
-          doubleClick={{ mode: "zoomIn" }}
-          pinch={{ step: 5 }}
-        >
+        <TransformWrapper initialScale={1} minScale={1} maxScale={5} doubleClick={{ mode: "zoomIn" }} pinch={{ step: 5 }}>
           <TransformComponent
             wrapperStyle={{ width: "100%", height: "100%" }}
             contentStyle={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -83,7 +72,9 @@ function MapLightbox({ src, label, onClose }: { src: string; label: string; onCl
           </TransformComponent>
         </TransformWrapper>
       </div>
-      <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">×</button>
+      <button className="lightbox__close" type="button" onClick={onClose} aria-label="关闭">
+        ×
+      </button>
       <p className="lightbox__hint">双指缩放 · 双击放大</p>
     </div>
   );
@@ -98,7 +89,9 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [lightbox]);
 
   return (
@@ -109,19 +102,11 @@ export function GuideScreen({ onToast }: GuideScreenProps) {
 
       <div className="guide-carousel">
         {guideVenues.map((venue) => (
-          <VenueCard
-            key={venue.name}
-            venue={venue}
-            onToast={onToast}
-            onMapClick={(src, label) => setLightbox({ src, label })}
-          />
+          <VenueCard key={venue.name} venue={venue} onToast={onToast} onMapClick={(src, label) => setLightbox({ src, label })} />
         ))}
       </div>
 
-      {lightbox && createPortal(
-        <MapLightbox src={lightbox.src} label={lightbox.label} onClose={() => setLightbox(null)} />,
-        document.body
-      )}
+      {lightbox && createPortal(<MapLightbox src={lightbox.src} label={lightbox.label} onClose={() => setLightbox(null)} />, document.body)}
     </section>
   );
 }

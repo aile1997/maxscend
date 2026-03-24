@@ -159,15 +159,17 @@ function SecondaryCard028() {
   return (
     <article className="agenda-abs-slide">
       <span className="aa__date">03.28</span>
-      <span className="aa__venue" style={{ top: du(70) }}>芯卓园区</span>
+      <span className="aa__venue" style={{ top: du(70) }}>芯卓工厂</span>
       <T y={104}>10:00-10:30</T>
       <T y={149}>10:30-11:30</T>
+      <T y={194}>10:30-13:00</T>
 
       <div className="aa__body" style={{ top: du(105) }}>
-        <p className="aa__b">参观卓胜微展厅及芯卓园区</p>
+        <p className="aa__b">参观展厅</p>
         <S /><S />
-        <p className="aa__b">合作伙伴启幕仪式</p>
-        <p className="aa__m">与合作伙伴共同种下友谊树</p>
+        <p className="aa__b">合作伙伴林</p>
+        <S /><S />
+        <p className="aa__b">用餐</p>
       </div>
     </article>
   );

@@ -178,6 +178,29 @@ export const subVenueSchedule: AgendaDateBlock = {
   ],
 };
 
+export const subVenueSchedule2: AgendaDateBlock = {
+  date: "03.28",
+  sections: [
+    {
+      venue: "芯卓工厂",
+      items: [
+        {
+          time: "10:00-10:30",
+          title: "参观展厅",
+        },
+        {
+          time: "10:30-11:30",
+          title: "合作伙伴林",
+        },
+        {
+          time: "10:30-13:00",
+          title: "用餐",
+        },
+      ],
+    },
+  ],
+};
+
 export const guideVenues: GuideVenue[] = [
   {
     name: "\u82af\u5353\u56ed\u533a",

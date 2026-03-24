@@ -880,9 +880,13 @@ svg {
 .guide-card__map-wrap {
   width: calc(267 * var(--design-unit));
   height: calc(220 * var(--design-unit));
-  border-radius: calc(8 * var(--design-unit));
+  border-radius: calc(12 * var(--design-unit));
   overflow: hidden;
   background: #ffffff;
+  -webkit-border-radius: calc(12 * var(--design-unit));
+  -moz-border-radius: calc(12 * var(--design-unit));
+  -ms-border-radius: calc(12 * var(--design-unit));
+  -o-border-radius: calc(12 * var(--design-unit));
 }
 
 .guide-card__map {
