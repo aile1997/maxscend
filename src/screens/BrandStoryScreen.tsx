@@ -3,7 +3,7 @@ import { designAssets } from "../designAssets";
 const B = `${import.meta.env.BASE_URL}brand-assets/`;
 
 const yearbooks = [
-  { cover: `${B}yearbook-2025.webp`, title: "时间的刻度", sub: "卓胜微 20 周年", url: "https://www.yunzhan365.com/check/nyddg/kqfg/mobile/index.html" },
+  { cover: `${B}yearbook-2025.webp`, title: "时间的刻度", sub: "卓胜微 20 周年", url: "https://book.yunzhan365.com/nyddg/uffa/mobile/index.html" },
   { cover: `${B}yearbook-2024.webp`, title: "在这里度过有为的年辰", sub: "2024—担当、突围、向善", url: "https://book.yunzhan365.com/nyddg/blxr/mobile/index.html" },
   { cover: `${B}yearbook-2023.webp`, title: "在这里度过有为的年辰", sub: "2023—芯途探索", url: "https://book.yunzhan365.com/nyddg/rhhf/mobile/index.html" },
 ];

@@ -200,7 +200,7 @@ function App() {
       {!isBooting && page === "home" && (
         <a
           className="home-screen__live-btn"
-          href="https://live.photoplus.cn/live/pc/71498478"
+          href="https://m.alltuu.com/album/ca8e119aacc079a0721054bb2dc61339/"
           target="_blank"
           rel="noopener noreferrer"
         >
