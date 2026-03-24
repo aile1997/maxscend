@@ -85,8 +85,10 @@ export function WishScreen() {
         <p className="wish__label">这棵树</p>
         <h1 className="wish__tree-name">{brand.tree}</h1>
 
-        {/* 右侧介绍文案 */}
+        {/* 右侧介绍文案 + 品牌合作年份 */}
         <div className="wish__intro">
+          <p className="wish__intro-year">{yearText}</p>
+          <p>&nbsp;</p>
           {tree.intro.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
@@ -94,11 +96,6 @@ export function WishScreen() {
           {tree.poem.map((line, i) => (
             <p key={`p${i}`}>{line}</p>
           ))}
-        </div>
-
-        {/* 品牌合作年份 */}
-        <div className="wish__year-text">
-          <p>{yearText}</p>
         </div>
 
         {/* MAXSCEND 20TH ANNIVERSARY */}

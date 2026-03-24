@@ -1513,6 +1513,12 @@ svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: wish-kv-drift 8s ease-out both;
+}
+
+@keyframes wish-kv-drift {
+  from { transform: scale(1.12); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .wish__kv-overlay {
@@ -1524,39 +1530,52 @@ svg {
 .wish__logo {
   position: absolute;
   left: calc(37 * var(--du));
-  top: calc(88 * var(--du));
+  top: calc(47 * var(--du));
   width: calc(330 * var(--du));
   height: calc(35 * var(--du));
   z-index: 1;
+  animation: wish-fade-down 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes wish-fade-down {
+  from { transform: translateY(-12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .wish__label {
   position: absolute;
   left: calc(36 * var(--du));
-  top: calc(154 * var(--du));
+  top: calc(113 * var(--du));
   z-index: 1;
   margin: 0;
   font-size: calc(20 * var(--du));
   font-weight: 700;
   color: #fff;
+  animation: wish-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .wish__tree-name {
   position: absolute;
   left: calc(36 * var(--du));
-  top: calc(190 * var(--du));
+  top: calc(136 * var(--du));
   z-index: 1;
   margin: 0;
   font-size: calc(70 * var(--du));
   font-weight: 700;
   color: #fff;
   line-height: 1;
+  animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+@keyframes wish-fade-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .wish__intro {
   position: absolute;
   right: calc(35 * var(--du));
-  top: calc(325 * var(--du));
+  top: calc(284 * var(--du));
   z-index: 1;
   width: calc(296 * var(--du));
   text-align: right;
@@ -1564,37 +1583,27 @@ svg {
   font-size: calc(12 * var(--du));
   font-weight: 500;
   line-height: calc(28 * var(--du));
+  animation: wish-fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
 }
 
 .wish__intro p {
   margin: 0;
 }
 
-.wish__year-text {
-  position: absolute;
-  right: calc(35 * var(--du));
-  top: calc(325 * var(--du));
-  z-index: 1;
-  text-align: right;
-  color: #fff;
-  font-size: calc(12 * var(--du));
+.wish__intro-year {
   font-weight: 500;
-  line-height: calc(28 * var(--du));
-}
-
-.wish__year-text p {
-  margin: 0;
 }
 
 .wish__anniversary-tag {
   position: absolute;
   left: calc(37 * var(--du));
-  top: calc(605 * var(--du));
+  bottom: calc(27 * var(--du));
   z-index: 1;
   color: #fff;
   font-size: calc(16 * var(--du));
   font-weight: 700;
   line-height: 1.2;
+  animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
 }
 
 .wish__anniversary-tag p {
@@ -1609,6 +1618,7 @@ svg {
   max-width: calc(140 * var(--du));
   max-height: calc(50 * var(--du));
   object-fit: contain;
+  animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
 }
 
 /* 纸张背景下半段 */
@@ -1640,6 +1650,9 @@ svg {
   font-size: calc(20 * var(--du));
   font-weight: 700;
   color: #1a1a1a;
+  animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
 }
 
 .wish__time-desc {
@@ -1663,6 +1676,14 @@ svg {
   box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  animation: wish-card-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
+}
+
+@keyframes wish-card-rise {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .wish__card-header {
@@ -1708,6 +1729,9 @@ svg {
   z-index: 1;
   padding: calc(30 * var(--du)) calc(30 * var(--du));
   color: #1a1a1a;
+  animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
 }
 
 .wish__future-title {
