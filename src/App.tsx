@@ -173,18 +173,18 @@ function App() {
     window.__bootScreen?.finish();
   }, [isBooting]);
 
-  // useLayoutEffect 在浏览器绘制前同步执行，确保用户看不到旧的滚动位置
+  // 切换页面时强制重置滚动 — 双保险
   useLayoutEffect(() => {
-    if (shellRef.current) {
-      shellRef.current.scrollTop = 0;
-    }
+    if (shellRef.current) shellRef.current.scrollTop = 0;
+    // 额外兜底：window scroll（某些浏览器会滚动 html/body 而不是容器）
+    window.scrollTo(0, 0);
   }, [page]);
 
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
 
   return (
     <div ref={shellRef} className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
-      <div className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
+      <div key={isBooting ? "boot" : page} className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
         {!isBooting && <EventBackdrop />}
         {!isBooting && (
           <>
