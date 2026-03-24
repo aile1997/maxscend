@@ -1503,7 +1503,7 @@ svg {
 .wish__kv {
   position: relative;
   width: 100%;
-  height: calc(791 * var(--du));
+  height: calc(691 * var(--du));
   overflow: hidden;
 }
 
