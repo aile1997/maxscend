@@ -176,10 +176,42 @@ function App() {
 
   useEffect(() => {
     const shell = document.querySelector(".app-shell");
-    if (shell) {
+    if (!shell) return;
+
+    // Immediate reset
+    shell.scrollTop = 0;
+    console.log(`[scroll-reset] page=${page}, immediate scrollTop=${shell.scrollTop}`);
+
+    // After React render
+    requestAnimationFrame(() => {
       shell.scrollTop = 0;
-      requestAnimationFrame(() => { shell.scrollTop = 0; });
-    }
+      console.log(`[scroll-reset] rAF scrollTop=${shell.scrollTop}`);
+    });
+
+    // After images may have triggered layout shifts
+    const timers = [50, 150, 300, 600].map(ms =>
+      setTimeout(() => {
+        if (shell.scrollTop !== 0) {
+          console.warn(`[scroll-reset] drift detected at ${ms}ms: scrollTop=${shell.scrollTop}, forcing reset`);
+          shell.scrollTop = 0;
+        }
+      }, ms)
+    );
+
+    // Watch for scroll events during the first second (something is pushing scroll)
+    const onScroll = () => {
+      console.warn(`[scroll-reset] unexpected scroll event: scrollTop=${shell.scrollTop}`);
+    };
+    shell.addEventListener("scroll", onScroll);
+    const cleanup = setTimeout(() => {
+      shell.removeEventListener("scroll", onScroll);
+    }, 1000);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(cleanup);
+      shell.removeEventListener("scroll", onScroll);
+    };
   }, [page]);
 
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
