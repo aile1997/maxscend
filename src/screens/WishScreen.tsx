@@ -62,10 +62,6 @@ export function WishScreen() {
   if (!brand) return <NotFound />;
 
   const tree = treeConfig[brand.tree];
-  const yearText = brand.years
-    ? `在与 ${brand.brandName} 携手走过第 ${brand.years} 年的这一年`
-    : `在与 ${brand.brandName} 携手多年`;
-
   const photoSrc = `${PHOTOS}${brand.slug}.jpg`;
   const logoSrc = `${LOGOS}${brand.slug}.svg`;
 
@@ -83,10 +79,8 @@ export function WishScreen() {
         <p className="wish__label">这棵树</p>
         <h1 className="wish__tree-name">{brand.tree}</h1>
 
-        {/* 右侧介绍文案 + 品牌合作年份 */}
+        {/* 右侧介绍文案（年份文案+logo在SVG图层里，不重复） */}
         <div className="wish__intro">
-          <p className="wish__intro-year">{yearText}</p>
-          <p>&nbsp;</p>
           {tree.intro.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
