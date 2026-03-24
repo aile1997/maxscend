@@ -60,9 +60,9 @@ const allAssetSources = [
   ...Object.values(navIconAssets).flatMap((icon) => (icon.active ? [icon.active, icon.inactive] : [icon.inactive])),
   // Brand story assets
   `${import.meta.env.BASE_URL}brand-assets/text-layer.svg`,
-  `${import.meta.env.BASE_URL}brand-assets/ip-illustration.svg`,
+  `${import.meta.env.BASE_URL}brand-assets/ip-illustration.png`,
   `${import.meta.env.BASE_URL}brand-assets/simjo-logo.svg`,
-  `${import.meta.env.BASE_URL}brand-assets/mascot2.webp`,
+  `${import.meta.env.BASE_URL}brand-assets/mascot2.png`,
   `${import.meta.env.BASE_URL}brand-assets/vector-bottom.png`,
   `${import.meta.env.BASE_URL}brand-assets/yearbook-2025.webp`,
   `${import.meta.env.BASE_URL}brand-assets/yearbook-2024.webp`,
@@ -78,9 +78,19 @@ declare global {
 }
 
 function App() {
-  const [minimumSplashDone, setMinimumSplashDone] = useState(false);
+  // 从外部链接返回时 sessionStorage 有记录，跳过 splash
+  const isReturning = !!sessionStorage.getItem("maxscend-page");
+  const [minimumSplashDone, setMinimumSplashDone] = useState(isReturning);
   const [assetsReady, setAssetsReady] = useState(false);
-  const [page, setPage] = useState<PageId>("home");
+  const [page, setPageRaw] = useState<PageId>(() => {
+    const saved = sessionStorage.getItem("maxscend-page");
+    return (saved === "home" || saved === "agenda" || saved === "story" || saved === "guide" || saved === "contact") ? saved : "home";
+  });
+
+  const setPage = (p: PageId) => {
+    sessionStorage.setItem("maxscend-page", p);
+    setPageRaw(p);
+  };
   const [toast, setToast] = useState<string | null>(null);
 
   useEffect(() => {
@@ -185,7 +195,7 @@ function App() {
   return (
     <div ref={shellRef} className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} data-page={isBooting ? "boot" : page} style={shellStyle}>
       <div key={isBooting ? "boot" : page} className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
-        {!isBooting && <EventBackdrop />}
+        {!isBooting && page !== "story" && <EventBackdrop />}
         {!isBooting && (
           <>
             {page === "home" && <HomeScreen />}

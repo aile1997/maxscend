@@ -120,8 +120,12 @@ svg {
 }
 
 @keyframes page-fade {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .screen {
@@ -792,7 +796,6 @@ svg {
   -ms-overflow-style: none;
 }
 
-
 .guide-carousel::-webkit-scrollbar {
   display: none;
 }
@@ -1231,7 +1234,7 @@ svg {
 /* ---- Full-page text layer SVG ---- */
 .brand-story__text-layer {
   position: absolute;
-  top: calc(-76 * var(--design-unit));
+  top: calc(-85 * var(--design-unit));
   left: 0;
   width: 100%;
   z-index: 1;
@@ -1394,9 +1397,9 @@ svg {
   z-index: 1;
   display: flex;
   gap: calc(28 * var(--design-unit));
-  scroll-padding-left: calc(38 * var(--design-unit));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1406,7 +1409,7 @@ svg {
 }
 
 .brand-story__yearbook-carousel > :last-child {
-  margin-right: calc(38 * var(--design-unit));
+  margin-right: calc(50vw);
 }
 
 .brand-story__yearbook-carousel::-webkit-scrollbar {
@@ -1415,7 +1418,7 @@ svg {
 
 .brand-story__yearbook-card {
   flex: 0 0 auto;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 .brand-story__yearbook-cover {
