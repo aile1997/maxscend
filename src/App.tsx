@@ -183,7 +183,7 @@ function App() {
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";
 
   return (
-    <div ref={shellRef} className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} style={shellStyle}>
+    <div ref={shellRef} className={`app-shell${noScroll ? " app-shell--no-scroll" : ""}`} data-page={isBooting ? "boot" : page} style={shellStyle}>
       <div key={isBooting ? "boot" : page} className={`device-shell${isBooting ? " device-shell--booting" : ""}`}>
         {!isBooting && <EventBackdrop />}
         {!isBooting && (

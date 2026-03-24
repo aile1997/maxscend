@@ -83,6 +83,15 @@ svg {
   height: 100dvh;
 }
 
+/* 品牌故事页深色背景 — 防止 iOS 弹簧回弹露出白色 */
+.app-shell[data-page="story"] {
+  background: #21201e;
+}
+
+.app-shell[data-page="boot"] {
+  background: #010101;
+}
+
 .device-shell {
   position: relative;
   width: 100%;
@@ -99,7 +108,18 @@ svg {
   position: relative;
   min-height: max(calc(var(--screen-height) * var(--design-unit)), calc(100dvh - var(--nav-height)));
   color: #ffffff;
-  /* animation: screen-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; */
+  animation: screen-fade-in 0.35s ease-out both;
+}
+
+@keyframes screen-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes screen-enter {
@@ -897,23 +917,19 @@ svg {
 }
 
 .lightbox__close {
-  position: fixed;
-  top: calc(20 * var(--design-unit));
-  right: calc(20 * var(--design-unit));
-  z-index: 100;
-  width: calc(44 * var(--design-unit));
-  height: calc(44 * var(--design-unit));
-  border: 1px solid #ffffff;
+  position: absolute;
+  top: 56px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: 0;
   border-radius: 50%;
-  background: rgba(250, 250, 250, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  font-size: calc(24 * var(--design-unit));
-  line-height: calc(44 * var(--design-unit));
+  font-size: 20px;
+  line-height: 32px;
   text-align: center;
   cursor: pointer;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--glass-shadow);
 }
 
 .contact-screen__title {
@@ -1025,6 +1041,7 @@ svg {
   inset: auto 0 0;
   height: calc(51 * var(--design-unit));
   background: #fafafa;
+  border-radius: 0 0 calc(12 * var(--design-unit)) calc(12 * var(--design-unit));
 }
 
 .contact-feedback__field {
@@ -1368,7 +1385,8 @@ svg {
 }
 
 .brand-story__yearbook-card {
-  flex: 0 0 auto;
+  flex: 0 0 calc(300 * var(--design-unit));
+  width: calc(300 * var(--design-unit));
   scroll-snap-align: start;
 }
 
@@ -1381,8 +1399,6 @@ svg {
 
 .brand-story__yearbook-img {
   display: block;
-  height: 100%;
-  width: auto;
   width: 100%;
   height: 100%;
   object-fit: cover;
