@@ -89,7 +89,6 @@ svg {
   min-height: max(100dvh, calc(var(--screen-height) * var(--design-unit) + var(--nav-height)));
   padding-bottom: var(--nav-height);
   overflow: hidden;
-  background: #21201e;
 }
 
 .device-shell--booting {
@@ -1369,21 +1368,21 @@ svg {
 }
 
 .brand-story__yearbook-card {
-  flex: 0 0 calc(300 * var(--design-unit));
+  flex: 0 0 auto;
   scroll-snap-align: start;
 }
 
 .brand-story__yearbook-cover {
   position: relative;
-  width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
   overflow: hidden;
 }
 
 .brand-story__yearbook-img {
-  position: absolute;
-  inset: 0;
+  display: block;
+  height: 100%;
+  width: auto;
   width: 100%;
   height: 100%;
   object-fit: cover;
