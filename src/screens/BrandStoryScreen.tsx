@@ -20,11 +20,11 @@ export function BrandStoryScreen() {
         <img className="brand-story__simjo-logo" src={`${B}simjo-logo.svg`} alt="simjo" />
       </div>
 
-      <img className="brand-story__ip-illustration" src={`${B}ip-illustration.png`} alt="小卓吉祥物" />
+      <img className="brand-story__ip-illustration" src={`${B}ip-illustration.webp`} alt="小卓吉祥物" />
 
       <div className="brand-story__mascot2-section">
         <img className="brand-story__vector-bg" src={`${B}vector-bottom.png`} alt="" aria-hidden="true" />
-        <img className="brand-story__mascot2" src={`${B}mascot2.png`} alt="小卓" />
+        <img className="brand-story__mascot2" src={`${B}mascot2.webp`} alt="小卓" />
       </div>
 
       <div className="brand-story__traits-carousel">
