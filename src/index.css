@@ -1477,3 +1477,238 @@ svg {
     box-shadow: none;
   }
 }
+
+/* ==================== Wish Tree Screen ==================== */
+
+.wish-screen {
+  --du: calc(min(100vw, 430px) / 402);
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.wish-screen--404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  font-size: 18px;
+  color: #999;
+}
+
+/* KV 区域 */
+.wish__kv {
+  position: relative;
+  width: 100%;
+  height: calc(691 * var(--du));
+  overflow: hidden;
+}
+
+.wish__kv-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wish__kv-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.wish__logo {
+  position: absolute;
+  left: calc(37 * var(--du));
+  top: calc(88 * var(--du));
+  width: calc(330 * var(--du));
+  height: calc(35 * var(--du));
+  z-index: 1;
+}
+
+.wish__label {
+  position: absolute;
+  left: calc(36 * var(--du));
+  top: calc(154 * var(--du));
+  z-index: 1;
+  margin: 0;
+  font-size: calc(20 * var(--du));
+  font-weight: 700;
+  color: #fff;
+}
+
+.wish__tree-name {
+  position: absolute;
+  left: calc(36 * var(--du));
+  top: calc(190 * var(--du));
+  z-index: 1;
+  margin: 0;
+  font-size: calc(70 * var(--du));
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.wish__intro {
+  position: absolute;
+  right: calc(35 * var(--du));
+  top: calc(325 * var(--du));
+  z-index: 1;
+  width: calc(296 * var(--du));
+  text-align: right;
+  color: #fff;
+  font-size: calc(12 * var(--du));
+  font-weight: 500;
+  line-height: calc(28 * var(--du));
+}
+
+.wish__intro p {
+  margin: 0;
+}
+
+.wish__year-text {
+  position: absolute;
+  right: calc(35 * var(--du));
+  top: calc(325 * var(--du));
+  z-index: 1;
+  text-align: right;
+  color: #fff;
+  font-size: calc(12 * var(--du));
+  font-weight: 500;
+  line-height: calc(28 * var(--du));
+}
+
+.wish__year-text p {
+  margin: 0;
+}
+
+.wish__anniversary-tag {
+  position: absolute;
+  left: calc(37 * var(--du));
+  top: calc(605 * var(--du));
+  z-index: 1;
+  color: #fff;
+  font-size: calc(16 * var(--du));
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.wish__anniversary-tag p {
+  margin: 0;
+}
+
+/* 纸张背景下半段 */
+.wish__paper {
+  position: relative;
+  width: 100%;
+  min-height: calc(800 * var(--du));
+  padding-bottom: calc(40 * var(--du));
+}
+
+.wish__paper-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wish__time-section {
+  position: relative;
+  z-index: 1;
+  padding: calc(60 * var(--du)) calc(30 * var(--du)) 0;
+  text-align: right;
+}
+
+.wish__time-title {
+  margin: 0 0 calc(20 * var(--du));
+  font-size: calc(20 * var(--du));
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.wish__time-desc {
+  margin: 0;
+  font-size: calc(12 * var(--du));
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: calc(28 * var(--du));
+}
+
+/* 照片卡片 */
+.wish__card {
+  position: relative;
+  z-index: 1;
+  margin: calc(30 * var(--du)) calc(30 * var(--du)) 0;
+  width: calc(281 * var(--du));
+  padding: calc(16 * var(--du));
+  background: rgba(250, 250, 250, 0.25);
+  border: 1px solid #fff;
+  border-radius: calc(12 * var(--du));
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wish__card-header {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--du));
+}
+
+.wish__card-clock {
+  width: calc(24 * var(--du));
+  height: calc(24 * var(--du));
+}
+
+.wish__card-date {
+  font-size: calc(24 * var(--du));
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.wish__card-label {
+  margin: calc(8 * var(--du)) 0 calc(12 * var(--du));
+  font-size: calc(14 * var(--du));
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.wish__card-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: calc(8 * var(--du));
+  overflow: hidden;
+}
+
+.wish__card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 未来 */
+.wish__future {
+  position: relative;
+  z-index: 1;
+  padding: calc(30 * var(--du)) calc(30 * var(--du));
+  color: #1a1a1a;
+}
+
+.wish__future-title {
+  margin: 0 0 calc(12 * var(--du));
+  font-size: calc(20 * var(--du));
+  font-weight: 700;
+}
+
+.wish__future p {
+  margin: 0;
+  font-size: calc(12 * var(--du));
+  font-weight: 500;
+  line-height: calc(28 * var(--du));
+}
