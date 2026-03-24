@@ -23,7 +23,6 @@ const treeConfig = {
     rootText: "这株娜塔栎在此扎根",
     kvImg: `${A}kv-natali.webp`,
     defaultPhoto: `${A}photo-default-natali.webp`,
-    kvOverlayOpacity: 0.35,
   },
   水杉: {
     intro: [
@@ -40,7 +39,6 @@ const treeConfig = {
     rootText: "这株水杉在此扎根",
     kvImg: `${A}kv-shuishan.webp`,
     defaultPhoto: `${A}photo-default-shuishan.webp`,
-    kvOverlayOpacity: 0.15,
   },
 };
 
@@ -76,7 +74,7 @@ export function WishScreen() {
       {/* === KV 区域（深色背景 + 树照片） === */}
       <div className="wish__kv">
         <img className="wish__kv-img" src={tree.kvImg} alt="" />
-        <div className="wish__kv-overlay" style={{ opacity: tree.kvOverlayOpacity }} />
+        <div className={`wish__kv-overlay wish__kv-overlay--${brand.tree === "娜塔栎" ? "natali" : "shuishan"}`} />
 
         {/* Header logo */}
         <img className="wish__logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
