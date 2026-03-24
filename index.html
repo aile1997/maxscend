@@ -86,11 +86,10 @@
       }
 
       .boot-screen__hero {
-        left: 50%;
-        top: 28%;
-        transform: translateX(-50%);
-        width: 72%;
-        height: auto;
+        left: calc(73 * var(--boot-unit));
+        top: calc(240 * var(--boot-unit));
+        width: calc(288 * var(--boot-unit));
+        height: calc(138.4 * var(--boot-unit));
         animation: boot-hero-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
       }
 
@@ -108,10 +107,9 @@
       }
 
       .boot-screen__copy {
-        left: 50%;
-        top: 55%;
-        transform: translateX(-50%);
-        width: 80%;
+        left: calc(111 * var(--boot-unit));
+        top: calc(480 * var(--boot-unit));
+        width: calc(180 * var(--boot-unit));
         text-align: center;
       }
 
@@ -143,27 +141,26 @@
 
       .boot-screen__copy p:nth-child(1) {
         font-size: calc(26 * var(--boot-unit));
-        line-height: 1.3;
+        line-height: calc(31 * var(--boot-unit));
       }
 
       .boot-screen__copy p:nth-child(2) {
         font-size: calc(18 * var(--boot-unit));
-        line-height: 1.3;
+        line-height: calc(22 * var(--boot-unit));
       }
 
       .boot-screen__copy p:nth-child(3) {
-        margin-top: calc(6 * var(--boot-unit));
-        font-size: calc(18 * var(--boot-unit));
-        line-height: 1.6;
+        margin-top: calc(2 * var(--boot-unit));
+        font-size: calc(20 * var(--boot-unit));
+        line-height: calc(29 * var(--boot-unit));
         font-weight: 700;
       }
 
       .boot-screen__logo {
-        left: 50%;
-        bottom: 8%;
-        transform: translateX(-50%);
+        left: calc(140 * var(--boot-unit));
+        top: calc(660 * var(--boot-unit));
         width: calc(123 * var(--boot-unit));
-        height: auto;
+        height: calc(30.035 * var(--boot-unit));
         animation: boot-logo-in 1s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
       }
 
@@ -187,7 +184,7 @@
       <div class="boot-screen__copy">
         <p>MAXSCEND</p>
         <p>20th Anniversary</p>
-        <p>卓胜微 20 周年庆暨<br/>合作伙伴大会</p>
+        <p>卓胜微 20 周年庆暨合作伙伴大会</p>
       </div>
       <img class="boot-screen__logo" src="./figma-assets/splash-logo.svg" alt="" />
     </div>
