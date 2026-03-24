@@ -67,7 +67,7 @@ svg {
 
 .app-shell {
   --design-unit: calc(min(100vw, 430px) / 402);
-  --nav-height: calc(81 * var(--design-unit));
+  --nav-height: calc(86 * var(--design-unit));
   min-height: 100dvh;
   width: 100%;
   max-width: 430px;
@@ -99,7 +99,7 @@ svg {
   position: relative;
   min-height: max(calc(var(--screen-height) * var(--design-unit)), calc(100dvh - var(--nav-height)));
   color: #ffffff;
-  animation: screen-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* animation: screen-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; */
 }
 
 @keyframes screen-enter {
@@ -320,7 +320,7 @@ svg {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: start;
   height: var(--nav-height);
-  padding: calc(21 * var(--design-unit)) calc(23 * var(--design-unit)) calc(10 * var(--design-unit));
+  padding: calc(15 * var(--design-unit)) calc(23 * var(--design-unit)) calc(10 * var(--design-unit));
   background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
 }
@@ -538,9 +538,9 @@ svg {
 
 .home-screen__copy-image {
   left: calc(33 * var(--design-unit));
-  top: calc(190 * var(--design-unit));
+  top: calc(150 * var(--design-unit));
   width: calc(337.016 * var(--design-unit));
-  height: calc(293 * var(--design-unit));
+  height: calc(333 * var(--design-unit));
 }
 
 .home-screen__live-btn {
@@ -548,7 +548,7 @@ svg {
   z-index: 20;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(var(--nav-height) + 20 * var(--design-unit));
+  bottom: calc(var(--nav-height) + 50 * var(--design-unit));
   width: calc(328 * var(--design-unit));
   max-width: calc(100% - 74 * var(--design-unit));
   display: flex;
@@ -580,7 +580,7 @@ svg {
 }
 
 .agenda-screen-v2__sub-title {
-  top: calc(1704 * var(--design-unit));
+  top: calc(1493 * var(--design-unit));
 }
 
 .aa {
@@ -599,7 +599,7 @@ svg {
 .aa--primary {
   top: calc(157 * var(--design-unit));
   width: calc(330 * var(--design-unit));
-  height: calc(1474 * var(--design-unit));
+  height: calc(1263 * var(--design-unit));
   animation: card-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
@@ -618,7 +618,7 @@ svg {
   position: absolute;
   left: calc(38 * var(--design-unit));
   right: 0;
-  top: calc(1748 * var(--design-unit));
+  top: calc(1537 * var(--design-unit));
   z-index: 1;
   display: flex;
   gap: calc(14 * var(--design-unit));

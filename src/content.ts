@@ -59,7 +59,8 @@ export const mainVenueSchedule: AgendaDateBlock = {
           time: "09:25-10:05",
           title: "\u5706\u684c\u8bba\u575b",
           subtitle: "\u786c\u4ef6\u4e4b\u8eaf\u2014\u2014\u6253\u9020 AI \u539f\u751f\u65f6\u4ee3\u7684\u667a\u80fd\u65b0\u7269\u79cd",
-          detail: "\u4e3b\u6301\u4eba \u5f20\u5c0f\u73fa\n\u5609\u5bbe\uff1a\u9648\u5eb7\u8fbe\uff08\u5149\u5e06\u79d1\u6280\u8054\u521b & CTO\uff09\n\u6768\u6ce2\uff08Haivivi \u5408\u4f19\u4eba\uff09\n\u77e5\u53bf\uff08\u72ec\u7acb\u5f00\u53d1\u8005 / OwliaBot\uff09",
+          detail:
+            "\u4e3b\u6301\u4eba \u5f20\u5c0f\u73fa\n\u5609\u5bbe\uff1a\u9648\u5eb7\u8fbe\uff08\u5149\u5e06\u79d1\u6280\u8054\u521b & CTO\uff09\n\u6768\u6ce2\uff08Haivivi \u5408\u4f19\u4eba\uff09\n\u77e5\u53bf\uff08\u72ec\u7acb\u5f00\u53d1\u8005 / OwliaBot\uff09",
         },
         {
           time: "10:05-10:20",
@@ -75,7 +76,8 @@ export const mainVenueSchedule: AgendaDateBlock = {
           time: "10:45-11:30",
           title: "\u5706\u684c\u8bba\u575b",
           subtitle: "\u751f\u6001\u4e4b\u601d\u2014\u2014Openclaw \u5f15\u7206\u7684\u5546\u4e1a\u65b0\u8303\u5f0f",
-          detail: "\u4e3b\u6301\u4eba\uff1a\u5f20\u5c0f\u73fa\n\u5609\u5bbe\uff1a\u5218\u7f61\uff08\u963f\u5c14\u6cd5\u516c\u793e\u5408\u4f19\u4eba\uff09\n\u5218\u77e5\u8fdc\uff08\u9762\u58c1\u667a\u80fd\u8054\u5408\u521b\u59cb\u4eba\uff09",
+          detail:
+            "\u4e3b\u6301\u4eba\uff1a\u5f20\u5c0f\u73fa\n\u5609\u5bbe\uff1a\u5218\u7f61\uff08\u963f\u5c14\u6cd5\u516c\u793e\u5408\u4f19\u4eba\uff09\n\u5218\u77e5\u8fdc\uff08\u9762\u58c1\u667a\u80fd\u8054\u5408\u521b\u59cb\u4eba\uff09",
         },
       ],
     },
@@ -85,7 +87,8 @@ export const mainVenueSchedule: AgendaDateBlock = {
         {
           time: "14:00\u524d",
           title: "\u5353\u80dc\u5fae20\u5468\u5e74\u7279\u5c55",
-          detail: "\u901a\u8fc7\u4ea7\u54c1\u3001\u6280\u672f\u4e0e\u91cd\u8981\u8282\u70b9\uff0c\u56de\u671b\u5353\u80dc\u5fae\u4e8c\u5341\u5e74\u7684\u6210\u957f\u8f68\u8ff9\u3002",
+          detail:
+            "\u901a\u8fc7\u4ea7\u54c1\u3001\u6280\u672f\u4e0e\u91cd\u8981\u8282\u70b9\uff0c\u56de\u671b\u5353\u80dc\u5fae\u4e8c\u5341\u5e74\u7684\u6210\u957f\u8f68\u8ff9\u3002",
         },
         {
           time: "14:00-14:20",
@@ -110,7 +113,8 @@ export const mainVenueSchedule: AgendaDateBlock = {
           time: "16:30-17:20",
           title: "\u4e3b\u9898\u6f14\u8bb2",
           subtitle: "\u7a7f\u8d8a\u98ce\u4e91\uff1a\u8d38\u6613\u6218\u4e0eAI\u65f6\u4ee3\u4e0b\u7684\u5168\u7403\u8d44\u672c\u6d6a\u6f6e",
-          detail: "\u5609\u5bbe\uff1a\u9ad8\u76db\u4e9a\u6d32\uff08\u9664\u65e5\u672c\uff09\u80a1\u7968\u8d44\u672c\u5e02\u573a\u603b\u7ecf\u7406 \u738b\u4e9a\u519b",
+          detail:
+            "\u5609\u5bbe\uff1a\u9ad8\u76db\u4e9a\u6d32\uff08\u9664\u65e5\u672c\uff09\u80a1\u7968\u8d44\u672c\u5e02\u573a\u603b\u7ecf\u7406 \u738b\u4e9a\u519b",
         },
         {
           time: "17:20-17:30",
@@ -182,16 +186,16 @@ export const guideVenues: GuideVenue[] = [
     mapUrl: "https://uri.amap.com/marker?position=120.198,31.475&name=\u82af\u5353\u56ed\u533a&callnative=1",
   },
   {
-    name: "\u592a\u6e56\u996d\u5e97",
-    address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u9526\u56ed\u8def1\u53f7",
-    mapAsset: "guide-map-taihu-hotel.webp",
-    mapUrl: "https://uri.amap.com/marker?position=120.275,31.547&name=\u592a\u6e56\u996d\u5e97&callnative=1",
-  },
-  {
     name: "\u7ba1\u793e\u5c71\u5e84",
     address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u6ee8\u6e56\u533a\u9f0b\u6e1a\u8def1\u53f7",
     mapAsset: "guide-map-guanshe.webp",
     mapUrl: "https://uri.amap.com/marker?position=120.217,31.510&name=\u7ba1\u793e\u5c71\u5e84&callnative=1",
+  },
+  {
+    name: "\u592a\u6e56\u996d\u5e97",
+    address: "\u6c5f\u82cf\u7701\u65e0\u9521\u5e02\u9526\u56ed\u8def1\u53f7",
+    mapAsset: "guide-map-taihu-hotel.webp",
+    mapUrl: "https://uri.amap.com/marker?position=120.275,31.547&name=\u592a\u6e56\u996d\u5e97&callnative=1",
   },
 ];
 

@@ -12,7 +12,7 @@ import { HomeScreen } from "./screens/HomeScreen";
 import type { NavItemDefinition, PageId } from "./types";
 
 const DEFAULT_SCREEN_HEIGHT = 774;
-const AGENDA_SCREEN_HEIGHT = 2200;
+const AGENDA_SCREEN_HEIGHT = 2000;
 const GUIDE_SCREEN_HEIGHT = 774;
 const BRAND_STORY_SCREEN_HEIGHT = 3280;
 const MIN_SPLASH_MS = 1400;

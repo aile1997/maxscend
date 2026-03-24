@@ -18,12 +18,7 @@ export function ContactScreen({ onSubmitFeedback }: ContactScreenProps) {
             <h2 className="contact-card__name">{person.name}</h2>
             <p className="contact-card__role">{person.role}</p>
             <a className="contact-card__action" href={`tel:${person.phone}`}>
-              <img
-                className="contact-card__phone"
-                src={designAssets.contactPhoneRight}
-                alt=""
-                aria-hidden="true"
-              />
+              <img className="contact-card__phone" src={designAssets.contactPhoneRight} alt="" aria-hidden="true" />
               <span>{copy.callContact}</span>
             </a>
           </article>
@@ -43,13 +38,7 @@ export function ContactScreen({ onSubmitFeedback }: ContactScreenProps) {
         }}
       >
         <div className="contact-feedback__field-shell">
-          <textarea
-            id="feedback"
-            name="feedback"
-            className="contact-feedback__field"
-            placeholder={copy.feedbackPlaceholder}
-            rows={7}
-          />
+          <textarea id="feedback" name="feedback" className="contact-feedback__field" placeholder={copy.feedbackPlaceholder} rows={7} />
         </div>
         <div className="contact-feedback__footer">
           <button className="contact-feedback__submit" type="submit">
