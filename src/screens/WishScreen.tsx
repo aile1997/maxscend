@@ -4,6 +4,7 @@ import { designAssets } from "../designAssets";
 
 const A = `${import.meta.env.BASE_URL}wish-assets/`;
 const PHOTOS = `${import.meta.env.BASE_URL}wish-photos/`;
+const LOGOS = `${import.meta.env.BASE_URL}wish-logos/`;
 
 const treeConfig = {
   娜塔栎: {
@@ -63,6 +64,7 @@ export function WishScreen() {
     : `在与 ${brand.brandName} 携手多年`;
 
   const photoSrc = `${PHOTOS}${brand.slug}.jpg`;
+  const logoSrc = `${LOGOS}${brand.slug}.svg`;
 
   return (
     <div className="wish-screen">
@@ -100,6 +102,14 @@ export function WishScreen() {
           <p>20TH</p>
           <p>ANNIVERSARY</p>
         </div>
+
+        {/* 品牌 logo（右下角） */}
+        <img
+          className="wish__brand-logo"
+          src={logoSrc}
+          alt={brand.brandName}
+          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+        />
       </div>
 
       {/* === 纸张背景下半段 === */}

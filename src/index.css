@@ -1601,6 +1601,16 @@ svg {
   margin: 0;
 }
 
+.wish__brand-logo {
+  position: absolute;
+  right: calc(40 * var(--du));
+  bottom: calc(30 * var(--du));
+  z-index: 1;
+  max-width: calc(140 * var(--du));
+  max-height: calc(50 * var(--du));
+  object-fit: contain;
+}
+
 /* 纸张背景下半段 */
 .wish__paper {
   position: relative;
