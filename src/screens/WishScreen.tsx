@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { wishBrands } from "../data/wish-brands";
 import { designAssets } from "../designAssets";
@@ -42,6 +42,14 @@ const treeConfig = {
   },
 };
 
+const preload = (src: string) =>
+  new Promise<void>((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve();
+    img.onerror = () => resolve();
+    img.src = src;
+  });
+
 function NotFound() {
   return (
     <div className="wish-screen wish-screen--404">
@@ -53,13 +61,34 @@ function NotFound() {
 export function WishScreen() {
   const { slug } = useParams<{ slug: string }>();
   const brand = wishBrands.find((b) => b.slug === slug);
+  const [ready, setReady] = useState(false);
 
-  // 树牌页面不走主站 splash，立即显示
   useEffect(() => {
-    window.__bootScreen?.finish();
-  }, []);
+    if (!brand) {
+      window.__bootScreen?.finish();
+      return;
+    }
+
+    const tree = treeConfig[brand.tree];
+    const photoSrc = `${PHOTOS}${brand.slug}.jpg`;
+    const logoSrc = `${LOGOS}${brand.slug}.svg`;
+
+    // 动态预加载当前品牌需要的图片
+    Promise.all([
+      preload(tree.kvImg),
+      preload(designAssets.headerLogo),
+      preload(`${A}bg-paper.webp`),
+      preload(`${A}icon-time.svg`),
+      preload(logoSrc),
+      preload(photoSrc).catch(() => preload(tree.defaultPhoto)),
+    ]).finally(() => {
+      setReady(true);
+      window.__bootScreen?.finish();
+    });
+  }, [brand]);
 
   if (!brand) return <NotFound />;
+  if (!ready) return null; // boot screen 还在显示
 
   const tree = treeConfig[brand.tree];
   const photoSrc = `${PHOTOS}${brand.slug}.jpg`;
@@ -67,19 +96,16 @@ export function WishScreen() {
 
   return (
     <div className="wish-screen">
-      {/* === KV 区域（深色背景 + 树照片） === */}
+      {/* === KV 区域 === */}
       <div className="wish__kv">
         <img className="wish__kv-img" src={tree.kvImg} alt="" />
         <div className={`wish__kv-overlay wish__kv-overlay--${brand.tree === "娜塔栎" ? "natali" : "shuishan"}`} />
 
-        {/* Header logo */}
         <img className="wish__logo" src={designAssets.headerLogo} alt="" aria-hidden="true" />
 
-        {/* 这棵树 */}
         <p className="wish__label">这棵树</p>
         <h1 className="wish__tree-name">{brand.tree}</h1>
 
-        {/* 右侧介绍文案（年份文案+logo在SVG图层里，不重复） */}
         <div className="wish__intro">
           {tree.intro.map((line, i) => (
             <p key={i}>{line}</p>
@@ -90,14 +116,13 @@ export function WishScreen() {
           ))}
         </div>
 
-        {/* MAXSCEND 20TH ANNIVERSARY */}
         <div className="wish__anniversary-tag">
           <p>MAXSCEND</p>
           <p>20TH</p>
           <p>ANNIVERSARY</p>
         </div>
 
-        {/* 品牌 logo（右下角） */}
+        {/* 品牌 SVG 图层（年份文案 + logo） */}
         <img
           className="wish__brand-logo"
           src={logoSrc}
@@ -106,18 +131,16 @@ export function WishScreen() {
         />
       </div>
 
-      {/* === 纸张背景下半段 === */}
+      {/* === 纸张下半段 === */}
       <div className="wish__paper">
         <img className="wish__paper-bg" src={`${A}bg-paper.webp`} alt="" aria-hidden="true" />
 
-        {/* 时间记录 */}
         <div className="wish__time-section">
           <h2 className="wish__time-title">时间记录</h2>
           <p className="wish__time-desc">每一年，我们都会在这里记录它的变化</p>
           <p className="wish__time-desc">也记录公司的成长</p>
         </div>
 
-        {/* 照片卡片 */}
         <div className="wish__card">
           <div className="wish__card-header">
             <img className="wish__card-clock" src={`${A}icon-time.svg`} alt="" aria-hidden="true" />
@@ -135,7 +158,6 @@ export function WishScreen() {
           </div>
         </div>
 
-        {/* 未来 */}
         <div className="wish__future">
           <h2 className="wish__future-title">未来</h2>
           <p>多年后也许它已经高过屋檐</p>

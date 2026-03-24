@@ -1503,7 +1503,7 @@ svg {
 .wish__kv {
   position: relative;
   width: 100%;
-  height: calc(691 * var(--du));
+  height: calc(791 * var(--du));
   overflow: hidden;
 }
 
@@ -1517,9 +1517,17 @@ svg {
 }
 
 @keyframes wish-kv-drift {
-  from { transform: scale(1.08); opacity: 0; }
-  60% { opacity: 1; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .wish__kv-overlay {
@@ -1530,21 +1538,11 @@ svg {
 }
 
 .wish__kv-overlay--natali {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .wish__kv-overlay--shuishan {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.12) 50%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .wish__logo {
@@ -1558,8 +1556,14 @@ svg {
 }
 
 @keyframes wish-fade-down {
-  from { transform: translateY(-12px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .wish__label {
@@ -1577,7 +1581,7 @@ svg {
 .wish__tree-name {
   position: absolute;
   left: calc(36 * var(--du));
-  top: calc(136 * var(--du));
+  top: calc(150 * var(--du));
   z-index: 1;
   margin: 0;
   font-size: calc(70 * var(--du));
@@ -1588,8 +1592,14 @@ svg {
 }
 
 @keyframes wish-fade-up {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .wish__intro {
@@ -1702,8 +1712,14 @@ svg {
 }
 
 @keyframes wish-card-rise {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .wish__card-header {
