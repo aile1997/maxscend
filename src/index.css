@@ -1632,14 +1632,12 @@ svg {
 
 .wish__brand-logo {
   position: absolute;
-  right: calc(35 * var(--du));
-  bottom: calc(85 * var(--du));
+  right: calc(40 * var(--du));
+  bottom: calc(30 * var(--du));
   z-index: 1;
-  width: calc(120 * var(--du));
-  height: auto;
-  max-height: calc(45 * var(--du));
+  max-width: calc(140 * var(--du));
+  max-height: calc(50 * var(--du));
   object-fit: contain;
-  filter: brightness(0) invert(1);
   animation: wish-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
 }
 
