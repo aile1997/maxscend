@@ -175,25 +175,43 @@ function App() {
   }, [isBooting]);
 
   useEffect(() => {
-    const resetAll = (label: string) => {
-      const shell = document.querySelector(".app-shell");
-      const ds = document.querySelector(".device-shell");
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-      if (shell) shell.scrollTop = 0;
-      if (ds) ds.scrollTop = 0;
-      console.log(`[scroll-reset] ${label}: window=${window.scrollY}, html=${document.documentElement.scrollTop}, body=${document.body.scrollTop}, shell=${shell?.scrollTop}, device=${ds?.scrollTop}`);
-    };
+    const shell = document.querySelector(".app-shell");
+    if (!shell) return;
 
-    resetAll(`page=${page} immediate`);
-    requestAnimationFrame(() => resetAll("rAF"));
+    // Immediate reset
+    shell.scrollTop = 0;
+    console.log(`[scroll-reset] page=${page}, immediate scrollTop=${shell.scrollTop}`);
 
-    const timers = [50, 150, 300, 600, 1000].map(ms =>
-      setTimeout(() => resetAll(`${ms}ms`), ms)
+    // After React render
+    requestAnimationFrame(() => {
+      shell.scrollTop = 0;
+      console.log(`[scroll-reset] rAF scrollTop=${shell.scrollTop}`);
+    });
+
+    // After images may have triggered layout shifts
+    const timers = [50, 150, 300, 600].map(ms =>
+      setTimeout(() => {
+        if (shell.scrollTop !== 0) {
+          console.warn(`[scroll-reset] drift detected at ${ms}ms: scrollTop=${shell.scrollTop}, forcing reset`);
+          shell.scrollTop = 0;
+        }
+      }, ms)
     );
 
-    return () => { timers.forEach(clearTimeout); };
+    // Watch for scroll events during the first second (something is pushing scroll)
+    const onScroll = () => {
+      console.warn(`[scroll-reset] unexpected scroll event: scrollTop=${shell.scrollTop}`);
+    };
+    shell.addEventListener("scroll", onScroll);
+    const cleanup = setTimeout(() => {
+      shell.removeEventListener("scroll", onScroll);
+    }, 1000);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(cleanup);
+      shell.removeEventListener("scroll", onScroll);
+    };
   }, [page]);
 
   const noScroll = isBooting || page === "home" || page === "guide" || page === "contact";

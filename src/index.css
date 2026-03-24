@@ -89,6 +89,7 @@ svg {
   min-height: max(100dvh, calc(var(--screen-height) * var(--design-unit) + var(--nav-height)));
   padding-bottom: var(--nav-height);
   overflow: hidden;
+  background: #21201e;
 }
 
 .device-shell--booting {
@@ -250,8 +251,8 @@ svg {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--browser-border);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -555,7 +556,7 @@ svg {
   align-items: center;
   justify-content: center;
   height: calc(50 * var(--design-unit));
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
   border: 1px solid #ffffff;
   color: #ffffff;
   font-size: calc(16 * var(--design-unit));
@@ -563,8 +564,8 @@ svg {
   text-decoration: none;
   border-radius: calc(25 * var(--design-unit));
   letter-spacing: calc(1 * var(--design-unit));
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--glass-shadow);
   transition: opacity 0.2s;
 }
@@ -589,10 +590,10 @@ svg {
   z-index: 1;
   border: 1px solid #ffffff;
   border-radius: calc(12 * var(--design-unit));
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #ffffff;
 }
 
@@ -644,10 +645,10 @@ svg {
   scroll-snap-align: start;
   border: 1px solid #ffffff;
   border-radius: calc(12 * var(--design-unit));
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #ffffff;
 }
 
@@ -787,10 +788,10 @@ svg {
   scroll-snap-align: start;
   border: 1px solid #ffffff;
   border-radius: calc(12 * var(--design-unit));
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: calc(16 * var(--design-unit));
   color: #ffffff;
 }
@@ -897,19 +898,23 @@ svg {
 }
 
 .lightbox__close {
-  position: absolute;
-  top: 56px;
-  right: 5px;
-  width: 32px;
-  height: 32px;
-  border: 0;
+  position: fixed;
+  top: calc(20 * var(--design-unit));
+  right: calc(20 * var(--design-unit));
+  z-index: 100;
+  width: calc(44 * var(--design-unit));
+  height: calc(44 * var(--design-unit));
+  border: 1px solid #ffffff;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(250, 250, 250, 0.25);
   color: #ffffff;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: calc(24 * var(--design-unit));
+  line-height: calc(44 * var(--design-unit));
   text-align: center;
   cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
 }
 
 .contact-screen__title {
@@ -945,14 +950,14 @@ svg {
   scroll-snap-align: start;
   border: 1px solid #ffffff;
   border-radius: calc(12 * var(--design-unit));
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .contact-card:last-child {
-  background: rgba(250, 250, 250, 0.35);
+  background: rgba(250, 250, 250, 0.25);
 }
 
 .contact-card__name,
@@ -998,7 +1003,7 @@ svg {
 .contact-feedback {
   position: absolute;
   left: calc(37 * var(--design-unit));
-  top: calc(375 * var(--design-unit));
+  top: calc(380 * var(--design-unit));
   z-index: 1;
   width: calc(327 * var(--design-unit));
   height: calc(263 * var(--design-unit));
@@ -1007,7 +1012,6 @@ svg {
 .contact-feedback__field-shell {
   position: absolute;
   inset: 0;
-  overflow: hidden;
   border: 1px solid #ffffff;
   border-radius: calc(12 * var(--design-unit));
   background: rgba(250, 250, 250, 0.91);
@@ -1074,8 +1078,8 @@ svg {
   padding: 10px 14px;
   border-radius: 999px;
   background: rgba(17, 18, 20, 0.88);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #ffffff;
   font-size: 13px;
   text-align: center;
@@ -1365,21 +1369,24 @@ svg {
 }
 
 .brand-story__yearbook-card {
-  flex: 0 0 auto;
+  flex: 0 0 calc(300 * var(--design-unit));
   scroll-snap-align: start;
 }
 
 .brand-story__yearbook-cover {
   position: relative;
+  width: calc(300 * var(--design-unit));
   height: calc(304 * var(--design-unit));
   border-radius: calc(8 * var(--design-unit));
   overflow: hidden;
 }
 
 .brand-story__yearbook-img {
-  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: cover;
 }
 
 .brand-story__yearbook-btn {
